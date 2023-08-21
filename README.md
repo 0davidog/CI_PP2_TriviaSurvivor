@@ -1,39 +1,65 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Trivia Survivor 
 
-Welcome,
+Trivia Survivor is a movie trivia quiz game with an element of danger. Players will test their knowledge of movie trivia as a creature makes its way towards them. Correct answers will sall the creatures approach while incorrect answers will allow it to advance. When too many wrong answers have been submitted the game ends in failure so to survive players must answer enough trivia questions correctly.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Demo of the Dead
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **July 26th, 2023**
+This version, created as part of an course project will be subtitled 'Demo of the Dead' and focus its subject matter on the zombie sub-genre of horror movies as this will allow for a scope that fits within the time frame given for development.
 
-## Codeanywhere Reminders
+### Author
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+David C. O'Gara
 
-`python3 -m http.server`
+### Deployed Site
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+[LINK]
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+## External user goal
 
-`http_server`
+Users of the site are invited to test their knowledge of movie trivia in a fun survival quiz where they must answer questions correctly or lose from a limited number of lives.  
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Site owner goal
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+The goal in creating the site is to provide and entertaining and fun quiz that encourages repeat attempts. 
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Target Audience
 
-To log into the Heroku toolbelt CLI:
+The target audience are in this case a movie watching audience, in particular horror movies. This will then appeal to an audience of film watching age of at around 15+ due to the subject matter and age requirements of the films. For this project the scope will focus on films of the zombie genre which, although specific, is an ever-popular subgenre with a sizable audience. A potential future version of the app would include a selection of genres to choose from. 
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## User Story 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+As a visitor I want to put my knowledge to the test in a quiz and be rewarded for correct answers by ‘surviving’ the game and being a score. I would return to the site to improve my score and try out other modes.  
 
----
+## Site Owner Story 
 
-Happy coding!
+As the site owner I want user to make return visits to the site to both improve their score and try other modes. The possibility of failure from too many wrong answers creates a challenge element and immediacy to the quiz and randomised questions assist replay-ability. 
+
+## Design
+
+### Wireframes
+
+### Storyboard
+
+## Features
+
+### Implimented
+
+### Future Features
+
+## Testing
+
+### Manual Tests
+
+### Validation
+
+### Lighthouse
+
+## Tech Used
+
+## Deployment
+
+## Credits
+
+### Content
+
+### Acknowledgments
