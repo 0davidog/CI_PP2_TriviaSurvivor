@@ -34,21 +34,21 @@ hardBtn.addEventListener('click', startHardMode);
 
 function startEasyMode() {
 	console.log('Easy mode started...');
-	titleCard.classList.add('hidden');
+	titleCard.style.display = "none";
 	creatureBox.classList.remove('hidden');
 	questionBox.classList.remove('hidden');
 }
 
 function startNormalMode() {
 	console.log('Normal mode started...');
-	titleCard.classList.add('hidden');
+	titleCard.style.display = "none";
 	creatureBox.classList.remove('hidden');
 	questionBox.classList.remove('hidden');
 }
 
 function startHardMode() {
 	console.log('Hard mode started...');
-	titleCard.classList.add('hidden');
+	titleCard.style.display = "none";
 	creatureBox.classList.remove('hidden');
 	questionBox.classList.remove('hidden');
 }

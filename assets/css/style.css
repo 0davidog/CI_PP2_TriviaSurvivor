@@ -46,32 +46,44 @@ button:hover {
 }
 /* Styling the title card... */
 #title-card {
-	width: 240px;
-	height: 280px;
-	margin: 0 5 0 5;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+	width: 85%;
+	height: 80%;
 	padding: 5px;
 	border: solid 5px #808080;
 	border-radius: 10px;
 	background-color: #000000;
-	text-align: center;
 }
 /* Styling the title h1 in the title card... */
 #title {
+	flex-basis: 100%;
 	font-family: 'League Gothic', sans-serif;
+	text-align: center;
 	font-size: 3rem;
 }
 /* Styling the sub-title h3 in the title card... */
 #sub-title {
+	flex-basis: 100%;
 	color: #9e0b0f;
+	text-align: center;
 	padding-bottom: 40px;
 }
 /* Styling the input box for the user's name.. */
+#enter-name {
+	flex-basis: 100%;
+	text-align: center;
+}
 #enter-name input {
 	padding: 5px;
 	margin: 10px;
 }
 
 #choose-difficulty {
+	flex-basis: 100%;
+	text-align: center;
 	padding-top: 10px;
 }
 
