@@ -1,8 +1,69 @@
 /* Welcome to the CSS file */
 
+/* Importing League Gothic Font */
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
 /* Removing initial formatting with wildcard selector */
 * {
     margin: 0;
     padding: 0;
     border: none;
 }
+/* Styling the body */
+body {
+	height: 100vh;
+	width: 100vw;
+	background-color: #1b1464;
+	color: #ffffff;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
+/* Styling buttons */
+button {
+	background-color: #000000;
+	color: #ffffff;
+	padding: 5px;
+	font-size: 1.1rem;
+}
+.hidden {
+	display: none;
+}
+/* Setting the flex container */
+.flex-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+/* Styling the title card */
+#title-card {
+	width: 240px;
+	margin: 0 5 0 5;
+	padding: 5px;
+	border: solid 5px #808080;
+	border-radius: 10px;
+	background-color: #000000;
+	text-align: center;
+}
+
+#title {
+	font-family: 'League Gothic', sans-serif;
+	font-size: 3rem;
+}
+
+#sub-title {
+	color: #9e0b0f;
+}
+
+#enter-name {
+	padding-top: 10px;
+}
+#enter-name input {
+	padding: 5px;
+	margin: 10px;
+}
+
+#choose-difficulty {
+	padding-top: 10px;
+}
+

@@ -13,5 +13,25 @@
 </head>
 
 <body>
+	<!-- Title Card Section, first thing user will see -->
+	<div class="flex-container">
+		<div id="title-card">
+			<h1 id="title">TRIVIA SURVIVOR</h1>
+			<h3 id="sub-title">[Demo of the Dead]</h3>
+			<div id="enter-name">
+				<form onsubmit="chooseDifficulty()">
+				<label for="name">Enter your name to begin:</label><br>
+				<input type="text" id="name" name="name" placeholder="Name" required><br>
+				<button type="submit" name="start-btn" id="start-btn" class="start-btn btn">Start</button>
+				</form>
+			</div>
+			<div id="choose-difficulty" class="hidden">
+				<button id="easy-btn" class="easy-btn btn">Easy</button><br>
+				<button id="normal-btn" class="normal-btn btn">Normal</button><br>
+				<button id="hard-btn" class="hard-btn btn">Hard</button><br>
+			</div>
+		</div>
+
+	</div>
 </body>
 </html>
