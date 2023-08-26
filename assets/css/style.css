@@ -55,11 +55,9 @@ button {
 
 #sub-title {
 	color: #9e0b0f;
+	padding-bottom: 40px;
 }
 
-#enter-name {
-	padding-top: 10px;
-}
 #enter-name input {
 	padding: 5px;
 	margin: 10px;
@@ -86,8 +84,8 @@ button {
 	display: flex;
 	height: 100%;
 	width: 20%;
-	align-items: center;
-	flex-wrap: wrap;
+	align-items: flex-end;
+    flex-wrap: wrap;
 }
 .danger-square {
 	border: solid 0px #808080;
