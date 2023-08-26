@@ -14,7 +14,7 @@
 
 <body>
 	<!-- Title Card Section, first thing user will see -->
-	<div class="flex-container">
+	<section class="flex-container">
 		<div id="title-card">
 			<h1 id="title">TRIVIA SURVIVOR</h1>
 			<h3 id="sub-title">[Demo of the Dead]</h3>
@@ -32,6 +32,32 @@
 			</div>
 		</div>
 
-	</div>
+	</section>
+		<!-- Game Card Section, the main portion of the game -->
+	<section class="flex-container">
+		<div id="creature-box">
+			<div id="danger-box">
+			<div class="danger-square">5</div>
+			<div class="danger-square">4</div>	
+			<div class="danger-square">3</div>
+			<div class="danger-square">2</div>
+			<div class="danger-square">1</div>
+			</div>
+			<div id="view-box">
+			</div>
+		</div>
+		<div id="question-box">
+	    	<div id="questions">
+				<h3>Question 0</h3>
+        		<p class="question" id="question">Oh no! There seems to be an error loading questions.</p>
+      		</div>
+      		<div id="answers">
+        		<button id="answer1-btn" class="btn" value="A" aria-label="Answer Button A">Answer A</button><br>
+        		<button id="answer2-btn" class="btn" value="B" aria-label="Answer Button B">Answer B</button><br>
+        		<button id="answer3-btn" class="btn" value="C" aria-label="Answer Button C">Answer C</button><br>
+        		<button id="answer4-btn" class="btn" value="D" aria-label="Answer Button D">Answer D</button><br>
+      		</div>
+		</div>
+	</section>
 </body>
 </html>
