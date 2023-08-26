@@ -4,6 +4,8 @@
 const titleCard = document.getElementById('title-card');
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
+const textBox = document.getElementById('text-box');
+const nextBtn = document.getElementById('next-btn');
 
 // Setting username variable when entered...
 const userName = document.getElementById('name');
@@ -27,28 +29,23 @@ function chooseDifficulty() {
 const easyBtn = document.getElementById('easy-btn');
 const normalBtn = document.getElementById('normal-btn');
 const hardBtn = document.getElementById('hard-btn');
-easyBtn.addEventListener('click', startEasyMode);
-normalBtn.addEventListener('click', startNormalMode);
-hardBtn.addEventListener('click', startHardMode);
+easyBtn.addEventListener('click', startQuiz);
+normalBtn.addEventListener('click', startQuiz);
+hardBtn.addEventListener('click', startQuiz);
 
-
-function startEasyMode() {
-	console.log('Easy mode started...');
+function startQuiz(event) {
+	let mode = event.target.value;
+	if (mode === "easy") {
+		console.log('Easy mode started...');
+	}
+	else if (mode === "normal") {
+		console.log('Normal mode started...');
+	}
+	else if (mode === "hard") {
+		console.log('Hard mode started...');
+	}
 	titleCard.style.display = "none";
 	creatureBox.classList.remove('hidden');
 	questionBox.classList.remove('hidden');
-}
-
-function startNormalMode() {
-	console.log('Normal mode started...');
-	titleCard.style.display = "none";
-	creatureBox.classList.remove('hidden');
-	questionBox.classList.remove('hidden');
-}
-
-function startHardMode() {
-	console.log('Hard mode started...');
-	titleCard.style.display = "none";
-	creatureBox.classList.remove('hidden');
-	questionBox.classList.remove('hidden');
+	textBox.innerHTML = `<p>Welcome ${userName.value}</p>`;
 }

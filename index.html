@@ -26,9 +26,9 @@
 				</form>
 			</div>
 			<div id="choose-difficulty" class="hidden">
-				<button id="easy-btn" class="easy-btn btn">Easy</button><br>
-				<button id="normal-btn" class="normal-btn btn">Normal</button><br>
-				<button id="hard-btn" class="hard-btn btn">Hard</button><br>
+				<button id="easy-btn" class="easy-btn btn" value="easy">Easy</button><br>
+				<button id="normal-btn" class="normal-btn btn" value="normal">Normal</button><br>
+				<button id="hard-btn" class="hard-btn btn" value="hard">Hard</button><br>
 			</div>
 		</div>
 
@@ -47,11 +47,16 @@
 			</div>
 		</div>
 		<div id="question-box" class="hidden">
-	    	<div id="questions">
+	    	<div id="text-box">
+			</div>
+			<div id="btn-box">
+				<button id="next-btn">></button>
+			</div>
+			<div id="questions" class="hidden">
 				<h3>Question 0</h3>
         		<p class="question" id="question">Oh no! There seems to be an error loading questions.</p>
       		</div>
-      		<div id="answers">
+      		<div id="answers" class="hidden">
         		<button id="answer1-btn" class="btn" value="A" aria-label="Answer Button A">Answer A</button><br>
         		<button id="answer2-btn" class="btn" value="B" aria-label="Answer Button B">Answer B</button><br>
         		<button id="answer3-btn" class="btn" value="C" aria-label="Answer Button C">Answer C</button><br>
