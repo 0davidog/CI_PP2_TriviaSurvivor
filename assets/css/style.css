@@ -1,6 +1,6 @@
 /* Welcome to the CSS file */
 
-/* Importing League Gothic Font */
+/* Importing League Gothic Font for the title from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
 /* Removing initial formatting with wildcard selector */
@@ -19,7 +19,7 @@ body {
 	color: #ffffff;
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 }
-/* Styling buttons */
+/* Styling buttons... */
 button {
 	background-color: #000000;
 	color: #ffffff;
@@ -28,17 +28,23 @@ button {
 	border-radius: 5px;
 	margin: 5px;
 }
+/* Changing button text colour to red when hovered over... */
+button:hover {
+	color: #9E0B0F;
+}
+/* Setting the hidden class to hide/unhide elements in javascript... */
 .hidden {
 	display: none;
 }
-/* Setting the flex container */
+/* Setting the flex container properties... */
 .flex-container {
 	display: flex;
+	height: 100%;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 }
-/* Styling the title card */
+/* Styling the title card... */
 #title-card {
 	width: 240px;
 	height: 280px;
@@ -49,17 +55,17 @@ button {
 	background-color: #000000;
 	text-align: center;
 }
-
+/* Styling the title h1 in the title card... */
 #title {
 	font-family: 'League Gothic', sans-serif;
 	font-size: 3rem;
 }
-
+/* Styling the sub-title h3 in the title card... */
 #sub-title {
 	color: #9e0b0f;
 	padding-bottom: 40px;
 }
-
+/* Styling the input box for the user's name.. */
 #enter-name input {
 	padding: 5px;
 	margin: 10px;
