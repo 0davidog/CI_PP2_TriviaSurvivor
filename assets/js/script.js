@@ -14,3 +14,11 @@ startBtn.addEventListener('click', logName);
 function logName() {
 	console.log(`Username: ${userName.value}`);
 }
+
+// Taking user to difficulty selection...
+function chooseDifficulty() {
+	let enterName = document.getElementById('enter-name');
+	let chooseDifficulty = document.getElementById('choose-difficulty');
+	enterName.classList.add('hidden');
+    chooseDifficulty.classList.remove('hidden');
+}
