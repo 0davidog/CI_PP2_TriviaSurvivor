@@ -22,3 +22,33 @@ function chooseDifficulty() {
 	enterName.classList.add('hidden');
     chooseDifficulty.classList.remove('hidden');
 }
+
+// Adding variables and event listeners for difficulty selection buttons...
+const easyBtn = document.getElementById('easy-btn');
+const normalBtn = document.getElementById('normal-btn');
+const hardBtn = document.getElementById('hard-btn');
+easyBtn.addEventListener('click', startEasyMode);
+normalBtn.addEventListener('click', startNormalMode);
+hardBtn.addEventListener('click', startHardMode);
+
+
+function startEasyMode() {
+	console.log('Easy mode started...');
+	titleCard.classList.add('hidden');
+	creatureBox.classList.remove('hidden');
+	questionBox.classList.remove('hidden');
+}
+
+function startNormalMode() {
+	console.log('Normal mode started...');
+	titleCard.classList.add('hidden');
+	creatureBox.classList.remove('hidden');
+	questionBox.classList.remove('hidden');
+}
+
+function startHardMode() {
+	console.log('Hard mode started...');
+	titleCard.classList.add('hidden');
+	creatureBox.classList.remove('hidden');
+	questionBox.classList.remove('hidden');
+}
