@@ -13,6 +13,7 @@ const answerBtnD = document.getElementById('answer-btn-d');
 let lives = 5;
 let quizLength = 10;
 let questionNumber = 0;
+let questionSet
 
 // Setting username variable when entered...
 const userName = document.getElementById('name');
@@ -104,8 +105,7 @@ function startQuiz() {
 	nexBtn04.classList.add('hidden');
 	textBox.classList.add('hidden');
 	// Shuffling question array...
-	let questionSet = questionList.sort(() => Math.random() - 0.5);
-	
+	questionSet = questionList.sort(() => Math.random() - 0.5);
 	let question = document.getElementById('questions');
 	let answers = document.getElementById('answers');
 	questions.classList.remove('hidden');
@@ -126,6 +126,15 @@ function startQuiz() {
 }
 
 function checkAnswer() {
+	let userAnswer = this.value;
+	console.log(`User answered: ${userAnswer}`);
+	let correctAnswer = questionSet[questionNumber].answer;
+	console.log(`Correct answer is: ${correctAnswer}`);
+	if (userAnswer === correctAnswer) {
+		console.log('User answered correctly');
+	} else {
+		console.log('User answered incorrectly');
+	}
 	
 }
 
@@ -136,6 +145,6 @@ const questionList = [
     b: "White Zombie",
     c: "Night of the Living Dead",
     d: "Shaun of the Dead",
-    answer: "c",
+    answer: "C",
   },
 ];
