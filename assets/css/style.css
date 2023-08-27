@@ -95,6 +95,7 @@ button:hover {
 	border: solid 5px #808080;
 	border-radius: 10px;
 	overflow: hidden;
+	background-color: #000000;
 }
 #creature-box img {
 	position: relative;

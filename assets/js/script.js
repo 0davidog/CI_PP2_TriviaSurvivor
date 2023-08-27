@@ -9,6 +9,13 @@ const answerBtnA = document.getElementById('answer-btn-a');
 const answerBtnB = document.getElementById('answer-btn-b');
 const answerBtnC = document.getElementById('answer-btn-c');
 const answerBtnD = document.getElementById('answer-btn-d');
+const zombieImgSrc = [
+	"assets/images/zombie-approach-01.webp",
+	"assets/images/zombie-approach-02.webp", 
+	"assets/images/zombie-approach-03.webp", 
+	"assets/images/zombie-approach-04.webp", 
+	"assets/images/zombie-approach-05.webp"
+]
 //Setting adjustable game variables
 let lives = 5;
 let quizLength = 10;
@@ -97,16 +104,26 @@ function introMessage04() {
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.remove('hidden');
     nexBtn04.onclick = startQuiz;
+	shuffleQuestions();
+}
+// Shuffling question array...
+function shuffleQuestions() {
+	questionSet = questionList.sort(() => Math.random() - 0.5);
+	console.log(questionSet);
 }
 
 // Starting Quiz
 function startQuiz() {
+	document.getElementById("zombie").src = "assets/images/zombie-approach-01.webp";
+	console.log(`Question number: ${questionNumber}.`)
 	//Removing intro text and button...
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.add('hidden');
 	textBox.classList.add('hidden');
-	// Shuffling question array...
-	questionSet = questionList.sort(() => Math.random() - 0.5);
+	// Checking if user has reached the end of the question list...
+	if (questionNumber === quizLength) {
+	console.log('Quiz complete.');	
+	}
 	// Revealing question text and answer buttons...
 	let question = document.getElementById('questions');
 	let answers = document.getElementById('answers');
@@ -134,11 +151,12 @@ function checkAnswer() {
 	let correctAnswer = questionSet[questionNumber].answer;
 	console.log(`Correct answer is: ${correctAnswer}`);
 	// Comparing the two answers...
-	if (userAnswer === correctAnswer) {
+	if (userAnswer == correctAnswer) {
 		console.log('User answered correctly.');
 		console.log('The Creature is stalled.');
 		console.log('No lives lost.');
 		console.log(`Lives currently at ${lives}.`);
+		nextQuestion();
 	} else {
 		console.log('User answered incorrectly.');
 		console.log('The creature takes a step forward.');
@@ -146,8 +164,13 @@ function checkAnswer() {
 		lives--;
 		console.log('Lives reduced by 1.');
 		console.log(`Lives currently at ${lives}.`);
-	}
-	
+		nextQuestion();
+	}	
+}
+
+function nextQuestion() {
+	questionNumber++;
+	startQuiz();
 }
 
 const questionList = [  
@@ -158,5 +181,76 @@ const questionList = [
     c: "Night of the Living Dead",
     d: "Shaun of the Dead",
     answer: "C",
-  },
-];
+  }, 
+	{
+    q: `Question 02`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, 
+	{
+    q: `Question 03`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, 
+	{
+    q: `Question 04`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, 
+	{
+    q: `Question 05`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, 
+	{
+    q: `Question 06`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, 
+	{
+    q: `Question 07`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, 
+	{
+    q: `Question 08`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, 
+	{
+    q: `Question 09`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, 
+	{
+    q: `Question 10`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  }, ];
