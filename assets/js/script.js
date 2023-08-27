@@ -9,6 +9,7 @@ const answerBtnA = document.getElementById('answer-btn-a');
 const answerBtnB = document.getElementById('answer-btn-b');
 const answerBtnC = document.getElementById('answer-btn-c');
 const answerBtnD = document.getElementById('answer-btn-d');
+const shadowBox = document.getElementById('shadow-box');
 const zombieImgSrc = [
 	"assets/images/zombie-approach-01.webp",
 	"assets/images/zombie-approach-02.webp", 
@@ -18,7 +19,7 @@ const zombieImgSrc = [
 ]
 //Setting adjustable game variables
 let lives = 5;
-let quizLength = 10;
+let quizLength = 9;
 let questionNumber = 0;
 let questionSet
 
@@ -54,8 +55,8 @@ function modeSelected(event) {
 	let mode = event.target.value;
 	if (mode === "easy") {
 		console.log('Easy mode started...');
-		quizLength = 7;
-		console.log(`Quiz length is now ${quizLength} questions.`);
+		quizLength = 6;
+		console.log(`Quiz length is now ${quizLength} questions`);
 	}
 	else if (mode === "normal") {
 		console.log('Normal mode started...');
@@ -65,8 +66,8 @@ function modeSelected(event) {
 	else if (mode === "hard") {
 		console.log('Hard mode started...');
 		lives = 3;
-		quizLength = 20;
-		console.log(`Quiz length is now ${quizLength} questions.`);
+		quizLength = 19;
+		console.log(`Quiz length is now ${quizLength} questions`);
 		console.log(`Number of lives reduced to ${lives}.`);
 	}
 	titleCard.style.display = "none";
@@ -115,15 +116,11 @@ function shuffleQuestions() {
 // Starting Quiz
 function startQuiz() {
 	document.getElementById("zombie").src = "assets/images/zombie-approach-01.webp";
-	console.log(`Question number: ${questionNumber}.`)
+	console.log(`Question number: ${questionNumber}.`);
 	//Removing intro text and button...
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.add('hidden');
 	textBox.classList.add('hidden');
-	// Checking if user has reached the end of the question list...
-	if (questionNumber === quizLength) {
-	console.log('Quiz complete.');	
-	}
 	// Revealing question text and answer buttons...
 	let question = document.getElementById('questions');
 	let answers = document.getElementById('answers');
@@ -156,7 +153,6 @@ function checkAnswer() {
 		console.log('The Creature is stalled.');
 		console.log('No lives lost.');
 		console.log(`Lives currently at ${lives}.`);
-		nextQuestion();
 	} else {
 		console.log('User answered incorrectly.');
 		console.log('The creature takes a step forward.');
@@ -164,15 +160,28 @@ function checkAnswer() {
 		lives--;
 		console.log('Lives reduced by 1.');
 		console.log(`Lives currently at ${lives}.`);
-		nextQuestion();
-	}	
+	}
+	// Checking if user has reached the end of the question list...
+	if (questionNumber === quizLength) {
+		console.log('Quiz complete.');
+		win();
+	} else {
+		questionNumber++;
+		startQuiz();
+	}		
 }
-
-function nextQuestion() {
-	questionNumber++;
-	startQuiz();
+// Displaying success screen...
+function win() {
+	shadowBox.style.display = "flex";
+	document.getElementById('win-state').classList.remove('hidden');
+	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time.`
 }
-
+// Displaying failure screen...
+function fail() {
+	shadowBox.style.display = "flex";
+	document.getElementById('fail-state').classList.remove('hidden');
+	document.getElementById('fail-text').innerHTML = `${userName.value}, the creature has you in it's grasp this time. But don't give up. Please try again.`
+}
 const questionList = [  
 	{
     q: `<em>'They're coming to get you, Barbara' </em> is a line from which of these classic zombie movies?`,
