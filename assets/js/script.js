@@ -101,18 +101,20 @@ function introMessage04() {
 
 // Starting Quiz
 function startQuiz() {
+	creatureBox.style.backgroundImage = "url('../images/zombie-approach-02.webp')";
+	//Removing intro text and button...
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.add('hidden');
 	textBox.classList.add('hidden');
 	// Shuffling question array...
 	questionSet = questionList.sort(() => Math.random() - 0.5);
+	// Revealing question text and answer buttons...
 	let question = document.getElementById('questions');
 	let answers = document.getElementById('answers');
 	questions.classList.remove('hidden');
 	answers.classList.remove('hidden');
-	
+	// Building a question from array...
 	for (let i = 0; i < questionList.length; i++) {
-		
 		question.innerHTML = questionSet[questionNumber].q;
 		answerBtnA.innerHTML = questionSet[questionNumber].a;
 		answerBtnB.innerHTML = questionSet[questionNumber].b;
@@ -124,16 +126,26 @@ function startQuiz() {
 		answerBtnD.onclick = checkAnswer;
     }
 }
-
+// Checking answer...
 function checkAnswer() {
+	// Retrieving users answer...
 	let userAnswer = this.value;
 	console.log(`User answered: ${userAnswer}`);
+	// Retrieving correct answer...
 	let correctAnswer = questionSet[questionNumber].answer;
 	console.log(`Correct answer is: ${correctAnswer}`);
+	// Comparing the two answers...
 	if (userAnswer === correctAnswer) {
-		console.log('User answered correctly');
+		console.log('User answered correctly.');
+		console.log('The Creature is stalled.')
+		console.log('No lives lost.');
+		console.log(`Lives currently at ${lives}.`);
 	} else {
-		console.log('User answered incorrectly');
+		console.log('User answered incorrectly.');
+		console.log('The creature takes a step forward.')
+		lives--;
+		console.log('Lives reduced by 1.');
+		console.log(`Lives currently at ${lives}.`);
 	}
 	
 }
