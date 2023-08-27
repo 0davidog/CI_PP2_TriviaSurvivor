@@ -5,9 +5,14 @@ const titleCard = document.getElementById('title-card');
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
 const textBox = document.getElementById('text-box');
+const answerBtnA = document.getElementById('answer-btn-a');
+const answerBtnB = document.getElementById('answer-btn-b');
+const answerBtnC = document.getElementById('answer-btn-c');
+const answerBtnD = document.getElementById('answer-btn-d');
 //Setting adjustable game variables
 let lives = 5;
 let quizLength = 10;
+let questionNumber = 0;
 
 // Setting username variable when entered...
 const userName = document.getElementById('name');
@@ -82,7 +87,7 @@ function introMessage03() {
 	nexBtn02.classList.add('hidden');
 	let nexBtn03 = document.getElementById('next-btn-03');
 	nexBtn03.classList.remove('hidden');
-    nexBtn03.addEventListener('click', introMessage04);
+    nexBtn03.onclick = introMessage04;
 }
 function introMessage04() {
 	textBox.innerHTML = `<p>Good luck.</p>`;
@@ -90,10 +95,47 @@ function introMessage04() {
 	nexBtn03.classList.add('hidden');
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.remove('hidden');
-    nexBtn04.addEventListener('click', startQuiz);
+    nexBtn04.onclick = startQuiz;
 }
 
 // Starting Quiz
 function startQuiz() {
+	let nexBtn04 = document.getElementById('next-btn-04');
+	nexBtn04.classList.add('hidden');
+	textBox.classList.add('hidden');
+	// Shuffling question array...
+	let questionSet = questionList.sort(() => Math.random() - 0.5);
+	
+	let question = document.getElementById('questions');
+	let answers = document.getElementById('answers');
+	questions.classList.remove('hidden');
+	answers.classList.remove('hidden');
+	
+	for (let i = 0; i < questionList.length; i++) {
+		
+		question.innerHTML = questionSet[questionNumber].q;
+		answerBtnA.innerHTML = questionSet[questionNumber].a;
+		answerBtnB.innerHTML = questionSet[questionNumber].b;
+		answerBtnC.innerHTML = questionSet[questionNumber].c;
+		answerBtnD.innerHTML = questionSet[questionNumber].d;
+		answerBtnA.onclick = checkAnswer;
+		answerBtnB.onclick = checkAnswer;
+		answerBtnC.onclick = checkAnswer;
+		answerBtnD.onclick = checkAnswer;
+    }
+}
+
+function checkAnswer() {
 	
 }
+
+const questionList = [  
+	{
+    q: `<em>'They're coming to get you, Barbara' </em> is a line from which of these classic zombie movies?`,
+    a: "Dawn of the Dead",
+    b: "White Zombie",
+    c: "Night of the Living Dead",
+    d: "Shaun of the Dead",
+    answer: "c",
+  },
+];
