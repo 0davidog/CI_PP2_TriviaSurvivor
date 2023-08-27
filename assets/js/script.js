@@ -1,10 +1,13 @@
 // Welcome to the JavaScript Document
 
-// Setting variables
+// Setting static global variables
 const titleCard = document.getElementById('title-card');
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
 const textBox = document.getElementById('text-box');
+//Setting adjustable game variables
+let lives = 5;
+let quizLength = 10;
 
 // Setting username variable when entered...
 const userName = document.getElementById('name');
@@ -38,12 +41,20 @@ function modeSelected(event) {
 	let mode = event.target.value;
 	if (mode === "easy") {
 		console.log('Easy mode started...');
+		quizLength = 7;
+		console.log(`Quiz length is now ${quizLength} questions.`);
 	}
 	else if (mode === "normal") {
 		console.log('Normal mode started...');
+		console.log(`Quiz length remains ${quizLength} questions.`);
+		console.log(`Number of lives remain at ${lives}.`);
 	}
 	else if (mode === "hard") {
 		console.log('Hard mode started...');
+		lives = 3;
+		quizLength = 20;
+		console.log(`Quiz length is now ${quizLength} questions.`);
+		console.log(`Number of lives reduced to ${lives}.`);
 	}
 	titleCard.style.display = "none";
 	creatureBox.classList.remove('hidden');
@@ -80,4 +91,9 @@ function introMessage04() {
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.remove('hidden');
     nexBtn04.addEventListener('click', startQuiz);
+}
+
+// Starting Quiz
+function startQuiz() {
+	
 }
