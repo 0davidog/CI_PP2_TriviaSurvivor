@@ -101,7 +101,6 @@ function introMessage04() {
 
 // Starting Quiz
 function startQuiz() {
-	creatureBox.style.backgroundImage = "url('../images/zombie-approach-02.webp')";
 	//Removing intro text and button...
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.add('hidden');
@@ -137,12 +136,13 @@ function checkAnswer() {
 	// Comparing the two answers...
 	if (userAnswer === correctAnswer) {
 		console.log('User answered correctly.');
-		console.log('The Creature is stalled.')
+		console.log('The Creature is stalled.');
 		console.log('No lives lost.');
 		console.log(`Lives currently at ${lives}.`);
 	} else {
 		console.log('User answered incorrectly.');
-		console.log('The creature takes a step forward.')
+		console.log('The creature takes a step forward.');
+		document.getElementById("zombie").src = "assets/images/zombie-approach-02.webp";
 		lives--;
 		console.log('Lives reduced by 1.');
 		console.log(`Lives currently at ${lives}.`);

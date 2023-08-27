@@ -94,11 +94,12 @@ button:hover {
 	padding: 5px;
 	border: solid 5px #808080;
 	border-radius: 10px;
-	background-image: url('../images/zombie-approach-01.webp');
-	background-position: center;
-	background-color: #000000;
-	background-repeat: no-repeat;
-    background-size: auto 100%;
+	overflow: hidden;
+}
+#creature-box img {
+	position: relative;
+	left: -150px;
+	top: -5px;
 }
 /* styling for green and red coloured squares that represent danger level or lives left */
 #danger-box {
