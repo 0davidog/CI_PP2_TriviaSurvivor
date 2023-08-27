@@ -11,11 +11,18 @@ const answerBtnC = document.getElementById('answer-btn-c');
 const answerBtnD = document.getElementById('answer-btn-d');
 const shadowBox = document.getElementById('shadow-box');
 const zombieImgSrc = [
-	"assets/images/zombie-approach-01.webp",
-	"assets/images/zombie-approach-02.webp", 
-	"assets/images/zombie-approach-03.webp", 
+	"assets/images/zombie-approach-05.webp",
 	"assets/images/zombie-approach-04.webp", 
-	"assets/images/zombie-approach-05.webp"
+	"assets/images/zombie-approach-03.webp", 
+	"assets/images/zombie-approach-02.webp", 
+	"assets/images/zombie-approach-01.webp"
+]
+const dangerImgSrc = [
+	"assets/images/danger-block-05.webp",
+	"assets/images/danger-block-04.webp",
+	"assets/images/danger-block-03.webp",
+	"assets/images/danger-block-02.webp",
+	"assets/images/danger-block-01.webp",
 ]
 //Setting adjustable game variables
 let lives = 5;
@@ -115,7 +122,9 @@ function shuffleQuestions() {
 
 // Starting Quiz
 function startQuiz() {
-	document.getElementById("zombie").src = "assets/images/zombie-approach-01.webp";
+	let dangerLvl = lives - 1;
+	console.log(`Danger is ${dangerLvl}`);
+	document.getElementById("zombie").src = zombieImgSrc[dangerLvl];
 	console.log(`Question number: ${questionNumber}.`);
 	//Removing intro text and button...
 	let nexBtn04 = document.getElementById('next-btn-04');
@@ -153,8 +162,6 @@ function checkAnswer() {
 		console.log('The Creature is stalled.');
 		console.log('No lives lost.');
 		console.log(`Lives currently at ${lives}.`);
-	} else if (lives == 0){
-		fail();
 	} else {
 		console.log('User answered incorrectly.');
 		console.log('The creature takes a step forward.');
@@ -167,6 +174,8 @@ function checkAnswer() {
 	if (questionNumber === quizLength) {
 		console.log('Quiz complete.');
 		win();
+	} else if (lives === 0){
+		fail();
 	} else {
 		questionNumber++;
 		startQuiz();
