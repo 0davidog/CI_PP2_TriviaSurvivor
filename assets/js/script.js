@@ -153,6 +153,8 @@ function checkAnswer() {
 		console.log('The Creature is stalled.');
 		console.log('No lives lost.');
 		console.log(`Lives currently at ${lives}.`);
+	} else if (lives == 0){
+		fail();
 	} else {
 		console.log('User answered incorrectly.');
 		console.log('The creature takes a step forward.');

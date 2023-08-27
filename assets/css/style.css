@@ -197,3 +197,6 @@ button:hover {
 	text-align: center;
 	color: #9E0B0F;
 }
+#fail-text {
+	padding: 20px;
+}
