@@ -80,13 +80,13 @@ button:hover {
 	padding: 5px;
 	margin: 10px;
 }
-
+/* Styling the difficulty selection... */
 #choose-difficulty {
 	flex-basis: 100%;
 	text-align: center;
 	padding-top: 10px;
 }
-
+/* Styling the box that displays the creature images... */
 #creature-box {
 	width: 240px;
 	height: 280px;
@@ -100,6 +100,7 @@ button:hover {
 	background-repeat: no-repeat;
     background-size: auto 100%;
 }
+/* styling for green and red coloured squares that represent danger level or lives left */
 #danger-box {
 	display: none;
 	height: 100%;
@@ -139,6 +140,7 @@ button:hover {
 	background-position: center;
 	background-size: cover;
 }
+/* Styling the box in which the questions and messages appear... */
 #question-box {
 	width: 240px;
 	height: 280px;
