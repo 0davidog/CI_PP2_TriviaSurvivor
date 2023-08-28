@@ -7,17 +7,24 @@
     <meta name="keywords" content="Trivia, Survivor, movie, horror-movie, quiz, zombie">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=10">
     <link rel="stylesheet" href="assets/css/style.css">
-	
+	<script src="https://kit.fontawesome.com/5216db6454.js" crossorigin="anonymous"></script>
 	<title>Trivia Survivor</title>
 	
 </head>
 
 <body>
-	<!-- Title Card Section, first thing user will see -->
+	<!-- Main game container -->
 	<section class="flex-container">
+		<!-- Title Card Section, first thing user will see -->
 		<div id="title-card">
+			<div class="info-box">
+			</div>
+			<div class="info-box">
+				<i class="fa-solid fa-circle-info" style="color: #808080;"></i>
+			</div>
 			<h1 id="title">TRIVIA SURVIVOR</h1>
 			<h3 id="sub-title">[Demo of the Dead]</h3>
+			<!-- username entry -->
 			<div id="enter-name">
 				<form action="javascript:void(0);" onsubmit="chooseDifficulty()">
 				<label for="name">Enter your name to begin:</label><br>
@@ -25,11 +32,13 @@
 				<button type="submit" name="start-btn" id="start-btn" class="start-btn btn">Start</button>
 				</form>
 			</div>
+			<!-- Difficulty mode selection -->
 			<div id="choose-difficulty" class="hidden">
 				<button id="easy-btn" class="easy-btn btn" value="easy">Easy</button><br>
 				<button id="normal-btn" class="normal-btn btn" value="normal">Normal</button><br>
 				<button id="hard-btn" class="hard-btn btn" value="hard">Hard</button><br>
 			</div>
+			
 		</div>
 
 		<!-- Game Card Section, the main portion of the game -->
