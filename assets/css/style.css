@@ -125,15 +125,31 @@ button:hover {
 }
 /* Styling the box that displays the creature images... */
 #creature-box {
+	display: flex;
+	justify-content: center;
 	width: 100%;
 	height: 50%;
 	overflow: hidden;
+}
+
+#danger-box {
+	overflow: hidden;
+	height: 100%;
+	flex-basis: 20%;
+	flex-wrap: wrap;
 	background-color: #000000;
 }
-#creature-box img {
+.danger-square {
+	height: 20%;
+	z-index: 7;
+}
+#view-box {
+	overflow: hidden;
+	flex-basis: 80%;
+}
+#zombie {
 	position: relative;
-	left: -150px;
-	top: -5px;
+	left: -70%;
 }
 /* Styling the box in which the questions and messages appear... */
 #question-box {
@@ -141,7 +157,7 @@ button:hover {
 	height: 50%;
 	border-top: solid 5px #808080;
 	background-color: #003471;
-	background-image: linear-gradient(to bottom right, #003471, #000000);
+	background-image: linear-gradient(to bottom right, #000000, #003471);
 }
 #text-box {
 	width: 100%;

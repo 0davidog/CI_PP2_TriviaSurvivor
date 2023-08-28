@@ -16,7 +16,15 @@ const zombieImgSrc = [
 	"assets/images/zombie-approach-04.webp", 
 	"assets/images/zombie-approach-03.webp", 
 	"assets/images/zombie-approach-02.webp", 
-	"assets/images/zombie-approach-01.webp"
+	"assets/images/zombie-approach-01.webp",
+	"assets/images/zombie-approach-00.webp"
+]
+const dangerColor = [
+	"danger-square-05",
+	"danger-square-04",
+	"danger-square-03",
+	"danger-square-02",
+	"danger-square-01",
 ]
 //Setting adjustable game variables
 let lives = 5;
@@ -120,6 +128,7 @@ function startQuiz() {
 	let dangerLvl = lives - 1;
 	console.log(`Danger is ${dangerLvl}`);
 	document.getElementById("zombie").src = zombieImgSrc[dangerLvl];
+	document.getElementById(dangerColor[dangerLvl]).classList.remove('hidden');
 	console.log(`Question number: ${questionNumber}.`);
 	//Removing intro text and button...
 	let nexBtn04 = document.getElementById('next-btn-04');
