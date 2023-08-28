@@ -28,7 +28,7 @@ const dangerColor = [
 ]
 //Setting adjustable game variables
 let lives = 5;
-let quizLength = 9;
+let quizLength = 10;
 let questionNumber = 0;
 let questionSet
 
@@ -125,6 +125,14 @@ function shuffleQuestions() {
 
 // Starting Quiz
 function startQuiz() {
+	// Checking if user has reached the end of the question list...
+	if (questionNumber === quizLength) {
+		console.log('Quiz complete.');
+		win();
+	} else if (lives === 0){
+		fail();
+	}
+	questionNumber++;
 	let dangerLvl = lives - 1;
 	console.log(`Danger is ${dangerLvl}`);
 	document.getElementById("zombie").src = zombieImgSrc[dangerLvl];
@@ -154,15 +162,6 @@ function startQuiz() {
 }
 // Checking answer...
 function checkAnswer() {
-	// Checking if user has reached the end of the question list...
-	if (questionNumber === quizLength) {
-		console.log('Quiz complete.');
-		win();
-	} else if (lives === 0){
-		fail();
-	} else {
-		questionNumber++;
-	}	
 	// Retrieving users answer...
 	let userAnswer = this.value;
 	console.log(`User answered: ${userAnswer}`);
@@ -298,6 +297,13 @@ const questionList = [
   }, 
 	{
     q: `Question 10`,
+    a: "Answer A",
+    b: "Answer B",
+    c: "Answer C",
+    d: "Answer D",
+    answer: "A",
+  },{
+    q: `Question 11`,
     a: "Answer A",
     b: "Answer B",
     c: "Answer C",
