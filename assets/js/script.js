@@ -154,6 +154,15 @@ function startQuiz() {
 }
 // Checking answer...
 function checkAnswer() {
+	// Checking if user has reached the end of the question list...
+	if (questionNumber === quizLength) {
+		console.log('Quiz complete.');
+		win();
+	} else if (lives === 0){
+		fail();
+	} else {
+		questionNumber++;
+	}	
 	// Retrieving users answer...
 	let userAnswer = this.value;
 	console.log(`User answered: ${userAnswer}`);
@@ -166,23 +175,41 @@ function checkAnswer() {
 		console.log('The Creature is stalled.');
 		console.log('No lives lost.');
 		console.log(`Lives currently at ${lives}.`);
+		correctAnswerMessage();
 	} else {
 		console.log('User answered incorrectly.');
 		console.log('The creature takes a step forward.');
 		lives--;
 		console.log('Lives reduced by 1.');
 		console.log(`Lives currently at ${lives}.`);
+		incorrectAnswerMessage();
 	}
-	// Checking if user has reached the end of the question list...
-	if (questionNumber === quizLength) {
-		console.log('Quiz complete.');
-		win();
-	} else if (lives === 0){
-		fail();
-	} else {
-		questionNumber++;
-		startQuiz();
-	}		
+	
+}
+function correctAnswerMessage() {
+	document.getElementById('questions').classList.add('hidden');
+	document.getElementById('answers').classList.add('hidden');
+	textBox.classList.remove('hidden');
+	textBox.innerHTML = `<p>You have answered correctly.</p>`;
+	let nexBtn04 = document.getElementById('next-btn-04');
+	nexBtn04.classList.remove('hidden');
+    nexBtn04.addEventListener('click', function() {
+		document.getElementById('questions').classList.remove('hidden');
+		document.getElementById('answers').classList.remove('hidden');
+		startQuiz;
+	}) }
+function incorrectAnswerMessage() {
+	document.getElementById('questions').classList.add('hidden');
+	document.getElementById('answers').classList.add('hidden');
+	textBox.classList.remove('hidden');
+	textBox.innerHTML = `<p>You have answered incorrectly.</p>`;
+	let nexBtn04 = document.getElementById('next-btn-04');
+	nexBtn04.classList.remove('hidden');
+    nexBtn04.addEventListener('click', function() {
+		document.getElementById('questions').classList.remove('hidden');
+		document.getElementById('answers').classList.remove('hidden');
+		startQuiz;
+	})
 }
 // Displaying success screen...
 function win() {
