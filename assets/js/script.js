@@ -2,6 +2,7 @@
 
 // Setting static global variables
 const titleCard = document.getElementById('title-card');
+const gameCard = document.getElementById('game-card');
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
 const textBox = document.getElementById('text-box');
@@ -16,13 +17,6 @@ const zombieImgSrc = [
 	"assets/images/zombie-approach-03.webp", 
 	"assets/images/zombie-approach-02.webp", 
 	"assets/images/zombie-approach-01.webp"
-]
-const dangerImgSrc = [
-	"assets/images/danger-block-05.webp",
-	"assets/images/danger-block-04.webp",
-	"assets/images/danger-block-03.webp",
-	"assets/images/danger-block-02.webp",
-	"assets/images/danger-block-01.webp",
 ]
 //Setting adjustable game variables
 let lives = 5;
@@ -78,6 +72,7 @@ function modeSelected(event) {
 		console.log(`Number of lives reduced to ${lives}.`);
 	}
 	titleCard.style.display = "none";
+	gameCard.style.display = "flex";
 	creatureBox.classList.remove('hidden');
 	questionBox.classList.remove('hidden');
 	introMessage01();
@@ -165,7 +160,6 @@ function checkAnswer() {
 	} else {
 		console.log('User answered incorrectly.');
 		console.log('The creature takes a step forward.');
-		document.getElementById("zombie").src = "assets/images/zombie-approach-02.webp";
 		lives--;
 		console.log('Lives reduced by 1.');
 		console.log(`Lives currently at ${lives}.`);
