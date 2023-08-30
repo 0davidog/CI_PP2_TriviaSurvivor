@@ -188,7 +188,7 @@ i:hover {
 	height: 75%;
 }
 #text-box p {
-	padding: 5px;
+	padding: 10px;
 }
 #next-btn-box {
 	width: 100%;
@@ -221,6 +221,7 @@ i:hover {
 	background-color: #000000;
 }
 
+
 /* Styling the message for when the quiz is won */
 #win-state {
 	flex-basis: 100%;
@@ -229,6 +230,7 @@ i:hover {
 	color: #007236;
 }
 #win-text {
+	text-align: left;
 	padding: 20px;
 }
 
@@ -240,5 +242,6 @@ i:hover {
 	color: #9E0B0F;
 }
 #fail-text {
+	text-align: left;
 	padding: 20px;
 }

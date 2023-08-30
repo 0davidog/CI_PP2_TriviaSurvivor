@@ -4,7 +4,7 @@
 // Game cards
 const titleCard = document.getElementById('title-card');
 const gameCard = document.getElementById('game-card');
-const inforCard = document.getElementById('info-card');
+const infoCard = document.getElementById('info-card');
 // Game boxes
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
@@ -35,8 +35,11 @@ const dangerColor = [
 let lives = 5;
 let quizLength = 10;
 let questionNumber = 0;
+let userScore = 0;
 // Empty variable to set randomised questions in
 let questionSet
+// Empty variable to set game mode
+let gameMode
 
 // Setting username variable when entered...
 const userName = document.getElementById('name');
@@ -69,21 +72,25 @@ hardBtn.addEventListener('click', modeSelected);
 function modeSelected(event) {
 	let mode = event.target.value;
 	if (mode === "easy") {
+		gameMode = "Easy";
 		console.log('Easy mode started...');
-		quizLength = 6;
+		quizLength = 5;
 		console.log(`Quiz length is now ${quizLength} questions`);
 	}
 	else if (mode === "normal") {
+		gameMode = "Normal";
 		console.log('Normal mode started...');
 		console.log(`Quiz length remains ${quizLength} questions.`);
 		console.log(`Number of lives remain at ${lives}.`);
 	}
 	else if (mode === "hard") {
+		gameMode = "Hard";
 		console.log('Hard mode started...');
 		lives = 3;
-		quizLength = 19;
+		document.getElementById(dangerColor[4]).classList.remove('hidden');
+		document.getElementById(dangerColor[3]).classList.remove('hidden');
+		quizLength = 10;
 		console.log(`Quiz length is now ${quizLength} questions`);
-		console.log(`Number of lives reduced to ${lives}.`);
 	}
 	titleCard.style.display = "none";
 	gameCard.style.display = "flex";
@@ -135,9 +142,11 @@ function startQuiz() {
 	if (questionNumber === quizLength) {
 		console.log('Quiz complete.');
 		win();
+		return;
 	} else if (lives === 0){
 		console.log('Quiz lost');
 		fail();
+		return;
 	}
 	// incrementing question number...
 	questionNumber++;
@@ -184,6 +193,7 @@ function checkAnswer() {
 		console.log('The Creature is stalled.');
 		console.log('No lives lost.');
 		console.log(`Lives currently at ${lives}.`);
+		userScore++;
 		correctAnswerMessage();
 	} else {
 		console.log('User answered incorrectly.');
@@ -200,7 +210,7 @@ function correctAnswerMessage() {
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
-	textBox.innerHTML = `<p>You have answered correctly.</p>`;
+	textBox.innerHTML = `${rightMessage[questionNumber]}`;
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.remove('hidden');
     nexBtn04.addEventListener('click', function() {
@@ -213,7 +223,7 @@ function incorrectAnswerMessage() {
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
-	textBox.innerHTML = `<p>You have answered incorrectly.</p>`;
+	textBox.innerHTML = `${wrongMessage[lives]}`;
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.remove('hidden');
     nexBtn04.addEventListener('click', function() {
@@ -225,18 +235,40 @@ function incorrectAnswerMessage() {
 
 // Displaying success screen...
 function win() {
+	gameCard.style.display = "none";
 	infoCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
-	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time.`
+	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`
 }
 
 // Displaying failure screen...
 function fail() {
+	gameCard.style.display = "none"
 	infoCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
-	document.getElementById('fail-text').innerHTML = `${userName.value}, the creature has you in it's grasp this time. But don't give up. Please try again.`
+	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`
 }
-
+// Setting some large arrays at the bottom here, including the questions array
+const rightMessage = [
+	`right answer 0`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done, keep it up!</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Keep going!.</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>So far so good.</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>You can do it!</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Woah, we're half way there!</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>You're doing great!.</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done.</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Looking good!</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done, you've almost escaped!</p>`,
+	`<p>Correct answer.<br>The creature has been completely stalled by your knowledge.<br>Great work, you made it!</p>`,
+]
+const wrongMessage = [
+	`<p>Wrong answer.<br>The creature takes a step forward.<br>Sorry, there are no more lives left.</p>`,
+	`<p>Wrong answer.<br>The creature takes a step forward.<br>Don't give up!</p>`,
+	`<p>Wrong answer.<br>The creature takes a step forward.<br>Hang in there!</p>`,
+	`<p>Wrong answer.<br>The creature takes a step forward.<br><em>It's coming to get you!</em></p>`,
+	`<p>Wrong answer.<br>The creature takes a step forward.<br>Be careful.</p>`,
+]
 const questionList = [  
 	{
     q: `<em>'They're coming to get you, Barbara' </em> is a line from which of these classic zombie movies?`,
