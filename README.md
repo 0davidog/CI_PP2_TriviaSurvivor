@@ -38,6 +38,10 @@ As the site owner I want user to make return visits to the site to both improve 
 
 ### Wireframes
 
+Here is a PDF of the wireframes put together at the sites inception. Adobe photoshop was used to visually plan the sites look and layout using an iPhone Xs (375x812) and a Dell laptop (1920x1080) as reference for viewport size/ratio.
+[wireframes.pdf](https://github.com/0davidog/trivia-survivor/files/12473826/wireframes.pdf)
+
+
 ### Storyboard
 
 ## Features
