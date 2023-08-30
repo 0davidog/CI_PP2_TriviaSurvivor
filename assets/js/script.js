@@ -16,15 +16,16 @@ const answerBtnA = document.getElementById('answer-btn-a');
 const answerBtnB = document.getElementById('answer-btn-b');
 const answerBtnC = document.getElementById('answer-btn-c');
 const answerBtnD = document.getElementById('answer-btn-d');
+const failReplayBtn = document.getElementById('fail-replay-btn');
+const winReplayBtn = document.getElementById('win-replay-btn');
+
 // Sound effects
 const selected = new Audio("assets/sounds/selected.wav");
-const pageTurn = new Audio("assets/sounds/scroll.wav");
 const violins = new Audio("assets/sounds/violins.ogg");
 const creatureStep = new Audio("assets/sounds/creature-step.wav");
 const correctSound = new Audio("assets/sounds/correct.wav");
 // Muting sound effect by default
 selected.muted = true;
-pageTurn.muted = true;
 violins.muted = true;
 creatureStep.muted = true;
 correctSound.muted = true;
@@ -74,7 +75,6 @@ document.getElementById('sound-btn').onclick = function() {
 		soundBtn.classList.remove('fa-volume-off');
 		soundBtn.classList.add('fa-volume-high');
 		selected.muted = false;
-		pageTurn.muted = false;
 		violins.muted = false;
 		creatureStep.muted = false;
 		correctSound.muted = false;
@@ -83,7 +83,6 @@ document.getElementById('sound-btn').onclick = function() {
 		soundBtn.classList.remove('fa-volume-high');
 		soundBtn.classList.add('fa-volume-off');
 		selected.muted = true;
-		pageTurn.muted = true;
 		violins.muted = true;
 		creatureStep.muted = true;
 		correctSound.muted = true;
@@ -117,7 +116,6 @@ startBtn.addEventListener('click', logName);
 function logName() {
 	selected.play();
 	console.log(`Username: ${userName.value}`);
-	textBox.innerHTML = `<p>Welcome ${userName.value}.</p>`;
 }
 
 // Taking user to difficulty selection...
@@ -165,18 +163,23 @@ function modeSelected(event) {
 	gameCard.style.display = "flex";
 	creatureBox.classList.remove('hidden');
 	questionBox.classList.remove('hidden');
+	document.getElementById('text-box').classList.remove('hidden');
+	document.getElementById('next-btn-box').classList.remove('hidden');
+	let nexBtn04 = document.getElementById('next-btn-04');
+	nexBtn04.classList.add('hidden');
 	introMessage01();
 }
 
 // Adding functions for cycling through the intro messages...
 function introMessage01() {
 	selected.play();
+	textBox.innerHTML = `<p>Welcome ${userName.value}.</p>`;
 	let nexBtn01 = document.getElementById('next-btn-01');
 	nexBtn01.classList.remove('hidden');
     nexBtn01.addEventListener('click', introMessage02);
 }
 function introMessage02() {
-	pageTurn.play();
+	selected.play();
 	textBox.innerHTML = `<p>You have entered a world of survival trivia.</p>`;
 	let nexBtn01 = document.getElementById('next-btn-01');
 	nexBtn01.classList.add('hidden');
@@ -185,7 +188,7 @@ function introMessage02() {
     nexBtn02.addEventListener('click', introMessage03);
 }
 function introMessage03() {
-	pageTurn.play();
+	selected.play();
 	textBox.innerHTML = `<p>Answer questions correctly to stall the creature.</p>`;
 	let nexBtn02 = document.getElementById('next-btn-02');
 	nexBtn02.classList.add('hidden');
@@ -194,7 +197,7 @@ function introMessage03() {
     nexBtn03.onclick = introMessage04;
 }
 function introMessage04() {
-	pageTurn.play();
+	selected.play();
 	textBox.innerHTML = `<p>Good luck.</p>`;
 	let nexBtn03 = document.getElementById('next-btn-03');
 	nexBtn03.classList.add('hidden');
@@ -205,7 +208,7 @@ function introMessage04() {
 }
 // Shuffling question array...
 function shuffleQuestions() {
-	pageTurn.play();
+	selected.play();
 	questionSet = questionList.sort(() => Math.random() - 0.5);
 	console.log(questionSet);
 }
@@ -314,6 +317,10 @@ function incorrectAnswerMessage() {
 // Displaying success screen...
 function win() {
 	violins.play();
+	textBox.classList.add('hidden;');
+	document.getElementById('questions').classList.add('hidden');
+	document.getElementById('answers').classList.add('hidden');
+	textBox.innerHTML = "";
 	gameCard.style.display = "none";
 	resultsCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
@@ -324,12 +331,52 @@ function win() {
 // Displaying failure screen...
 function fail() {
 	violins.play();
+	textBox.classList.add('hidden');
+	document.getElementById('questions').classList.add('hidden');
+	document.getElementById('answers').classList.add('hidden');
+	textBox.innerHTML = "";
 	gameCard.style.display = "none"
 	resultsCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	failedList.push(`<li>${userName.value} was lost with a score of ${userScore}/${quizLength}</li>`);
 }
+
+// Exiting Win/Fail screens and restarting from difficulty screen...
+failReplayBtn.onclick = reStart;
+winReplayBtn.onclick = reStart;
+
+function reStart() {
+	selected.play();
+	titleCard.style.display = "flex";
+	gameCard.style.display = "none";
+	infoCard.style.display = "none";
+	resultsCard.style.display = "none";
+	scoreCard.style.display = "none";
+	//Setting adjustable game variables
+	lives = 5;
+	quizLength = 10;
+	questionNumber = 0;
+	userScore = 0;
+	// Empty variable to set randomised questions in
+    questionSet = undefined;
+	// Empty variable to set game mode
+	gameMode = undefined;
+	// Resetting images
+	document.getElementById(dangerColor[0]).classList.add('hidden');
+	document.getElementById(dangerColor[1]).classList.add('hidden');
+	document.getElementById(dangerColor[2]).classList.add('hidden');
+	document.getElementById(dangerColor[3]).classList.add('hidden');
+	document.getElementById(dangerColor[4]).classList.add('hidden');
+	document.getElementById("zombie").src = zombieImgSrc[5];
+	document.getElementById('questions').classList.add('hidden');
+	document.getElementById('answers').classList.add('hidden');
+	document.getElementById('text-box').classList.add('hidden');
+	document.getElementById('next-btn-box').classList.add('hidden');
+	document.getElementById('choose-difficulty').classList.remove('hidden');
+	document.getElementById('enter-name').classList.add('hidden');
+}
+
 // Setting some large arrays at the bottom here, including the questions array
 const rightMessage = [
 	`right answer 0`,
