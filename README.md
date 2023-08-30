@@ -12,11 +12,11 @@ David C. O'Gara
 
 ### Repository
 
-[Github Repo]('https://github.com/0davidog/trivia-survivor/')
+[Github Repo](https://github.com/0davidog/trivia-survivor/)
 
 ### Deployed Site
 
-[Trivia Survivor]('https://0davidog.github.io/trivia-survivor/')
+[Trivia Survivor](https://0davidog.github.io/trivia-survivor/)
 
 ## External user goal
 
