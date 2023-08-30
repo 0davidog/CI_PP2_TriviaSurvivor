@@ -16,7 +16,7 @@ David C. O'Gara
 
 ### Deployed Site
 
-[LINK]
+[Trivia Survivor]('https://0davidog.github.io/trivia-survivor/')
 
 ## External user goal
 
