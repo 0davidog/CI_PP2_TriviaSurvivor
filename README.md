@@ -38,15 +38,19 @@ As the site owner I want user to make return visits to the site to both improve 
 
 ### Wireframes
 
-Here is a PDF of the wireframes put together at the sites inception. Adobe photoshop was used to visually plan the sites look and layout using an iPhone Xs (375x812) and a Dell laptop (1920x1080) as reference for viewport size/ratio.
+Here is a PDF of the wireframes put together at the sites inception. Adobe photoshop was used to visually plan the sites look and layout using an iPhone Xs (375x812) and a Dell laptop (1920x1080) as reference for viewport size/ratio:
 
 [wireframes.pdf](https://github.com/0davidog/trivia-survivor/files/12473826/wireframes.pdf)
 
 ### Storyboard
 
-Here is a storyboard for the basic way the creature image advances after each wrong question accompanied by an increasing bar in colours green to red that simbolises the threat level.
+Here is a storyboard for the basic way the creature image advances after each wrong question accompanied by an increasing bar in colours green to red that simbolises the threat level:
 
 ![zombie-storyboard](https://github.com/0davidog/trivia-survivor/assets/135815736/12a69d5b-167f-419a-8c56-7a033c48ba1e)
+
+And here is a pdf file with the zomibe-advance images rendered in photshop:
+
+[zombie-approach.pdf](https://github.com/0davidog/trivia-survivor/files/12473927/zombie-approach.pdf)
 
 ## Features
 
