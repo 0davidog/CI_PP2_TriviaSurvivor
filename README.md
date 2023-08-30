@@ -48,7 +48,7 @@ Here is a storyboard for the basic way the creature image advances after each wr
 
 ![zombie-storyboard](https://github.com/0davidog/trivia-survivor/assets/135815736/12a69d5b-167f-419a-8c56-7a033c48ba1e)
 
-And here is a pdf file with the zomibe-advance images rendered in photshop:
+And here is a pdf file with the zombie-advance images rendered in photshop:
 
 [zombie-approach.pdf](https://github.com/0davidog/trivia-survivor/files/12473927/zombie-approach.pdf)
 
