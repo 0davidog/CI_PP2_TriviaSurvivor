@@ -10,6 +10,10 @@ This version, created as part of an course project will be subtitled 'Demo of th
 
 David C. O'Gara
 
+### Repository
+
+[Github Repo]('https://github.com/0davidog/trivia-survivor/')
+
 ### Deployed Site
 
 [LINK]
