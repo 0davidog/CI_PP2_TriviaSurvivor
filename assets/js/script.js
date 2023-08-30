@@ -7,6 +7,7 @@ const gameCard = document.getElementById('game-card');
 const infoCard = document.getElementById('info-card');
 const resultsCard = document.getElementById('results-card');
 const scoreCard = document.getElementById('score-card');
+const commentCard = document.getElementById('comment-card');
 // Game boxes
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
@@ -65,6 +66,7 @@ document.getElementById('home-btn').onclick = function() {
 	infoCard.style.display = "none";
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
+	commentCard.style.display = "none";
 	document.getElementById('choose-difficulty').classList.add('hidden');
 	document.getElementById('enter-name').classList.remove('hidden');
 }
@@ -95,6 +97,7 @@ document.getElementById('info-btn').onclick = function() {
 	titleCard.style.display = "none";
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
+	commentCard.style.display = "none";
 }
 document.getElementById('score-btn').onclick = function() {
 	selected.play();
@@ -103,8 +106,18 @@ document.getElementById('score-btn').onclick = function() {
 	gameCard.style.display = "none";
 	titleCard.style.display = "none";
 	resultsCard.style.display = "none";
+	commentCard.style.display = "none";
 	document.getElementById('survivors').innerHTML = survivedList.join(``);
 	document.getElementById('failures').innerHTML = failedList.join(``);
+}
+document.getElementById('comment-btn').onclick = function() {
+	selected.play();
+	commentCard.style.display = "flex";
+	infoCard.style.display = "none";
+	gameCard.style.display = "none";
+	titleCard.style.display = "none";
+	resultsCard.style.display = "none";
+	scoreCard.style.display = "none";
 }
 
 // Setting username variable when entered...
@@ -116,6 +129,9 @@ startBtn.addEventListener('click', logName);
 function logName() {
 	selected.play();
 	console.log(`Username: ${userName.value}`);
+	let newPLaceholder = `${userName.value}`;
+	document.getElementById('name').placeholder = newPLaceholder;
+	console.log(newPLaceholder);
 }
 
 // Taking user to difficulty selection...
@@ -376,7 +392,23 @@ function reStart() {
 	document.getElementById('choose-difficulty').classList.remove('hidden');
 	document.getElementById('enter-name').classList.add('hidden');
 }
-
+function commentSubmit() {
+	let name = document.getElementById("comment-form").name.value;
+	console.log(`Name: ${name}`);
+	let email = document.getElementById("comment-form").email.value;
+	console.log(`Email Adress: ${email}`);
+	let comment = document.getElementById("comment-form").comment.value;
+	console.log(`Comment: ${comment}`);
+	alert(`Thank you ${name}, for leaving feedback.`);
+	userFeedback.push(`
+{
+Name: ${name},
+Email: ${email},
+Comment: ${comment},
+}`);
+	console.log(`Added to comments array ${userFeedback}`);
+	
+}
 // Setting some large arrays at the bottom here, including the questions array
 const rightMessage = [
 	`right answer 0`,
@@ -492,4 +524,7 @@ let survivedList = [
 ]
 let failedList = [
 	`<li>Albert was lost with a score of 5/10</li>`
+]
+let userFeedback = [
+	
 ]

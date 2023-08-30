@@ -20,6 +20,7 @@
 			<i class="fa-solid fa-volume-off" id="sound-btn"></i>
 			<i class="fa-solid fa-circle-info" id="info-btn"></i>
 			<i class="fa-solid fa-star" id="score-btn"></i>
+			<i class="fa-solid fa-comment" id="comment-btn"></i>
 			</nav>
 		<!-- Title Card Section, first thing user will see -->
 		<div id="title-card" class="card">
@@ -111,6 +112,24 @@
 			<h1>INFORMATION</h1>
 			<p>Trivia Survivor is a survival quiz game.<br><br>The rules are simple.<br><br>You must test your knowledge of movie-triva against an approaching threat.<br><br>The creature stalking you will advance a step with every wrong answer.<br><br>Answer all 10 questions to survive.<br><br>Good luck.<br></p>
 		</div>
+	<div id="comment-card" class="card">
+		<h1>FEEDBACK</h1>
+		<p>Thank you for checking out Trivia Survivor. Please consider leaving a comment on your experience with the game.</p>
+		<div id="feedback-form">
+			<form method="post" action="javascript:void(0);" onsubmit="commentSubmit()" id="comment-form">
+			<label for="name">Name:</label><br>
+			<input type="text" id="name" name="name" placeholder="Name" required><br>
+			<label for="email">Email:</label><br>
+			<input type="email" id="email" name="email-address" placeholder="Email address" required><br>
+			<label for="comment">Your Comment:</label><br>
+			<textarea id="comment" name="comment" placeholder="..." required></textarea><br><br>
+			<div id="contact-form-button-wrap">
+				<button type="submit" id="submit" value="Send">Leave Feedback</button></div><br>
+        	</form>
+			</div>
+	</div>
+	
+	
 	</section>
 	<script src="assets/js/script.js"></script>
 </body>
