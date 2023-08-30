@@ -5,6 +5,8 @@
 const titleCard = document.getElementById('title-card');
 const gameCard = document.getElementById('game-card');
 const infoCard = document.getElementById('info-card');
+const resultsCard = document.getElementById('results-card');
+const scoreCard = document.getElementById('score-card');
 // Game boxes
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
@@ -40,6 +42,43 @@ let userScore = 0;
 let questionSet
 // Empty variable to set game mode
 let gameMode
+
+// Setting up nav bar links
+document.getElementById('home-btn').onclick = function() {
+	titleCard.style.display = "flex";
+	gameCard.style.display = "none";
+	infoCard.style.display = "none";
+	resultsCard.style.display = "none"
+	scoreCard.style.display = "none";
+	document.getElementById('choose-difficulty').classList.add('hidden');
+	document.getElementById('enter-name').classList.remove('hidden');
+}
+document.getElementById('sound-btn').onclick = function() {
+	let soundBtn = document.getElementById('sound-btn');
+	if (soundBtn.classList.contains('fa-volume-off')) {
+		soundBtn.classList.remove('fa-volume-off');
+		soundBtn.classList.add('fa-volume-high');
+	} else if (soundBtn.classList.contains('fa-volume-high')) {
+		soundBtn.classList.remove('fa-volume-high');
+		soundBtn.classList.add('fa-volume-off');
+	}
+}
+document.getElementById('info-btn').onclick = function() {
+	infoCard.style.display = "flex";
+	gameCard.style.display = "none";
+	titleCard.style.display = "none";
+	resultsCard.style.display = "none";
+	scoreCard.style.display = "none";
+}
+document.getElementById('score-btn').onclick = function() {
+	scoreCard.style.display = "flex";
+	infoCard.style.display = "none";
+	gameCard.style.display = "none";
+	titleCard.style.display = "none";
+	resultsCard.style.display = "none";
+	document.getElementById('survivors').innerHTML = survivedList.join(``);
+	document.getElementById('failures').innerHTML = failedList.join(``);
+}
 
 // Setting username variable when entered...
 const userName = document.getElementById('name');
@@ -236,17 +275,19 @@ function incorrectAnswerMessage() {
 // Displaying success screen...
 function win() {
 	gameCard.style.display = "none";
-	infoCard.style.display = "flex";
+	resultsCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
-	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`
+	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
+	survivedList.push(`<li>${userName.value} survived with a score of ${userScore}/${quizLength}</li>`);
 }
 
 // Displaying failure screen...
 function fail() {
 	gameCard.style.display = "none"
-	infoCard.style.display = "flex";
+	resultsCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
-	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`
+	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
+	failedList.push(`<li>${userName.value} was lost with a score of ${userScore}/${quizLength}</li>`);
 }
 // Setting some large arrays at the bottom here, including the questions array
 const rightMessage = [
@@ -357,3 +398,10 @@ const questionList = [
     d: "Answer D",
     answer: "A",
   }, ];
+
+let survivedList = [
+	`<li>Barry survived with a score of 8/10</li>`
+]
+let failedList = [
+	`<li>Albert was lost with a score of 5/10</li>`
+]

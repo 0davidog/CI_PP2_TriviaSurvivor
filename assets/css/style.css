@@ -18,6 +18,7 @@ body {
 	background-image: linear-gradient(to bottom right, #1b1464, #000000);
 	background-attachment: fixed;
 	color: #ffffff;
+	text-shadow: 2px 2px 4px #000000;
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 }
 
@@ -26,7 +27,9 @@ h1 {
 	font-family: 'League Gothic', sans-serif;
 	font-size: 3rem;
 }
-
+p {
+	padding: 10px;
+}
 /* Styling all buttons... */
 button {
 	background-color: #000000;
@@ -187,9 +190,6 @@ i:hover {
 	width: 100%;
 	height: 75%;
 }
-#text-box p {
-	padding: 10px;
-}
 #next-btn-box {
 	width: 100%;
 	text-align: right;
@@ -211,8 +211,10 @@ i:hover {
 	text-align: center;
 }
 
-/* Styling the info card, this forms the setting for all other pages */
+/* Styling the info card */
 #info-card {
+	overflow: scroll;
+	align-content: flex-start;
 	display: none;
 	background-image: url("../images/background-image.webp");
 	background-position: center;
@@ -220,7 +222,29 @@ i:hover {
 	background-repeat: no-repeat;
 	background-color: #000000;
 }
-
+#info-card h1 {
+	margin: 20px 0px 20px 0px;
+}
+/* Styling the results card */
+#results-card {
+	display: none;
+	background-image: url("../images/background-image.webp");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #000000;
+}
+/* Styling the score card */
+#score-card {
+	overflow: scroll;
+	align-content: flex-start;
+	display: none;
+	background-image: url("../images/background-image.webp");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #000000;
+}
 
 /* Styling the message for when the quiz is won */
 #win-state {
@@ -231,7 +255,7 @@ i:hover {
 }
 #win-text {
 	text-align: left;
-	padding: 20px;
+	padding: 10px;
 }
 
 /* Styling the message for when the quiz is lost */
@@ -243,5 +267,28 @@ i:hover {
 }
 #fail-text {
 	text-align: left;
+	padding: 10px;
+}
+
+/* Styling the scores page */
+#survivor-box {
+	margin-top: 20px;
+	text-align: center;
+	flex-basis: 100%;
+	color: #007236;
+}
+#survivors {
+	text-align: left;
 	padding: 20px;
+	color: #ffffff;
+}
+#failure-box {
+	text-align: center;
+	flex-basis: 100%;
+	color: #9E0B0F;
+}
+#failures {
+	text-align: left;
+	padding: 20px;
+	color: #ffffff;
 }
