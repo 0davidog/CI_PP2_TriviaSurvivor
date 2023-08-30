@@ -1,16 +1,20 @@
 // Welcome to the JavaScript Document
 
-// Setting static global variables
+// Setting static global variables fo
+// Game cards
 const titleCard = document.getElementById('title-card');
 const gameCard = document.getElementById('game-card');
+const inforCard = document.getElementById('info-card');
+// Game boxes
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
 const textBox = document.getElementById('text-box');
+// Answer buttons
 const answerBtnA = document.getElementById('answer-btn-a');
 const answerBtnB = document.getElementById('answer-btn-b');
 const answerBtnC = document.getElementById('answer-btn-c');
 const answerBtnD = document.getElementById('answer-btn-d');
-const shadowBox = document.getElementById('shadow-box');
+// Zombie image url array
 const zombieImgSrc = [
 	"assets/images/zombie-approach-05.webp",
 	"assets/images/zombie-approach-04.webp", 
@@ -19,6 +23,7 @@ const zombieImgSrc = [
 	"assets/images/zombie-approach-01.webp",
 	"assets/images/zombie-approach-00.webp"
 ]
+// Array of Ids for coloured squares
 const dangerColor = [
 	"danger-square-05",
 	"danger-square-04",
@@ -30,6 +35,7 @@ const dangerColor = [
 let lives = 5;
 let quizLength = 10;
 let questionNumber = 0;
+// Empty variable to set randomised questions in
 let questionSet
 
 // Setting username variable when entered...
@@ -125,14 +131,17 @@ function shuffleQuestions() {
 
 // Starting Quiz
 function startQuiz() {
-	// Checking if user has reached the end of the question list...
+	// Checking if user has reached the end of the question list or lost all their lives...
 	if (questionNumber === quizLength) {
 		console.log('Quiz complete.');
 		win();
 	} else if (lives === 0){
+		console.log('Quiz lost');
 		fail();
 	}
+	// incrementing question number...
 	questionNumber++;
+	// Setting danger level variable to interact with images...
 	let dangerLvl = lives - 1;
 	console.log(`Danger is ${dangerLvl}`);
 	document.getElementById("zombie").src = zombieImgSrc[dangerLvl];
@@ -160,6 +169,7 @@ function startQuiz() {
 		answerBtnD.onclick = checkAnswer;
     }
 }
+
 // Checking answer...
 function checkAnswer() {
 	// Retrieving users answer...
@@ -185,6 +195,7 @@ function checkAnswer() {
 	}
 	
 }
+// Correct answer message...
 function correctAnswerMessage() {
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
@@ -197,6 +208,7 @@ function correctAnswerMessage() {
 		document.getElementById('answers').classList.remove('hidden');
 		startQuiz;
 	}) }
+// Incorrect answer message..
 function incorrectAnswerMessage() {
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
@@ -210,18 +222,21 @@ function incorrectAnswerMessage() {
 		startQuiz;
 	})
 }
+
 // Displaying success screen...
 function win() {
-	shadowBox.style.display = "flex";
+	infoCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
 	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time.`
 }
+
 // Displaying failure screen...
 function fail() {
-	shadowBox.style.display = "flex";
+	infoCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `${userName.value}, the creature has you in it's grasp this time. But don't give up. Please try again.`
 }
+
 const questionList = [  
 	{
     q: `<em>'They're coming to get you, Barbara' </em> is a line from which of these classic zombie movies?`,

@@ -22,7 +22,7 @@
 			<i class="fa-solid fa-star"></i>
 			</nav>
 		<!-- Title Card Section, first thing user will see -->
-		<div id="title-card">
+		<div id="title-card" class="card">
 			<h1 id="title">TRIVIA SURVIVOR</h1>
 			<h3 id="sub-title">[Demo of the Dead]</h3>
 			<!-- username entry -->
@@ -43,7 +43,7 @@
 		</div>
 
 		<!-- Game Card Section, the main portion of the game -->
-		<div id="game-card">
+		<div id="game-card" class="card">
 			<div id="creature-box" class="hidden">
 				<div id="danger-box">
 					<div class="danger-square" >
@@ -65,37 +65,36 @@
 			<div id="view-box">
 				<img id="zombie" src="assets/images/zombie-approach-00.webp" height="100%">
 			</div>
-		</div>
-		<div id="question-box" class="hidden">
-	    	<div id="text-box">
 			</div>
-			<div id="next-btn-box">
-				<button class="hidden" id="next-btn-01">next &gt&gt</button>
-				<button class="hidden" id="next-btn-02">next &gt&gt</button>
-				<button class="hidden" id="next-btn-03">next &gt&gt</button>
-				<button class="hidden" id="next-btn-04">next &gt&gt</button>
+			<div id="question-box" class="hidden">
+				<div id="text-box">
+				</div>
+				<div id="next-btn-box">
+					<button class="hidden" id="next-btn-01">next &gt&gt</button>
+					<button class="hidden" id="next-btn-02">next &gt&gt</button>
+					<button class="hidden" id="next-btn-03">next &gt&gt</button>
+					<button class="hidden" id="next-btn-04">next &gt&gt</button>
+				</div>
+				<div id="questions" class="hidden">
+				</div>
+				<div id="answers" class="hidden">
+					<button id="answer-btn-a" class="btn answer-btn" value="A" aria-label="Answer Button A">Answer A</button><br>
+					<button id="answer-btn-b" class="btn answer-btn" value="B" aria-label="Answer Button B">Answer B</button><br>
+					<button id="answer-btn-c" class="btn answer-btn" value="C" aria-label="Answer Button C">Answer C</button><br>
+					<button id="answer-btn-d" class="btn answer-btn" value="D" aria-label="Answer Button D">Answer D</button><br>
+				</div>
 			</div>
-			<div id="questions" class="hidden">
-      		</div>
-      		<div id="answers" class="hidden">
-        		<button id="answer-btn-a" class="btn answer-btn" value="A" aria-label="Answer Button A">Answer A</button><br>
-        		<button id="answer-btn-b" class="btn answer-btn" value="B" aria-label="Answer Button B">Answer B</button><br>
-        		<button id="answer-btn-c" class="btn answer-btn" value="C" aria-label="Answer Button C">Answer C</button><br>
-        		<button id="answer-btn-d" class="btn answer-btn" value="D" aria-label="Answer Button D">Answer D</button><br>
-      		</div>
 		</div>
-	
-	<div class="flex-container" id="shadow-box">
-		<div id="win-state" class="hidden">
-			<h1>YOU SURVIVED</h1>
-			<p id="win-text"></p>
+		<div id="info-card" class="card">
+			<div id="win-state" class="hidden">
+				<h1>YOU SURVIVED</h1>
+				<p id="win-text"></p>
+			</div>
+			<div id="fail-state" class="hidden">
+				<h1>YOU FAILED</h1>
+				<p id="fail-text"></p>
+			</div>
 		</div>
-		<div id="fail-state" class="hidden">
-			<h1>YOU FAILED</h1>
-			<p id="fail-text"></p>
-		</div>
-	</div>
-	</div>
 	</section>
 	<script src="assets/js/script.js"></script>
 </body>
