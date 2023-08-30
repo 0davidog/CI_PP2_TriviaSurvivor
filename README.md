@@ -56,6 +56,17 @@ And here is a pdf file with the zombie-advance images rendered in photshop:
 
 [zombie-approach.pdf](https://github.com/0davidog/trivia-survivor/files/12473927/zombie-approach.pdf)
 
+### Colour Scheme
+
+The theme and title chosen reminded me of the the playstation game series 'Resident Evil' so I looked to the the late nineties era titles for inspiration and chose to base the colour palette on the inventory screen (pictured below) from Resident Evil 2 (1998).
+
+![resident-evil-2-inventory-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/bbf02be4-b9ed-43c2-9d0d-67608a635886)
+
+Here is a generated palatte courtesy of the site [coolors](https://coolors.co/).
+
+![color-palette-coolors](https://github.com/0davidog/trivia-survivor/assets/135815736/05ee9b06-a0be-4fc0-aee3-be2685ae6878)
+
+
 ## Features
 
 ### Implimented
