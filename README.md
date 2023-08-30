@@ -66,6 +66,8 @@ Instead of aiming for an exact match however, I found a suitable set of close-ma
 
 ![color-palette-coolors](https://github.com/0davidog/trivia-survivor/assets/135815736/05ee9b06-a0be-4fc0-aee3-be2685ae6878)
 
+Though not pictured here, the site will use plain white (#ffffff) for the majority of text shown.
+
 ## Features
 
 ### Implimented
