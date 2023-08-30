@@ -58,14 +58,13 @@ And here is a pdf file with the zombie-advance images rendered in photshop:
 
 ### Colour Scheme
 
-The theme and title chosen reminded me of the the playstation game series 'Resident Evil' so I looked to the the late nineties era titles for inspiration and chose to base the colour palette on the inventory screen (pictured below) from Resident Evil 2 (1998).
+The theme and title chosen reminded me of the the playstation game series 'Resident Evil' so I looked to the the late nineties era titles for inspiration and chose to base the colour palette on the inventory screen (pictured below) from Resident Evil 2 (1998). This includes using green and red in the same manner to represent states of 'fine' and 'danger'.
 
-![resident-evil-2-inventory-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/bbf02be4-b9ed-43c2-9d0d-67608a635886)
+![resident-evil-2-inventory-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/bbf02be4-b9ed-43c2-9d0d-67608a635886) ![color-swatches](https://github.com/0davidog/trivia-survivor/assets/135815736/4b426abc-4d21-4468-a4f1-c8d4e1ac70f7)
 
-Here is a generated palatte courtesy of the site [coolors](https://coolors.co/).
+Instead of aiming for an exact match however, I found a suitable set of close-matches as part of photoshop's 'Dark' colour palatte in the default swatches collection. Here is a generated palatte courtesy of the site [coolors](https://coolors.co/):
 
 ![color-palette-coolors](https://github.com/0davidog/trivia-survivor/assets/135815736/05ee9b06-a0be-4fc0-aee3-be2685ae6878)
-
 
 ## Features
 
