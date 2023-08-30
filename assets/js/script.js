@@ -1,6 +1,6 @@
 // Welcome to the JavaScript Document
 
-// Setting static global variables fo
+// Setting static global variables for
 // Game cards
 const titleCard = document.getElementById('title-card');
 const gameCard = document.getElementById('game-card');
@@ -16,6 +16,19 @@ const answerBtnA = document.getElementById('answer-btn-a');
 const answerBtnB = document.getElementById('answer-btn-b');
 const answerBtnC = document.getElementById('answer-btn-c');
 const answerBtnD = document.getElementById('answer-btn-d');
+// Sound effects
+const selected = new Audio("assets/sounds/selected.wav");
+const pageTurn = new Audio("assets/sounds/scroll.wav");
+const violins = new Audio("assets/sounds/violins.ogg");
+const creatureStep = new Audio("assets/sounds/creature-step.wav");
+const correctSound = new Audio("assets/sounds/correct.wav");
+// Muting sound effect by default
+selected.muted = true;
+pageTurn.muted = true;
+violins.muted = true;
+creatureStep.muted = true;
+correctSound.muted = true;
+
 // Zombie image url array
 const zombieImgSrc = [
 	"assets/images/zombie-approach-05.webp",
@@ -45,25 +58,39 @@ let gameMode
 
 // Setting up nav bar links
 document.getElementById('home-btn').onclick = function() {
+	selected.play();
 	titleCard.style.display = "flex";
 	gameCard.style.display = "none";
 	infoCard.style.display = "none";
-	resultsCard.style.display = "none"
+	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
 	document.getElementById('choose-difficulty').classList.add('hidden');
 	document.getElementById('enter-name').classList.remove('hidden');
 }
 document.getElementById('sound-btn').onclick = function() {
+	selected.play();
 	let soundBtn = document.getElementById('sound-btn');
 	if (soundBtn.classList.contains('fa-volume-off')) {
 		soundBtn.classList.remove('fa-volume-off');
 		soundBtn.classList.add('fa-volume-high');
+		selected.muted = false;
+		pageTurn.muted = false;
+		violins.muted = false;
+		creatureStep.muted = false;
+		correctSound.muted = false;
+		selected.play();
 	} else if (soundBtn.classList.contains('fa-volume-high')) {
 		soundBtn.classList.remove('fa-volume-high');
 		soundBtn.classList.add('fa-volume-off');
+		selected.muted = true;
+		pageTurn.muted = true;
+		violins.muted = true;
+		creatureStep.muted = true;
+		correctSound.muted = true;
 	}
 }
 document.getElementById('info-btn').onclick = function() {
+	selected.play();
 	infoCard.style.display = "flex";
 	gameCard.style.display = "none";
 	titleCard.style.display = "none";
@@ -71,6 +98,7 @@ document.getElementById('info-btn').onclick = function() {
 	scoreCard.style.display = "none";
 }
 document.getElementById('score-btn').onclick = function() {
+	selected.play();
 	scoreCard.style.display = "flex";
 	infoCard.style.display = "none";
 	gameCard.style.display = "none";
@@ -87,6 +115,7 @@ const userName = document.getElementById('name');
 const startBtn = document.getElementById('start-btn');
 startBtn.addEventListener('click', logName);
 function logName() {
+	selected.play();
 	console.log(`Username: ${userName.value}`);
 	textBox.innerHTML = `<p>Welcome ${userName.value}.</p>`;
 }
@@ -109,6 +138,7 @@ hardBtn.addEventListener('click', modeSelected);
 
 // Setting the options according to mode chosen...
 function modeSelected(event) {
+	selected.play();
 	let mode = event.target.value;
 	if (mode === "easy") {
 		gameMode = "Easy";
@@ -140,11 +170,13 @@ function modeSelected(event) {
 
 // Adding functions for cycling through the intro messages...
 function introMessage01() {
+	selected.play();
 	let nexBtn01 = document.getElementById('next-btn-01');
 	nexBtn01.classList.remove('hidden');
     nexBtn01.addEventListener('click', introMessage02);
 }
 function introMessage02() {
+	pageTurn.play();
 	textBox.innerHTML = `<p>You have entered a world of survival trivia.</p>`;
 	let nexBtn01 = document.getElementById('next-btn-01');
 	nexBtn01.classList.add('hidden');
@@ -153,6 +185,7 @@ function introMessage02() {
     nexBtn02.addEventListener('click', introMessage03);
 }
 function introMessage03() {
+	pageTurn.play();
 	textBox.innerHTML = `<p>Answer questions correctly to stall the creature.</p>`;
 	let nexBtn02 = document.getElementById('next-btn-02');
 	nexBtn02.classList.add('hidden');
@@ -161,6 +194,7 @@ function introMessage03() {
     nexBtn03.onclick = introMessage04;
 }
 function introMessage04() {
+	pageTurn.play();
 	textBox.innerHTML = `<p>Good luck.</p>`;
 	let nexBtn03 = document.getElementById('next-btn-03');
 	nexBtn03.classList.add('hidden');
@@ -171,12 +205,14 @@ function introMessage04() {
 }
 // Shuffling question array...
 function shuffleQuestions() {
+	pageTurn.play();
 	questionSet = questionList.sort(() => Math.random() - 0.5);
 	console.log(questionSet);
 }
 
 // Starting Quiz
 function startQuiz() {
+	selected.play();
 	// Checking if user has reached the end of the question list or lost all their lives...
 	if (questionNumber === quizLength) {
 		console.log('Quiz complete.');
@@ -220,6 +256,7 @@ function startQuiz() {
 
 // Checking answer...
 function checkAnswer() {
+	selected.play();
 	// Retrieving users answer...
 	let userAnswer = this.value;
 	console.log(`User answered: ${userAnswer}`);
@@ -246,6 +283,7 @@ function checkAnswer() {
 }
 // Correct answer message...
 function correctAnswerMessage() {
+	correctSound.play();
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
@@ -259,6 +297,7 @@ function correctAnswerMessage() {
 	}) }
 // Incorrect answer message..
 function incorrectAnswerMessage() {
+	creatureStep.play();
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
@@ -274,6 +313,7 @@ function incorrectAnswerMessage() {
 
 // Displaying success screen...
 function win() {
+	violins.play();
 	gameCard.style.display = "none";
 	resultsCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
@@ -283,6 +323,7 @@ function win() {
 
 // Displaying failure screen...
 function fail() {
+	violins.play();
 	gameCard.style.display = "none"
 	resultsCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
