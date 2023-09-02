@@ -351,3 +351,132 @@ i:hover {
 		border-left: solid 5px #808080;
 	}
 }
+
+/* Base CSS uses size ref. Galaxy Fold 280x653 */
+/* Setting media query for size ref. iphone SE 375x667 */
+@media screen and (min-width: 350px) and (orientation: portrait) {
+	.card {
+		width: 300px;
+		height: 550px;
+	}
+}
+
+/* Setting media query for size ref. iphone 12 pro 390x844 */
+@media screen and (min-width: 380px) and (orientation: portrait) {
+	.card {
+		width: 350px;
+		height: 700px;
+	}
+}
+
+/* Setting media query for size ref. iphoneXR 414x896 */
+@media screen and (min-width: 400px) and (orientation: portrait) {
+	.card {
+		width: 350px;
+		height: 700px;
+	}
+}
+
+/* Setting media query for size ref. Surface Duo 540x720 */
+@media screen and (min-width: 500px) and (orientation: portrait) {
+	.card {
+		width: 300px;
+		height: 600px;
+	}
+}
+
+/* Setting media query for size ref. iphone SE 375x667 */
+@media screen and (min-width: 650px) and (orientation: landscape) {
+	.card {
+		width: 500px;
+		height: 250px;
+	}
+}
+
+/* Setting media query for size ref. ipad mini 768x1024 */
+@media screen and (min-width: 700px) and (orientation: portrait) {
+	.card {
+		width: 450px;
+		height: 900px;
+	}
+}
+
+/* Setting media query for size ref. Surface Duo 540x720 */
+@media screen and (min-width: 700px) and (orientation: landscape) {
+	.card {
+		width: 600px;
+		height: 300px;
+	}
+}
+
+/* Setting media query for size ref. iphone SE 375x667 */
+@media screen and (min-width: 800px) and (orientation: landscape) {
+	.card {
+		width: 500px;
+		height: 250px;
+	}
+}
+
+/* Setting media query for size ref. Ipad air 820x1180 */
+@media screen and (min-width: 820px) and (orientation: portrait) {
+	.card {
+		width: 500px;
+		height: 1000px;
+	}	
+}
+
+/* Setting media query for size ref. Pixel 5 393x851 */
+@media screen and (min-width: 850px) and (orientation: landscape) {
+	.card {
+		width: 550px;
+		height: 275px;
+	}
+}
+
+/* Setting media query for size ref. iphoneXR 414x896 */
+@media screen and (min-width: 860px) and (orientation: landscape) {
+	.card {
+		width: 600px;
+		height: 300px;
+	}
+}
+
+/* Setting media query for size ref. Samsung Galaxy S20 Ultra 412x915 */
+@media screen and (min-width: 900px) and (max-height: 412px) and (orientation: landscape) {
+	.card {
+		width: 600px;
+		height: 300px;
+	}
+}
+
+/* Setting media query for size ref. Surface Pro 7 912x1368 */
+@media screen and (min-width: 900px) and (min-height: 412px) and (orientation: portrait) {
+	.card {
+		width: 600px;
+		height: 1200px;
+	}
+}
+
+/* Setting media query for size ref. ipad mini 768x1024 */
+@media screen and (min-width: 1000px) and (orientation: landscape) {
+	.card {
+		width: 900px;
+		height: 450px;
+	}
+}
+
+/* Setting media query for size ref. Ipad air 820x1180 */
+@media screen and (min-width: 1100px) and (orientation: landscape) {
+	.card {
+		width: 1050px;
+		height: 525px;
+	}
+}
+
+/* Setting media query for size ref. Surface Pro 7 912x1368 */
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+	.card {
+		width: 1200px;
+		height: 600px;
+	}
+}

@@ -58,6 +58,26 @@ let questionSet
 // Empty variable to set game mode
 let gameMode
 
+// Showing a warning if the screen height it to small...
+window.addEventListener('load', function() {
+	let screenWidth = window.innerWidth;
+	let screenHeight = window.innerHeight;
+	if (screenHeight <= 280) {
+	console.log('too small!');
+	alert('The screen height for this device is currently to small.\nPlease either rotate or unfold the screen');
+}
+}
+);
+window.addEventListener('resize', function() {
+	let screenWidth = window.innerWidth;
+	let screenHeight = window.innerHeight;
+	if (screenHeight <= 280) {
+	console.log('too small!');
+	alert('The screen height for this device is currently to small.\nPlease either rotate or unfold the screen');
+}
+}
+);
+
 // Setting up nav bar links
 document.getElementById('home-btn').onclick = function() {
 	selected.play();
