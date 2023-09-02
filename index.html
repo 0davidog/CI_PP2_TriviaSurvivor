@@ -15,13 +15,22 @@
 <body>
 	<!-- Main game container -->
 	<section class="flex-container">
-		<nav id="info-box">
-			<i class="fa-solid fa-house" id="home-btn"></i>
-			<i class="fa-solid fa-volume-off" id="sound-btn"></i>
-			<i class="fa-solid fa-circle-info" id="info-btn"></i>
-			<i class="fa-solid fa-star" id="score-btn"></i>
-			<i class="fa-solid fa-comment" id="comment-btn"></i>
+		<div id="info-box">
+			<nav>
+				<i class="fa-solid fa-house" id="home-btn"></i>
+				<i class="fa-solid fa-volume-off" id="sound-btn"></i>
+				<i class="fa-solid fa-circle-info" id="info-btn"></i>
+				<i class="fa-solid fa-star" id="score-btn"></i>
+				<i class="fa-solid fa-comment" id="comment-btn"></i>
 			</nav>
+			<div>
+				<p id="home-label" class="hidden">Home</p>
+				<p id="sound-label" class="hidden">Sound is off</p>
+				<p id="info-label" class="hidden">About the game</p>
+				<p id="score-label" class="hidden">Scores</p>
+				<p id="comment-label" class="hidden">Feedback</p>
+			</div>
+		</div>
 		<!-- Title Card Section, first thing user will see -->
 		<div id="title-card" class="card">
 			<h1 id="title">TRIVIA SURVIVOR</h1>

@@ -74,6 +74,7 @@ document.getElementById('sound-btn').onclick = function() {
 	selected.play();
 	let soundBtn = document.getElementById('sound-btn');
 	if (soundBtn.classList.contains('fa-volume-off')) {
+		document.getElementById('sound-label').innerHTML = "Sound is on";
 		soundBtn.classList.remove('fa-volume-off');
 		soundBtn.classList.add('fa-volume-high');
 		selected.muted = false;
@@ -82,6 +83,7 @@ document.getElementById('sound-btn').onclick = function() {
 		correctSound.muted = false;
 		selected.play();
 	} else if (soundBtn.classList.contains('fa-volume-high')) {
+		document.getElementById('sound-label').innerHTML = "Sound is off";
 		soundBtn.classList.remove('fa-volume-high');
 		soundBtn.classList.add('fa-volume-off');
 		selected.muted = true;
@@ -118,6 +120,37 @@ document.getElementById('comment-btn').onclick = function() {
 	titleCard.style.display = "none";
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
+}
+// Adding labels to nav links on mouse hover
+document.getElementById('home-btn').onmouseover = function() {
+	document.getElementById('home-label').classList.remove('hidden');
+}
+document.getElementById('home-btn').onmouseout = function() {
+	document.getElementById('home-label').classList.add('hidden');
+}
+document.getElementById('sound-btn').onmouseover = function() {
+	document.getElementById('sound-label').classList.remove('hidden');
+}
+document.getElementById('sound-btn').onmouseout = function() {
+	document.getElementById('sound-label').classList.add('hidden');
+}
+document.getElementById('info-btn').onmouseover = function() {
+	document.getElementById('info-label').classList.remove('hidden');
+}
+document.getElementById('info-btn').onmouseout = function() {
+	document.getElementById('info-label').classList.add('hidden');
+}
+document.getElementById('score-btn').onmouseover = function() {
+	document.getElementById('score-label').classList.remove('hidden');
+}
+document.getElementById('score-btn').onmouseout = function() {
+	document.getElementById('score-label').classList.add('hidden');
+}
+document.getElementById('comment-btn').onmouseover = function() {
+	document.getElementById('comment-label').classList.remove('hidden');
+}
+document.getElementById('comment-btn').onmouseout = function() {
+	document.getElementById('comment-label').classList.add('hidden');
 }
 
 // Setting username variable when entered...

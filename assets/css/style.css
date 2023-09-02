@@ -123,6 +123,9 @@ i:hover {
 	text-align: center;
 }
 #enter-name input {
+	font-size: 1.5rem;
+	text-align: center;
+	width: 200px;
 	padding: 5px;
 	margin: 10px;
 }
