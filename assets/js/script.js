@@ -19,7 +19,6 @@ const answerBtnC = document.getElementById('answer-btn-c');
 const answerBtnD = document.getElementById('answer-btn-d');
 const failReplayBtn = document.getElementById('fail-replay-btn');
 const winReplayBtn = document.getElementById('win-replay-btn');
-const continueBtn = document.getElementsByClassName('continue-btn');
 
 // Sound effects
 const selected = new Audio("assets/sounds/selected.wav");
@@ -38,7 +37,7 @@ const zombieImgSrc = [
 	"assets/images/zombie-approach-02.webp", 
 	"assets/images/zombie-approach-01.webp",
 	"assets/images/zombie-approach-00.webp"
-]
+];
 // Array of Ids for coloured squares
 const dangerColor = [
 	"danger-square-05",
@@ -46,48 +45,48 @@ const dangerColor = [
 	"danger-square-03",
 	"danger-square-02",
 	"danger-square-01",
-]
+];
 //Setting adjustable game variables
 let lives = 5;
 let quizLength = 10;
 let questionNumber = 0;
 let userScore = 0;
 // Empty variable to set randomised questions in
-let questionSet
+let questionSet;
 // Empty variable to set game mode
-let gameMode
+let gameMode;
 //Set variable gameState to indicate whether continue button to return to game or home 
 let gameState = "home";
 console.log(gameState);
+
 // Showing a warning if the screen height it to small...
 window.addEventListener('load', function() {
-	let screenWidth = window.innerWidth;
 	let screenHeight = window.innerHeight;
 	let orientation = screen.orientation.type;
 	console.log(orientation);
 	if (orientation == "landscape-primary") {
 		if (screenHeight <= 500) {
 			console.log("please flip");
-			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.')
+			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.');
 			}
 			
 	}
 }
 );
+
 window.addEventListener('resize', function() {
-	let screenWidth = window.innerWidth;
 	let screenHeight = window.innerHeight;
 	let orientation = screen.orientation.type;
 	console.log(orientation);
 	if (orientation == "landscape-primary") {
 		if (screenHeight <= 500) {
 			console.log("please flip");
-			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.')
+			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.');
 			}
-			
 	}
 }
 );
+
 // Setting up nav bar links
 document.getElementById('home-btn').onclick = function() {
 	selected.play();
@@ -123,7 +122,7 @@ document.getElementById('home-btn').onclick = function() {
 	document.getElementById('next-btn-box').classList.add('hidden');
 	document.getElementById('choose-difficulty').classList.add('hidden');
 	document.getElementById('enter-name').classList.remove('hidden');
-}
+};
 document.getElementById('sound-btn').onclick = function() {
 	selected.play();
 	let soundBtn = document.getElementById('sound-btn');
@@ -143,7 +142,7 @@ document.getElementById('sound-btn').onclick = function() {
 		creatureStep.muted = true;
 		correctSound.muted = true;
 	}
-}
+};
 document.getElementById('info-btn').onclick = function() {
 	selected.play();
 	infoCard.style.display = "flex";
@@ -152,7 +151,7 @@ document.getElementById('info-btn').onclick = function() {
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
 	commentCard.style.display = "none";
-}
+};
 document.getElementById('score-btn').onclick = function() {
 	selected.play();
 	scoreCard.style.display = "flex";
@@ -163,7 +162,7 @@ document.getElementById('score-btn').onclick = function() {
 	commentCard.style.display = "none";
 	document.getElementById('survivors').innerHTML = survivedList.join(``);
 	document.getElementById('failures').innerHTML = failedList.join(``);
-}
+};
 document.getElementById('comment-btn').onclick = function() {
 	selected.play();
 	commentCard.style.display = "flex";
@@ -172,10 +171,7 @@ document.getElementById('comment-btn').onclick = function() {
 	titleCard.style.display = "none";
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
-	continueBtn.onclick = function() {
-		
-	}
-}
+};
 // Adding continue button function to return to previous screen...
 document.getElementById('continue-btn-info').onclick = continueGame;
 document.getElementById('continue-btn-score').onclick = continueGame;
@@ -195,57 +191,56 @@ function continueGame() {
 		titleCard.style.display = "none";
 		resultsCard.style.display = "none";
 		scoreCard.style.display = "none";
+	} else if (gameState === "results") {
+		gameCard.style.display = "none";
+		commentCard.style.display = "none";
+		infoCard.style.display = "none";
+		titleCard.style.display = "none";
+		resultsCard.style.display = "flex";
+		scoreCard.style.display = "none";
 	}
-	
 }
 // Adding labels to nav links on mouse hover
 document.getElementById('home-btn').onmouseover = function() {
 	document.getElementById('home-label').classList.remove('hidden');
-}
+};
 document.getElementById('home-btn').onmouseout = function() {
 	document.getElementById('home-label').classList.add('hidden');
-}
+};
 document.getElementById('sound-btn').onmouseover = function() {
 	document.getElementById('sound-label').classList.remove('hidden');
-}
+};
 document.getElementById('sound-btn').onmouseout = function() {
 	document.getElementById('sound-label').classList.add('hidden');
-}
+};
 document.getElementById('info-btn').onmouseover = function() {
 	document.getElementById('info-label').classList.remove('hidden');
-}
+};
 document.getElementById('info-btn').onmouseout = function() {
 	document.getElementById('info-label').classList.add('hidden');
-}
+};
 document.getElementById('score-btn').onmouseover = function() {
 	document.getElementById('score-label').classList.remove('hidden');
-}
+};
 document.getElementById('score-btn').onmouseout = function() {
 	document.getElementById('score-label').classList.add('hidden');
-}
+};
 document.getElementById('comment-btn').onmouseover = function() {
 	document.getElementById('comment-label').classList.remove('hidden');
-}
+};
 document.getElementById('comment-btn').onmouseout = function() {
 	document.getElementById('comment-label').classList.add('hidden');
-}
+};
 
 // Setting username variable when entered...
 const userName = document.getElementById('user-name');
 
-//logging username to console...
+//logging username to console and moving to difficulty select...
 const startBtn = document.getElementById('start-btn');
 startBtn.addEventListener('click', logName);
 function logName() {
 	selected.play();
 	console.log(`Username: ${userName.value}`);
-	let newPLaceholder = `${userName.value}`;
-	document.getElementById('name').placeholder = newPLaceholder;
-	console.log(newPLaceholder);
-}
-
-// Taking user to difficulty selection...
-function chooseDifficulty() {
 	let enterName = document.getElementById('enter-name');
 	let chooseDifficulty = document.getElementById('choose-difficulty');
 	enterName.classList.add('hidden');
@@ -370,7 +365,7 @@ function startQuiz() {
 	// Revealing question text and answer buttons...
 	let question = document.getElementById('questions');
 	let answers = document.getElementById('answers');
-	questions.classList.remove('hidden');
+	question.classList.remove('hidden');
 	answers.classList.remove('hidden');
 	// Building a question from array...
 	for (let i = 0; i < questionList.length; i++) {
@@ -445,6 +440,7 @@ function incorrectAnswerMessage() {
 
 // Displaying success screen...
 function win() {
+	gameState = "results";
 	textBox.classList.add('hidden;');
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
@@ -458,6 +454,7 @@ function win() {
 
 // Displaying failure screen...
 function fail() {
+	gameState = "results";
 	textBox.classList.add('hidden');
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
@@ -475,6 +472,7 @@ winReplayBtn.onclick = reStart;
 
 function reStart() {
 	selected.play();
+	gameState = "home";
 	titleCard.style.display = "flex";
 	gameCard.style.display = "none";
 	infoCard.style.display = "none";
@@ -527,20 +525,20 @@ const rightMessage = [
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Keep going!.</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>So far so good.</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>You can do it!</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>You're doing great!</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Woah, we're half way there!</p>`,
-	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>You're doing great!.</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done.</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Looking good!</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done, you've almost escaped!</p>`,
 	`<p>Correct answer.<br>The creature has been completely stalled by your knowledge.<br>Great work, you made it!</p>`,
-]
+];
 const wrongMessage = [
 	`<p>Wrong answer.<br>The creature takes a step forward.<br>Sorry, there are no more lives left.</p>`,
 	`<p>Wrong answer.<br>The creature takes a step forward.<br>Don't give up!</p>`,
 	`<p>Wrong answer.<br>The creature takes a step forward.<br>Hang in there!</p>`,
 	`<p>Wrong answer.<br>The creature takes a step forward.<br><em>It's coming to get you!</em></p>`,
 	`<p>Wrong answer.<br>The creature takes a step forward.<br>Be careful.</p>`,
-]
+];
 const questionList = [
 	{
 		q: `"They're coming to get you Barbra" is a line from which film?`,
@@ -721,10 +719,10 @@ const questionList = [
 
 let survivedList = [
 	`Barry survived with a score of 8/10<br>`
-]
+];
 let failedList = [
 	`Albert was lost with a score of 5/10<br>`
-]
+];
 let userFeedback = [
 	
-]
+];
