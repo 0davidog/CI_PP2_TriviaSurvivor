@@ -21,7 +21,7 @@ body {
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 }
 
-/* Setting font and size of all header elements */
+/* Setting font and size of all h1 elements */
 h1 {
 	font-family: 'League Gothic', sans-serif;
 	font-size: 3rem;
@@ -101,6 +101,7 @@ i:hover {
 
 /* Styling and positioning the sub-title h2 in the title card... */
 #sub-title {
+	font-size: 1.2rem;
 	flex-basis: 100%;
 	color: #9e0b0f;
 	text-align: center;
