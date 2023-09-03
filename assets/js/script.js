@@ -19,6 +19,7 @@ const answerBtnC = document.getElementById('answer-btn-c');
 const answerBtnD = document.getElementById('answer-btn-d');
 const failReplayBtn = document.getElementById('fail-replay-btn');
 const winReplayBtn = document.getElementById('win-replay-btn');
+const continueBtn = document.getElementsByClassName('continue-btn');
 
 // Sound effects
 const selected = new Audio("assets/sounds/selected.wav");
@@ -57,7 +58,9 @@ let userScore = 0;
 let questionSet
 // Empty variable to set game mode
 let gameMode
-
+//Set variable gameState to indicate whether continue button to return to game or home 
+let gameState = "home";
+console.log(gameState);
 // Showing a warning if the screen height it to small...
 window.addEventListener('load', function() {
 	let screenWidth = window.innerWidth;
@@ -95,16 +98,39 @@ window.addEventListener('resize', function() {
 	}
 }
 );
-
 // Setting up nav bar links
 document.getElementById('home-btn').onclick = function() {
 	selected.play();
+	gameState = "home";
+	console.log(gameState);
 	titleCard.style.display = "flex";
 	gameCard.style.display = "none";
 	infoCard.style.display = "none";
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
 	commentCard.style.display = "none";
+	document.getElementById('choose-difficulty').classList.add('hidden');
+	document.getElementById('enter-name').classList.remove('hidden');
+	//Setting adjustable game variables
+	lives = 5;
+	quizLength = 10;
+	questionNumber = 0;
+	userScore = 0;
+	// Empty variable to set randomised questions in
+    questionSet = undefined;
+	// Empty variable to set game mode
+	gameMode = undefined;
+	// Resetting images
+	document.getElementById(dangerColor[0]).classList.add('hidden');
+	document.getElementById(dangerColor[1]).classList.add('hidden');
+	document.getElementById(dangerColor[2]).classList.add('hidden');
+	document.getElementById(dangerColor[3]).classList.add('hidden');
+	document.getElementById(dangerColor[4]).classList.add('hidden');
+	document.getElementById("zombie").src = zombieImgSrc[5];
+	document.getElementById('questions').classList.add('hidden');
+	document.getElementById('answers').classList.add('hidden');
+	document.getElementById('text-box').classList.add('hidden');
+	document.getElementById('next-btn-box').classList.add('hidden');
 	document.getElementById('choose-difficulty').classList.add('hidden');
 	document.getElementById('enter-name').classList.remove('hidden');
 }
@@ -158,6 +184,32 @@ document.getElementById('comment-btn').onclick = function() {
 	titleCard.style.display = "none";
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
+	continueBtn.onclick = function() {
+		
+	}
+}
+// Adding continue button function to return to previous screen...
+document.getElementById('continue-btn-info').onclick = continueGame;
+document.getElementById('continue-btn-score').onclick = continueGame;
+document.getElementById('continue-btn-comment').onclick = continueGame;
+function continueGame() {
+	console.log('button work?');
+	if (gameState === "home") {
+		gameCard.style.display = "none";
+		commentCard.style.display = "none";
+		infoCard.style.display = "none";
+		titleCard.style.display = "flex";
+		resultsCard.style.display = "none";
+		scoreCard.style.display = "none";
+	} else if (gameState === "game") {
+		gameCard.style.display = "flex";
+		commentCard.style.display = "none";
+		infoCard.style.display = "none";
+		titleCard.style.display = "none";
+		resultsCard.style.display = "none";
+		scoreCard.style.display = "none";
+	}
+	
 }
 // Adding labels to nav links on mouse hover
 document.getElementById('home-btn').onmouseover = function() {
@@ -224,6 +276,8 @@ hardBtn.addEventListener('click', modeSelected);
 // Setting the options according to mode chosen...
 function modeSelected(event) {
 	selected.play();
+	gameState = "game";
+	console.log(gameState);
 	let mode = event.target.value;
 	if (mode === "easy") {
 		gameMode = "Easy";
