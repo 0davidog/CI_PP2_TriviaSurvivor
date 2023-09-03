@@ -15,6 +15,7 @@
 <body>
 	<!-- Main game container -->
 	<section class="flex-container">
+		<!-- Navigation bar to sit at the top of the screen -->
 		<div id="info-box">
 			<nav>
 				<i class="fa-solid fa-house" id="home-btn"></i>
@@ -54,6 +55,7 @@
 
 		<!-- Game Card Section, the main portion of the game -->
 		<div id="game-card" class="card">
+			<!-- Top Half of the game card -->
 			<div id="creature-box" class="hidden">
 				<div id="danger-box">
 					<div class="danger-square" >
@@ -76,6 +78,7 @@
 				<img id="zombie" src="assets/images/zombie-approach-00.webp" height="100%">
 			</div>
 			</div>
+			<!-- Bottom half of the game card -->
 			<div id="question-box" class="hidden">
 				<div id="text-box">
 				</div>
@@ -95,6 +98,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- Screen to be displayed as win/lose result -->
 		<div id="results-card" class="card">
 			<div id="win-state" class="hidden">
 				<h1>YOU SURVIVED</h1>
@@ -107,6 +111,7 @@
 				<button id="fail-replay-btn">Return</button>
 			</div>
 		</div>
+		<!-- Display of user scores -->
 		<div id="score-card" class="card">
 			<div id="survivor-box">
 				<h1>SURVIVED</h1>
@@ -117,10 +122,12 @@
 				<p id="failures"><ul></ul></p>
 			</div>
 		</div>
+		<!-- Description of the game -->
 		<div id="info-card" class="card">
 			<h1>INFORMATION</h1>
 			<p>Trivia Survivor is a survival quiz game.<br><br>The rules are simple.<br><br>You must test your knowledge of movie-triva against an approaching threat.<br><br>The creature stalking you will advance a step with every wrong answer.<br><br>Answer all 10 questions to survive.<br><br>Good luck.<br></p>
 		</div>
+	<!-- A feedback form -->
 	<div id="comment-card" class="card">
 		<h1>FEEDBACK</h1>
 		<p>Thank you for checking out Trivia Survivor. <br>Please consider leaving a comment on your experience with the game.</p>
@@ -138,7 +145,7 @@
 			</div>
 	</div>
 	</section>
-
+	<!-- link to Javascript file -->
 	<script src="assets/js/script.js"></script>
 </body>
 </html>
