@@ -23,12 +23,10 @@ const continueBtn = document.getElementsByClassName('continue-btn');
 
 // Sound effects
 const selected = new Audio("assets/sounds/selected.wav");
-const violins = new Audio("assets/sounds/violins.ogg");
 const creatureStep = new Audio("assets/sounds/creature-step.wav");
 const correctSound = new Audio("assets/sounds/correct.wav");
 // Muting sound effect by default
 selected.muted = true;
-violins.muted = true;
 creatureStep.muted = true;
 correctSound.muted = true;
 
@@ -142,7 +140,6 @@ document.getElementById('sound-btn').onclick = function() {
 		soundBtn.classList.remove('fa-volume-off');
 		soundBtn.classList.add('fa-volume-high');
 		selected.muted = false;
-		violins.muted = false;
 		creatureStep.muted = false;
 		correctSound.muted = false;
 		selected.play();
@@ -151,7 +148,6 @@ document.getElementById('sound-btn').onclick = function() {
 		soundBtn.classList.remove('fa-volume-high');
 		soundBtn.classList.add('fa-volume-off');
 		selected.muted = true;
-		violins.muted = true;
 		creatureStep.muted = true;
 		correctSound.muted = true;
 	}
@@ -193,7 +189,6 @@ document.getElementById('continue-btn-info').onclick = continueGame;
 document.getElementById('continue-btn-score').onclick = continueGame;
 document.getElementById('continue-btn-comment').onclick = continueGame;
 function continueGame() {
-	console.log('button work?');
 	if (gameState === "home") {
 		gameCard.style.display = "none";
 		commentCard.style.display = "none";
@@ -458,7 +453,6 @@ function incorrectAnswerMessage() {
 
 // Displaying success screen...
 function win() {
-	violins.play();
 	textBox.classList.add('hidden;');
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
@@ -472,7 +466,6 @@ function win() {
 
 // Displaying failure screen...
 function fail() {
-	violins.play();
 	textBox.classList.add('hidden');
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
