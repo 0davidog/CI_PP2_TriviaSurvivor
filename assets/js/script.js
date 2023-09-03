@@ -65,14 +65,10 @@ window.addEventListener('load', function() {
 	let screenHeight = window.innerHeight;
 	let orientation = screen.orientation.type;
 	console.log(orientation);
-	if (screenHeight <= 280) {
-	console.log('too small!');
-	alert('The screen height for this device is currently to small.\nPlease either rotate or unfold the screen.');
-}
 	if (orientation == "landscape-primary") {
 		if (screenHeight <= 500) {
 			console.log("please flip");
-			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate your device.')
+			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.')
 			}
 			
 	}
@@ -83,14 +79,10 @@ window.addEventListener('resize', function() {
 	let screenHeight = window.innerHeight;
 	let orientation = screen.orientation.type;
 	console.log(orientation);
-	if (screenHeight <= 280) {
-	console.log('too small!');
-	alert('The screen height for this device is currently to small.\nPlease either rotate or unfold the screen');
-}
-		if (orientation == "landscape-primary") {
+	if (orientation == "landscape-primary") {
 		if (screenHeight <= 500) {
 			console.log("please flip");
-			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate your device.')
+			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.')
 			}
 			
 	}
