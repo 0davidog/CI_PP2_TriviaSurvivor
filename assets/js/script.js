@@ -1,5 +1,5 @@
 // Welcome to the JavaScript Document
-
+/*jshint esversion: 6 */ 
 // Setting static global variables for
 // Game cards
 const titleCard = document.getElementById('title-card');
@@ -420,8 +420,9 @@ function correctAnswerMessage() {
     nexBtn04.addEventListener('click', function() {
 		document.getElementById('questions').classList.remove('hidden');
 		document.getElementById('answers').classList.remove('hidden');
-		startQuiz;
-	}) }
+		startQuiz();
+	}); 
+}
 // Incorrect answer message..
 function incorrectAnswerMessage() {
 	creatureStep.play();
@@ -434,8 +435,8 @@ function incorrectAnswerMessage() {
     nexBtn04.addEventListener('click', function() {
 		document.getElementById('questions').classList.remove('hidden');
 		document.getElementById('answers').classList.remove('hidden');
-		startQuiz;
-	})
+		startQuiz();
+	});
 }
 
 // Displaying success screen...
@@ -459,7 +460,7 @@ function fail() {
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.innerHTML = "";
-	gameCard.style.display = "none"
+	gameCard.style.display = "none";
 	resultsCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
