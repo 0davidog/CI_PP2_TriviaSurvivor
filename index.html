@@ -40,7 +40,7 @@
 			<div id="enter-name">
 				<form action="javascript:void(0);" onsubmit="chooseDifficulty()">
 				<label for="name">Enter your name to begin:</label><br>
-				<input type="text" id="name" name="name" placeholder="Name" required><br>
+				<input type="text" id="user-name" name="name" placeholder="Name" required><br>
 				<button type="submit" name="start-btn" id="start-btn" class="start-btn btn">Start</button>
 				</form>
 			</div>
@@ -58,24 +58,24 @@
 			<!-- Top Half of the game card -->
 			<div id="creature-box" class="hidden">
 				<div id="danger-box">
-					<div class="danger-square" >
-						<img width="100%" id="danger-square-05" src="assets/images/danger-block-05.webp" class="hidden">
+					<div class="danger-square">
+						<img id="danger-square-05" src="assets/images/danger-block-05.webp" class="hidden" alt="A red coloured square.">
 					</div>
 					<div class="danger-square" >
-						<img width="100%" id="danger-square-04" src="assets/images/danger-block-04.webp" class="hidden">
+						<img id="danger-square-04" src="assets/images/danger-block-04.webp" class="hidden" alt="An orange coloured square.">
 					</div>	
 					<div class="danger-square">
-						<img width="100%" id="danger-square-03" src="assets/images/danger-block-03.webp" class="hidden">
+						<img id="danger-square-03" src="assets/images/danger-block-03.webp" class="hidden" alt="A green-yellow mix coloured square.">
 					</div>
 					<div class="danger-square">
-						<img width="100%" id="danger-square-02" src="assets/images/danger-block-02.webp" class="hidden">
+						<img id="danger-square-02" src="assets/images/danger-block-02.webp" class="hidden" alt="A more pale green coloured square.">
 					</div>
 					<div class="danger-square">
-						<img width="100%" id="danger-square-01" src="assets/images/danger-block-01.webp" class="hidden">
+						<img id="danger-square-01" src="assets/images/danger-block-01.webp" class="hidden"  alt="A green coloured square.">
 					</div>
 				</div>
 			<div id="view-box">
-				<img id="zombie" src="assets/images/zombie-approach-00.webp" height="100%">
+				<img id="zombie" src="assets/images/zombie-approach-00.webp" alt="An empty corridor.">
 			</div>
 			</div>
 			<!-- Bottom half of the game card -->
@@ -83,10 +83,10 @@
 				<div id="text-box">
 				</div>
 				<div id="next-btn-box">
-					<button class="hidden" id="next-btn-01">next &gt&gt</button>
-					<button class="hidden" id="next-btn-02">next &gt&gt</button>
-					<button class="hidden" id="next-btn-03">next &gt&gt</button>
-					<button class="hidden" id="next-btn-04">next &gt&gt</button>
+					<button class="hidden" id="next-btn-01">next &gt;&gt;</button>
+					<button class="hidden" id="next-btn-02">next &gt;&gt;</button>
+					<button class="hidden" id="next-btn-03">next &gt;&gt;</button>
+					<button class="hidden" id="next-btn-04">next &gt;&gt;</button>
 				</div>
 				<div id="questions" class="hidden">
 				</div>
@@ -115,11 +115,11 @@
 		<div id="score-card" class="card">
 			<div id="survivor-box">
 				<h1>SURVIVED</h1>
-				<p id="survivors"><ul></ul></p>
+				<p id="survivors"></p>
 			</div>
 			<div id="failure-box">
 				<h1>FAILED</h1>
-				<p id="failures"><ul></ul></p>
+				<p id="failures"></p>
 			</div>
 	<button id="continue-btn-score">Continue</button>
 		</div>
@@ -145,6 +145,7 @@
 				<button type="submit" id="submit" value="Send">Leave Feedback</button></div><br>
         	</form>
 			<button id="continue-btn-comment">Continue</button>
+		</div>
 	</div>
 	</section>
 	<!-- link to Javascript file -->

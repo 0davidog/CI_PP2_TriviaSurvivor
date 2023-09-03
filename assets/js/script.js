@@ -231,7 +231,7 @@ document.getElementById('comment-btn').onmouseout = function() {
 }
 
 // Setting username variable when entered...
-const userName = document.getElementById('name');
+const userName = document.getElementById('user-name');
 
 //logging username to console...
 const startBtn = document.getElementById('start-btn');
@@ -453,7 +453,7 @@ function win() {
 	resultsCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
 	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
-	survivedList.push(`<li>${userName.value} survived with a score of ${userScore}/${quizLength}</li>`);
+	survivedList.push(`${userName.value} survived with a score of ${userScore}/${quizLength}`);
 }
 
 // Displaying failure screen...
@@ -466,7 +466,7 @@ function fail() {
 	resultsCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
-	failedList.push(`<li>${userName.value} was lost with a score of ${userScore}/${quizLength}</li>`);
+	failedList.push(`${userName.value} was lost with a score of ${userScore}/${quizLength}`);
 }
 
 // Exiting Win/Fail screens and restarting from difficulty screen...
@@ -720,10 +720,10 @@ const questionList = [
 	}, ];
 
 let survivedList = [
-	`<li>Barry survived with a score of 8/10</li>`
+	`Barry survived with a score of 8/10<br>`
 ]
 let failedList = [
-	`<li>Albert was lost with a score of 5/10</li>`
+	`Albert was lost with a score of 5/10<br>`
 ]
 let userFeedback = [
 	
