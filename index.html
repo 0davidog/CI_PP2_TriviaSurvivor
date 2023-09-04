@@ -6,10 +6,13 @@
     <meta name="keywords" content="Trivia, Survivor, movie, horror-movie, quiz, zombie">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=10">
     <link rel="stylesheet" href="assets/css/style.css">
+	<!-- Favicon links courtesy of https://favicon.io/favicon-converter/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
 <!-- Adding script for fontawesome icons -->	
 	<script src="https://kit.fontawesome.com/5216db6454.js" crossorigin="anonymous"></script>
-<!-- Adding script for email JS function -->	
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 	
 	<title>Trivia Survivor</title>
@@ -156,6 +159,41 @@
 	</div>
 	</section>
 	<!-- link to Javascript file -->
-	<script src="assets/js/script.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+	<!-- Adding script for email JS function -->	
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+		//emailjs login
+		(function() {
+			// https://dashboard.emailjs.com/admin/account
+			emailjs.init('3Q0SMJLBwZIF-Uvwg');
+		})();
+		//emailjs function
+		window.onload = function() {
+			document.getElementById('contact-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				// generate a five digit number for the contact_number variable
+				this.contact_number.value = Math.random() * 100000 | 0;
+				// these IDs from the previous steps
+				emailjs.sendForm('service_pmzmnla', 'contact-form', this).then(function() {
+					document.getElementById('contact-form').reset();
+					alert('Thank you for your feedback.');
+					let name = document.getElementById("contact-form").name.value;
+					console.log(`Name: ${name}`);
+					let email = document.getElementById("contact-form").email.value;
+					console.log(`Email Adress: ${email}`);
+					let comment = document.getElementById("contact-form").message.value;
+					console.log(`Comment: ${comment}`);
+					userFeedback.push(`
+{
+Name: ${name},
+Email: ${email},
+Comment: ${comment},
+}`
+									  }, function(error) {
+						alert("I'm sorry, the form failed to send.");
+					});
+				});
+			}
+	</script>
 </body>
 </html>

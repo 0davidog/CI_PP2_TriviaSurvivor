@@ -85,7 +85,7 @@ i:hover {
 /* Styling the title card... */
 #title-card {
 	display: flex;
-	background-image: url("../images/background-image.webp");
+	background-image: url("../images/background-image-250x500.webp");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
