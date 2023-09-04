@@ -178,19 +178,6 @@
 				// these IDs from the previous steps
 				emailjs.sendForm('service_pmzmnla', 'contact-form', this).then(function() {
 					document.getElementById('contact-form').reset();
-					alert('Thank you for your feedback.');
-					let name = document.getElementById("contact-form").name.value;
-					console.log(`Name: ${name}`);
-					let email = document.getElementById("contact-form").email.value;
-					console.log(`Email Adress: ${email}`);
-					let comment = document.getElementById("contact-form").message.value;
-					console.log(`Comment: ${comment}`);
-					userFeedback.push(`
-{
-Name: ${name},
-Email: ${email},
-Comment: ${comment},
-}`
 									  }, function(error) {
 						alert("I'm sorry, the form failed to send.");
 					});

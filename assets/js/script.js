@@ -709,6 +709,3 @@ let survivedList = [
 let failedList = [
 	`Albert was lost with a score of 5/10<br>`
 ];
-let userFeedback = [
-	
-];
