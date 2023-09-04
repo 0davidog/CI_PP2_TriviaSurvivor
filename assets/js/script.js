@@ -237,7 +237,7 @@ const userName = document.getElementById('user-name');
 
 //logging username to console and moving to difficulty select...
 const startBtn = document.getElementById('start-btn');
-startBtn.addEventListener('click', logName);
+startBtn.addEventListener('submit', logName);
 function logName() {
 	selected.play();
 	console.log(`Username: ${userName.value}`);
@@ -502,6 +502,9 @@ function reStart() {
 	document.getElementById('choose-difficulty').classList.remove('hidden');
 	document.getElementById('enter-name').classList.add('hidden');
 }
+
+const commentBtn = document.getElementById('comment-btn');
+commentBtn.addEventListener('submit', commentSubmit);
 function commentSubmit() {
 	let name = document.getElementById("comment-form").name.value;
 	console.log(`Name: ${name}`);
@@ -516,9 +519,11 @@ Name: ${name},
 Email: ${email},
 Comment: ${comment},
 }`);
+	document.getElementById('comment-form').reset();
 	console.log(`Added to comments array ${userFeedback}`);
 	
 }
+
 // Setting some large arrays at the bottom here, including the questions array
 const rightMessage = [
 	`right answer 0`,

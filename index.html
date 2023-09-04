@@ -134,7 +134,7 @@
 		<h1>FEEDBACK</h1>
 		<p>Thank you for checking out Trivia Survivor. <br>Please consider leaving a comment on your experience with the game.</p>
 		<div id="feedback-form">
-			<form method="post" action="javascript:void(0);" onsubmit="commentSubmit()" id="comment-form">
+			<form method="post" action="javascript:void(0);" id="comment-form" onSubmit="commentSubmit()">
 			<label for="fname">Name:</label><br>
 			<input type="text" id="fname" name="fname" placeholder="Name" required><br>
 			<label for="email">Email:</label><br>
@@ -142,7 +142,7 @@
 			<label for="comment">Your Comment:</label><br>
 			<textarea id="comment" name="comment" placeholder="..." required></textarea><br><br>
 			<div id="contact-form-button-wrap">
-				<button type="submit" id="submit" value="Send">Leave Feedback</button></div><br>
+				<button type="submit" id="comment-btn">Leave Feedback</button></div><br>
         	</form>
 			<button id="continue-btn-comment">Continue</button>
 		</div>
