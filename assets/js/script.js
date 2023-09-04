@@ -1,5 +1,12 @@
 // Welcome to the JavaScript Document
 /*jshint esversion: 6 */ 
+
+//emailjs login
+(function() {
+	// https://dashboard.emailjs.com/admin/account
+	emailjs.init('3Q0SMJLBwZIF-Uvwg');
+})();
+
 // Setting static global variables for
 // Game cards
 const titleCard = document.getElementById('title-card');
@@ -503,7 +510,35 @@ function reStart() {
 	document.getElementById('enter-name').classList.add('hidden');
 }
 
-
+//emailjs function
+window.onload = function() {
+	document.getElementById('contact-form').addEventListener('submit', function(event) {
+		event.preventDefault();
+        // generate a five digit number for the contact_number variable
+		this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+		emailjs.sendForm('service_pmzmnla', 'contact-form', this).then(function() {
+			alert('Thank you for your feedback.');
+			let name = document.getElementById("comment-form").name.value;
+			console.log(`Name: ${name}`);
+			let email = document.getElementById("comment-form").email.value;
+			console.log(`Email Adress: ${email}`);
+			let comment = document.getElementById("comment-form").comment.value;
+			console.log(`Comment: ${comment}`);
+			alert(`Thank you ${name}, for leaving feedback.`);
+			userFeedback.push(`
+{
+Name: ${name},
+Email: ${email},
+Comment: ${comment},
+}`
+							 );
+					document.getElementById('contact-form').reset();
+		}, function(error) {
+			alert("I'm sorry, the form failed to send.");
+		});
+	});
+}
 
 // Setting some large arrays at the bottom here, including the questions array
 const rightMessage = [
