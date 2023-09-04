@@ -80,16 +80,16 @@ i:hover {
 	justify-content: center;
 	align-content: center;
 	flex-wrap: wrap;
-}
-
-/* Styling the title card... */
-#title-card {
-	display: flex;
 	background-image: url("../images/background-image-250x500.webp");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-color: #000000;
+}
+
+/* Styling the title card... */
+#title-card {
+	display: flex;
 }
 
 /* Positioning the title h1 in the title card... */
@@ -226,11 +226,6 @@ i:hover {
 	align-content: flex-start;
 	justify-content: center;
 	display: none;
-	background-image: url("../images/background-image.webp");
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: #000000;
 }
 #info-card h1 {
 	text-align: center;
@@ -246,11 +241,6 @@ i:hover {
 	overflow: auto;
 	align-content: flex-start;
 	display: none;
-	background-image: url("../images/background-image.webp");
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: #000000;
 }
 #comment-card h1 {
 	text-align: center;
@@ -286,22 +276,12 @@ i:hover {
 /* Styling the results card */
 #results-card {
 	display: none;
-	background-image: url("../images/background-image.webp");
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: #000000;
 }
 /* Styling the score card */
 #score-card {
 	overflow: auto;
 	align-content: flex-start;
 	display: none;
-	background-image: url("../images/background-image.webp");
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: #000000;
 }
 #score-card h1 {
 	text-align: center;
@@ -376,6 +356,7 @@ i:hover {
 	.card {
 		width: 300px;
 		height: 550px;
+		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -384,6 +365,7 @@ i:hover {
 	.card {
 		width: 350px;
 		height: 700px;
+		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -392,6 +374,7 @@ i:hover {
 	.card {
 		width: 350px;
 		height: 700px;
+		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -400,6 +383,7 @@ i:hover {
 	.card {
 		width: 300px;
 		height: 600px;
+		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -408,6 +392,7 @@ i:hover {
 	.card {
 		width: 500px;
 		height: 250px;
+		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -416,6 +401,7 @@ i:hover {
 	.card {
 		width: 450px;
 		height: 900px;
+		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -424,6 +410,7 @@ i:hover {
 	.card {
 		width: 600px;
 		height: 300px;
+		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -432,6 +419,7 @@ i:hover {
 	.card {
 		width: 500px;
 		height: 250px;
+		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -440,6 +428,7 @@ i:hover {
 	.card {
 		width: 500px;
 		height: 1000px;
+		background-image: url('../images/background-image-500x1000.webp');
 	}	
 }
 
@@ -448,6 +437,7 @@ i:hover {
 	.card {
 		width: 550px;
 		height: 275px;
+		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -456,6 +446,7 @@ i:hover {
 	.card {
 		width: 600px;
 		height: 300px;
+		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -464,6 +455,7 @@ i:hover {
 	.card {
 		width: 600px;
 		height: 300px;
+		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -472,6 +464,7 @@ i:hover {
 	.card {
 		width: 600px;
 		height: 1200px;
+		background-image: url('../images/background-image-600x1200.webp');
 	}
 }
 
@@ -480,6 +473,7 @@ i:hover {
 	.card {
 		width: 900px;
 		height: 450px;
+		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -488,6 +482,7 @@ i:hover {
 	.card {
 		width: 1050px;
 		height: 525px;
+		background-image: url('../images/background-image-1050x525.webp');
 	}
 }
 
@@ -496,5 +491,6 @@ i:hover {
 	.card {
 		width: 1200px;
 		height: 600px;
+		background-image: url('../images/background-image-1200x600.webp');
 	}
 }
