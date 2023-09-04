@@ -50,7 +50,7 @@ const dangerColor = [
 //Setting adjustable game variables
 let lives = 5;
 let quizLength = 10;
-let questionNumber = 0;
+let questionNumber = 1;
 let userScore = 0;
 // Empty variable to set randomised questions in
 let questionSet;
@@ -58,9 +58,8 @@ let questionSet;
 let gameMode;
 //Set variable gameState to indicate whether continue button to return to game or home 
 let gameState = "home";
-console.log(gameState);
 
-// Showing a warning if the screen height it to small...
+// Showing a warning if the screen height is to small...
 window.addEventListener('load', function() {
 	let screenHeight = window.innerHeight;
 	let orientation = screen.orientation.type;
@@ -101,10 +100,10 @@ document.getElementById('home-btn').onclick = function() {
 	commentCard.style.display = "none";
 	document.getElementById('choose-difficulty').classList.add('hidden');
 	document.getElementById('enter-name').classList.remove('hidden');
-	//Setting adjustable game variables
+	//Reetting adjustable game variables
 	lives = 5;
 	quizLength = 10;
-	questionNumber = 0;
+	questionNumber = 1;
 	userScore = 0;
 	// Empty variable to set randomised questions in
     questionSet = undefined;
@@ -117,6 +116,7 @@ document.getElementById('home-btn').onclick = function() {
 	document.getElementById(dangerColor[3]).classList.add('hidden');
 	document.getElementById(dangerColor[4]).classList.add('hidden');
 	document.getElementById("zombie").src = zombieImgSrc[5];
+	//hiding elements
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	document.getElementById('text-box').classList.add('hidden');
@@ -124,6 +124,7 @@ document.getElementById('home-btn').onclick = function() {
 	document.getElementById('choose-difficulty').classList.add('hidden');
 	document.getElementById('enter-name').classList.remove('hidden');
 };
+//toggle sound
 document.getElementById('sound-btn').onclick = function() {
 	selected.play();
 	let soundBtn = document.getElementById('sound-btn');
@@ -144,6 +145,7 @@ document.getElementById('sound-btn').onclick = function() {
 		correctSound.muted = true;
 	}
 };
+//info page
 document.getElementById('info-btn').onclick = function() {
 	selected.play();
 	infoCard.style.display = "flex";
@@ -153,6 +155,7 @@ document.getElementById('info-btn').onclick = function() {
 	scoreCard.style.display = "none";
 	commentCard.style.display = "none";
 };
+//score page
 document.getElementById('score-btn').onclick = function() {
 	selected.play();
 	scoreCard.style.display = "flex";
@@ -164,6 +167,7 @@ document.getElementById('score-btn').onclick = function() {
 	document.getElementById('survivors').innerHTML = survivedList.join(``);
 	document.getElementById('failures').innerHTML = failedList.join(``);
 };
+//comment page
 document.getElementById('comment-btn').onclick = function() {
 	selected.play();
 	commentCard.style.display = "flex";
@@ -291,6 +295,10 @@ function modeSelected(event) {
 	document.getElementById('next-btn-box').classList.remove('hidden');
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.add('hidden');
+	let nexBtn05 = document.getElementById('next-btn-05');
+	nexBtn05.classList.add('hidden');
+	let nexBtn06 = document.getElementById('next-btn-06');
+	nexBtn06.classList.add('hidden');
 	introMessage01();
 }
 
@@ -327,21 +335,20 @@ function introMessage04() {
 	nexBtn03.classList.add('hidden');
 	let nexBtn04 = document.getElementById('next-btn-04');
 	nexBtn04.classList.remove('hidden');
-    nexBtn04.onclick = startQuiz;
-	shuffleQuestions();
+    nexBtn04.onclick = shuffleQuestions();
 }
 // Shuffling question array...
 function shuffleQuestions() {
 	selected.play();
 	questionSet = questionList.sort(() => Math.random() - 0.5);
 	console.log(questionSet);
+	startQuiz();
 }
 
-// Starting Quiz
-function startQuiz() {
-	selected.play();
-	// Checking if user has reached the end of the question list or lost all their lives...
-	if (questionNumber === quizLength) {
+// Checking if user has reached the end of the question list or lost all their lives...
+function checkPoint() {
+	let finishLine = quizLength + 1;
+	if (questionNumber === finishLine) {
 		console.log('Quiz complete.');
 		win();
 		return;
@@ -349,25 +356,34 @@ function startQuiz() {
 		console.log('Quiz lost');
 		fail();
 		return;
-	}
-	// incrementing question number...
-	questionNumber++;
+	} startQuiz();
+}
+
+// Starting Quiz
+function startQuiz() {
+	selected.play();
 	// Setting danger level variable to interact with images...
 	let dangerLvl = lives - 1;
-	console.log(`Danger is ${dangerLvl}`);
 	document.getElementById("zombie").src = zombieImgSrc[dangerLvl];
 	document.getElementById(dangerColor[dangerLvl]).classList.remove('hidden');
 	console.log(`Question number: ${questionNumber}.`);
 	console.log(`Answer is: ${questionSet[questionNumber].answer}`);
+	
 	//Removing intro text and button...
 	let nexBtn04 = document.getElementById('next-btn-04');
+	let nexBtn05 = document.getElementById('next-btn-05');
+	let nexBtn06 = document.getElementById('next-btn-06');
 	nexBtn04.classList.add('hidden');
+	nexBtn05.classList.add('hidden');
+	nexBtn06.classList.add('hidden');
 	textBox.classList.add('hidden');
+	
 	// Revealing question text and answer buttons...
 	let question = document.getElementById('questions');
 	let answers = document.getElementById('answers');
 	question.classList.remove('hidden');
 	answers.classList.remove('hidden');
+	
 	// Building a question from array...
 	for (let i = 0; i < questionList.length; i++) {
 		question.innerHTML = questionSet[questionNumber].q;
@@ -412,31 +428,33 @@ function checkAnswer() {
 // Correct answer message...
 function correctAnswerMessage() {
 	correctSound.play();
+	questionNumber++;
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
 	textBox.innerHTML = `${rightMessage[questionNumber]}`;
-	let nexBtn04 = document.getElementById('next-btn-04');
-	nexBtn04.classList.remove('hidden');
-    nexBtn04.addEventListener('click', function() {
+	let nexBtn05 = document.getElementById('next-btn-05');
+	nexBtn05.classList.remove('hidden');
+    nexBtn05.addEventListener('click', function() {
 		document.getElementById('questions').classList.remove('hidden');
 		document.getElementById('answers').classList.remove('hidden');
-		startQuiz();
+		checkPoint();
 	}); 
 }
 // Incorrect answer message..
 function incorrectAnswerMessage() {
 	creatureStep.play();
+	questionNumber++;
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
 	textBox.innerHTML = `${wrongMessage[lives]}`;
-	let nexBtn04 = document.getElementById('next-btn-04');
-	nexBtn04.classList.remove('hidden');
-    nexBtn04.addEventListener('click', function() {
+	let nexBtn06 = document.getElementById('next-btn-06');
+	nexBtn06.classList.remove('hidden');
+    nexBtn06.addEventListener('click', function() {
 		document.getElementById('questions').classList.remove('hidden');
 		document.getElementById('answers').classList.remove('hidden');
-		startQuiz();
+		checkPoint();
 	});
 }
 
@@ -483,7 +501,7 @@ function reStart() {
 	//Setting adjustable game variables
 	lives = 5;
 	quizLength = 10;
-	questionNumber = 0;
+	questionNumber = 1;
 	userScore = 0;
 	// Empty variable to set randomised questions in
     questionSet = undefined;
@@ -502,11 +520,16 @@ function reStart() {
 	document.getElementById('next-btn-box').classList.add('hidden');
 	document.getElementById('choose-difficulty').classList.remove('hidden');
 	document.getElementById('enter-name').classList.add('hidden');
+	document.getElementById('win-state').classList.add('hidden');
+	document.getElementById('win-text').innerHTML = "";
+	document.getElementById('fail-state').classList.add('hidden');
+	document.getElementById('fail-text').innerHTML = "";
 }
 
 // Setting some large arrays at the bottom here, including the questions array
 const rightMessage = [
 	`right answer 0`,
+	`right answer 1`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done, keep it up!</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Keep going!.</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>So far so good.</p>`,
