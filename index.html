@@ -11,9 +11,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
-<!-- Adding script for fontawesome icons -->	
-	<script src="https://kit.fontawesome.com/5216db6454.js" crossorigin="anonymous"></script>
-
 	
 	<title>Trivia Survivor</title>
 	
@@ -23,7 +20,7 @@
 	<!-- Main game container -->
 	<section class="flex-container">
 		<!-- Navigation bar to sit at the top of the screen -->
-		<div id="info-box">
+		<div id="nav-box">
 			<nav>
 				<i class="fa-solid fa-house" id="home-btn"></i>
 				<i class="fa-solid fa-volume-off" id="sound-btn"></i>
@@ -128,38 +125,43 @@
 				<h1>FAILED</h1>
 				<p id="failures"></p>
 			</div>
-	<button id="continue-btn-score">Continue</button>
+	<div id="score-btn-box"><button id="continue-btn-score">Continue</button></div>
 		</div>
 		<!-- Description of the game -->
 		<div id="info-card" class="card">
 			<h1>INFORMATION</h1>
-			<p>Trivia Survivor is a survival quiz game.<br><br>The rules are simple.<br><br>You must test your knowledge of movie-triva against an approaching threat.<br><br>The creature stalking you will advance a step with every wrong answer.<br><br>Answer all 10 questions to survive.<br><br>Good luck.</p>
-			<button id="continue-btn-info">Continue</button>
+			<p>Trivia Survivor is a survival quiz game. The rules are simple. You must test your knowledge of movie-triva against an approaching threat. The creature stalking you will advance a step with every wrong answer. Answer all 10 questions to survive. Good luck.</p>
+			<div id="info-btn-box"><button id="continue-btn-info">Continue</button></div>
 		</div>
-	<!-- A feedback form -->
+	
+		<!-- A feedback form -->
 	<div id="comment-card" class="card">
 		<h1>FEEDBACK</h1>
-		<p>Thank you for checking out Trivia Survivor. <br>Please consider leaving a comment on your experience with the game.</p>
+		<p>Thank you for checking out Trivia Survivor. Please consider leaving a comment on your experience with the game.</p>
 		<div id="feedback-form">
 			<form id="contact-form">
-        <input type="hidden" name="contact_number"><br>
-        <label>Name:</label><br>
-        <input type="text" name="user_name"><br>
-        <label>Email:</label><br>
-        <input type="email" name="user_email"><br>
-        <label>Comment:</label><br>
-        <textarea name="message"></textarea><br>
+				<input type="hidden" name="contact_number"><br>
+				<label>Name:</label><br>
+				<input type="text" name="user_name"><br>
+				<label>Email:</label><br>
+				<input type="email" name="user_email"><br>
+				<label>Comment:</label><br>
+				<textarea name="message"></textarea><br>
+				
 				<div id="form-btn-box">
-				<button type="submit" value="Send">Send</button><br>
-				<button id="continue-btn-comment">Continue</button>
-					</div>
-    </form>
+					<button type="submit" value="Send">Send</button>
+					<button id="continue-btn-comment">Continue</button>
+				</div>
+				</form>
 			
 		</div>
 	</div>
 	</section>
+	
 	<!-- link to Javascript file -->
 	<script type="text/javascript" src="assets/js/script.js"></script>
+	<!-- Adding script for fontawesome icons -->	
+	<script src="https://kit.fontawesome.com/5216db6454.js" crossorigin="anonymous"></script>
 	<!-- Adding script for email JS function -->	
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 		//emailjs login
