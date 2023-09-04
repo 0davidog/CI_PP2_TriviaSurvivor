@@ -38,7 +38,7 @@ button {
 	font-size: 1.1rem;
 	border: solid 1px #808080;
 	border-radius: 5px;
-	margin: 5px;
+	margin: 10px 5px 10px 5px;
 }
 
 /* Changing button text colour to red when hovered over... */
@@ -80,7 +80,7 @@ i:hover {
 	justify-content: center;
 	align-content: center;
 	flex-wrap: wrap;
-	background-image: url("../images/background-image-250x500.webp");
+	background-image: url("../images/background-image.webp");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -108,7 +108,7 @@ i:hover {
 }
 
 /* Styling the nav bar and fixing it to the top of the screen */
-#info-box {
+#nav-box {
 	position: fixed;
 	width: 250px;
 	height: 40px;
@@ -125,6 +125,7 @@ i:hover {
 	text-align: center;
 }
 #enter-name input {
+	border-radius: 2px;
 	font-size: 1.1rem;
 	text-align: center;
 	width: 200px;
@@ -230,29 +231,33 @@ i:hover {
 #info-card h1 {
 	text-align: center;
 	width: 100%;
-	margin: 15px 0px 15px 0px;
 }
 #info-card p {
-	text-align: center;
+	text-align: left;
+	width: 220px;;
+}
+#info-btn-box {
 	width: 100%;
+	text-align: center;
 }
 /* Styling the comment card */
 #comment-card {
 	overflow: auto;
 	align-content: flex-start;
+	justify-content: center;
 	display: none;
 }
 #comment-card h1 {
 	text-align: center;
 	width: 100%;
-	margin: 15px 0px 15px 0px;
 }
 #comment-card p {
-	text-align: center;
-	width: 100%;
+	text-align: left;
+	width: 220px;
 }
-#contact-form {
-	padding: 10px;
+#feedback-form {
+	width: 100%;
+	text-align: center;
 }
 #contact-form input {
 	width: 220px;
@@ -270,25 +275,12 @@ i:hover {
 	margin: 5px 0px 5px 0px;
 }
 #form-btn-box {
-	width: 100%;
-	text-align: right;
+	text-align: center;
 }
 /* Styling the results card */
 #results-card {
 	display: none;
 }
-/* Styling the score card */
-#score-card {
-	overflow: auto;
-	align-content: flex-start;
-	display: none;
-}
-#score-card h1 {
-	text-align: center;
-	width: 100%;
-	margin: 15px 0px 15px 0px;
-}
-
 /* Styling the message for when the quiz is won */
 #win-state {
 	flex-basis: 100%;
@@ -314,28 +306,32 @@ i:hover {
 }
 
 /* Styling the scores page */
-#survivor-box {
-	margin-top: 20px;
+/* Styling the score card */
+#score-card {
+	overflow: auto;
+	align-content: flex-start;
+	justify-content: center;
 	text-align: center;
-	flex-basis: 100%;
+	display: none;
+}
+#score-card p {
+	color: #ffffff;
+}
+#survivor-box {
+	width: 100%;
+}
+#survivor-box h1 {
 	color: #007236;
 }
-#survivors {
-	text-align: left;
-	padding: 20px;
-	color: #ffffff;
-}
 #failure-box {
-	text-align: center;
-	flex-basis: 100%;
+	width: 100%;
+}
+#failure-box h1 {
 	color: #9E0B0F;
 }
-#failures {
-	text-align: left;
-	padding: 20px;
-	color: #ffffff;
+#score-btn-box {
+	width: 100%;
 }
-
 /* Setting media query for portrait/landscape modes */
 @media screen and (orientation: landscape) {
 	#creature-box {
@@ -356,7 +352,6 @@ i:hover {
 	.card {
 		width: 300px;
 		height: 550px;
-		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -365,7 +360,6 @@ i:hover {
 	.card {
 		width: 350px;
 		height: 700px;
-		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -374,7 +368,6 @@ i:hover {
 	.card {
 		width: 350px;
 		height: 700px;
-		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -383,7 +376,6 @@ i:hover {
 	.card {
 		width: 300px;
 		height: 600px;
-		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -392,7 +384,6 @@ i:hover {
 	.card {
 		width: 500px;
 		height: 250px;
-		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -401,7 +392,6 @@ i:hover {
 	.card {
 		width: 450px;
 		height: 900px;
-		background-image: url('../images/background-image-450x900.webp');
 	}
 }
 
@@ -410,7 +400,6 @@ i:hover {
 	.card {
 		width: 600px;
 		height: 300px;
-		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -419,7 +408,6 @@ i:hover {
 	.card {
 		width: 500px;
 		height: 250px;
-		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -428,7 +416,6 @@ i:hover {
 	.card {
 		width: 500px;
 		height: 1000px;
-		background-image: url('../images/background-image-500x1000.webp');
 	}	
 }
 
@@ -437,7 +424,6 @@ i:hover {
 	.card {
 		width: 550px;
 		height: 275px;
-		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -446,7 +432,6 @@ i:hover {
 	.card {
 		width: 600px;
 		height: 300px;
-		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -455,7 +440,6 @@ i:hover {
 	.card {
 		width: 600px;
 		height: 300px;
-		background-image: url('../images/background-image-900x450.webp');
 	}
 }
 
@@ -464,7 +448,6 @@ i:hover {
 	.card {
 		width: 600px;
 		height: 1200px;
-		background-image: url('../images/background-image-600x1200.webp');
 	}
 }
 
@@ -473,7 +456,18 @@ i:hover {
 	.card {
 		width: 900px;
 		height: 450px;
-		background-image: url('../images/background-image-900x450.webp');
+	}
+		h1 {
+		font-size: 4rem;
+	}
+	#sub-title {
+		font-size: 1.5rem;
+	}
+	#info-card p {
+		width: 500px;
+	}
+	#comment-card p {
+		width: 500px;
 	}
 }
 
@@ -482,7 +476,6 @@ i:hover {
 	.card {
 		width: 1050px;
 		height: 525px;
-		background-image: url('../images/background-image-1050x525.webp');
 	}
 }
 
@@ -491,12 +484,5 @@ i:hover {
 	.card {
 		width: 1200px;
 		height: 600px;
-		background-image: url('../images/background-image-1200x600.webp');
-	}
-	h1 {
-		font-size: 4rem;
-	}
-	#sub-title {
-		font-size: 1.5rem;
 	}
 }
