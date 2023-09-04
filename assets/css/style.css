@@ -493,4 +493,10 @@ i:hover {
 		height: 600px;
 		background-image: url('../images/background-image-1200x600.webp');
 	}
+	h1 {
+		font-size: 4rem;
+	}
+	#sub-title {
+		font-size: 1.5rem;
+	}
 }

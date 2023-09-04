@@ -234,11 +234,11 @@ document.getElementById('comment-btn').onmouseout = function() {
 };
 
 // Setting username variable when entered...
-const userName = document.getElementById('user-name');
+const userName = document.getElementById('name');
 
 //logging username to console and moving to difficulty select...
 const startBtn = document.getElementById('start-btn');
-startBtn.addEventListener('submit', logName);
+document.getElementById('name-input').addEventListener('submit', logName);
 function logName() {
 	selected.play();
 	console.log(`Username: ${userName.value}`);
