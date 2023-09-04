@@ -503,26 +503,7 @@ function reStart() {
 	document.getElementById('enter-name').classList.add('hidden');
 }
 
-const commentBtn = document.getElementById('comment-btn');
-commentBtn.addEventListener('submit', commentSubmit);
-function commentSubmit() {
-	let name = document.getElementById("comment-form").name.value;
-	console.log(`Name: ${name}`);
-	let email = document.getElementById("comment-form").email.value;
-	console.log(`Email Adress: ${email}`);
-	let comment = document.getElementById("comment-form").comment.value;
-	console.log(`Comment: ${comment}`);
-	alert(`Thank you ${name}, for leaving feedback.`);
-	userFeedback.push(`
-{
-Name: ${name},
-Email: ${email},
-Comment: ${comment},
-}`);
-	document.getElementById('comment-form').reset();
-	console.log(`Added to comments array ${userFeedback}`);
-	
-}
+
 
 // Setting some large arrays at the bottom here, including the questions array
 const rightMessage = [
