@@ -261,18 +261,27 @@ i:hover {
 	text-align: center;
 	width: 100%;
 }
-#feedback-form {
+#contact-form {
 	padding: 10px;
 }
-#feedback-form input {
+#contact-form input {
 	width: 220px;
 	font-size: 1.1rem;
+	border-radius: 2px;
+	padding: 2px;
+	margin: 5px 0px 5px 0px;
 }
-#feedback-form textarea {
+#contact-form textarea {
 	width: 220px;
 	height: 80px;
 	resize: none;
 	font-size: 1.1rem;
+	border-radius: 2px;
+	margin: 5px 0px 5px 0px;
+}
+#form-btn-box {
+	width: 100%;
+	text-align: right;
 }
 /* Styling the results card */
 #results-card {

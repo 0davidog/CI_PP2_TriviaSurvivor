@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-	
     <meta charset="utf-8">
     <meta name="description" content="Trivia Survivor, use your knowledge of movie trivia to escape the creature.">
     <meta name="keywords" content="Trivia, Survivor, movie, horror-movie, quiz, zombie">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=10">
     <link rel="stylesheet" href="assets/css/style.css">
+<!-- Adding script for fontawesome icons -->	
 	<script src="https://kit.fontawesome.com/5216db6454.js" crossorigin="anonymous"></script>
+<!-- Adding script for email JS function -->	
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 	<script type="text/javascript">
         (function() {
@@ -31,6 +32,7 @@
             });
         }
     </script>
+	
 	<title>Trivia Survivor</title>
 	
 </head>
@@ -158,16 +160,19 @@
 		<p>Thank you for checking out Trivia Survivor. <br>Please consider leaving a comment on your experience with the game.</p>
 		<div id="feedback-form">
 			<form id="contact-form">
-        <input type="hidden" name="contact_number">
-        <label>Name</label>
-        <input type="text" name="user_name">
-        <label>Email</label>
-        <input type="email" name="user_email">
-        <label>Message</label>
-        <textarea name="message"></textarea>
-        <input type="submit" value="Send">
+        <input type="hidden" name="contact_number"><br>
+        <label>Name:</label><br>
+        <input type="text" name="user_name"><br>
+        <label>Email:</label><br>
+        <input type="email" name="user_email"><br>
+        <label>Comment:</label><br>
+        <textarea name="message"></textarea><br>
+				<div id="form-btn-box">
+				<button type="submit" value="Send">Send</button><br>
+				<button id="continue-btn-comment">Continue</button>
+					</div>
     </form>
-			<button id="continue-btn-comment">Continue</button>
+			
 		</div>
 	</div>
 	</section>
