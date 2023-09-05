@@ -1,7 +1,8 @@
 // Welcome to the JavaScript Document
 /*jshint esversion: 6 */ 
 
-// Setting static global variables for
+// Setting static global variables for...
+
 // Game cards
 const titleCard = document.getElementById('title-card');
 const gameCard = document.getElementById('game-card');
@@ -9,10 +10,23 @@ const infoCard = document.getElementById('info-card');
 const resultsCard = document.getElementById('results-card');
 const scoreCard = document.getElementById('score-card');
 const commentCard = document.getElementById('comment-card');
+
 // Game boxes
 const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
 const textBox = document.getElementById('text-box');
+
+// Start button
+const startBtn = document.getElementById('start-btn');
+
+// Difficulty buttons
+const easyBtn = document.getElementById('easy-btn');
+const normalBtn = document.getElementById('normal-btn');
+const hardBtn = document.getElementById('hard-btn');
+
+// Next button
+const nextBtn = document.getElementById('next-btn');
+
 // Answer buttons
 const answerBtnA = document.getElementById('answer-btn-a');
 const answerBtnB = document.getElementById('answer-btn-b');
@@ -25,106 +39,161 @@ const winReplayBtn = document.getElementById('win-replay-btn');
 const selected = new Audio("assets/sounds/selected.wav");
 const creatureStep = new Audio("assets/sounds/creature-step.wav");
 const correctSound = new Audio("assets/sounds/correct.wav");
+
 // Muting sound effect by default
 selected.muted = true;
 creatureStep.muted = true;
 correctSound.muted = true;
 
+// Setting username variable when entered...
+let userName = document.getElementById('name');
+
+//Setting adjustable game variables
+let lives = 5;
+let quizLength = 10;
+let questionNumber = 1;
+let userScore = 0;
+
+// Empty variable to set randomised questions in
+let questionSet;
+
+// Empty variable to set game mode
+let gameMode;
+
+//Set variable gameState to indicate whether continue button to return to game or home 
+let gameState = "home";
+
 // Zombie image url array
 const zombieImgSrc = [
+	"assets/images/zombie-approach-00.webp",
 	"assets/images/zombie-approach-05.webp",
 	"assets/images/zombie-approach-04.webp", 
 	"assets/images/zombie-approach-03.webp", 
 	"assets/images/zombie-approach-02.webp", 
 	"assets/images/zombie-approach-01.webp",
-	"assets/images/zombie-approach-00.webp"
 ];
+
 // Array of Ids for coloured squares
 const dangerColor = [
+	"danger-square-05",
 	"danger-square-05",
 	"danger-square-04",
 	"danger-square-03",
 	"danger-square-02",
 	"danger-square-01",
 ];
-//Setting adjustable game variables
-let lives = 5;
-let quizLength = 10;
-let questionNumber = 1;
-let userScore = 0;
-// Empty variable to set randomised questions in
-let questionSet;
-// Empty variable to set game mode
-let gameMode;
-//Set variable gameState to indicate whether continue button to return to game or home 
-let gameState = "home";
 
-// Showing a warning if the screen height is to small...
+/** @Function
+* Activates when the window loads.
+* Fetch screen height.
+* Fetch window orientation.
+* IF in landscape and height less than 500px.
+* Then - ALERT Ask to rotate/unfold
+*/
 window.addEventListener('load', function() {
 	let screenHeight = window.innerHeight;
 	let orientation = screen.orientation.type;
-	console.log(orientation);
 	if (orientation == "landscape-primary") {
 		if (screenHeight <= 500) {
-			console.log("please flip");
 			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.');
 			}
-			
 	}
 }
 );
 
+/** @Function
+* Activates when the window is resized.
+* Fetch screen height.
+* Fetch window orientation.
+* IF in landscape and height less than 500px.
+* Then - ALERT Ask to rotate/unfold.
+*/
 window.addEventListener('resize', function() {
 	let screenHeight = window.innerHeight;
 	let orientation = screen.orientation.type;
-	console.log(orientation);
 	if (orientation == "landscape-primary") {
 		if (screenHeight <= 500) {
-			console.log("please flip");
 			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.');
 			}
 	}
 }
 );
 
-// Setting up nav bar links
+/** @Function
+* This function returns user to home-screen/title-card.
+* Retrieves home button element by Id.
+* Activates when button id"home-btn" is clicked.
+* Plays click sound. 
+* Change gameState value to "home".
+* Change display style of title-card to flex.
+* Change display style of other cards to none.
+* reset game variables to starting value.
+* resets game images to starting url.
+* Hides elements not needed for title-card.
+*/
 document.getElementById('home-btn').onclick = function() {
 	selected.play();
 	gameState = "home";
-	console.log(gameState);
 	titleCard.style.display = "flex";
 	gameCard.style.display = "none";
 	infoCard.style.display = "none";
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
 	commentCard.style.display = "none";
-	document.getElementById('choose-difficulty').classList.add('hidden');
-	document.getElementById('enter-name').classList.remove('hidden');
-	//Reetting adjustable game variables
+	resetVar();
+	resetImages();
+	hideElements();
+};
+
+/** @function
+* This function resets game variables to starting values.
+* questionSet and gameMode are both reset to undefined.
+*/
+function resetVar() {
 	lives = 5;
 	quizLength = 10;
 	questionNumber = 1;
 	userScore = 0;
-	// Empty variable to set randomised questions in
     questionSet = undefined;
-	// Empty variable to set game mode
 	gameMode = undefined;
-	// Resetting images
+}
+
+/** @function
+* This function resets images to their starting appearance.
+*/
+function resetImages() {
 	document.getElementById(dangerColor[0]).classList.add('hidden');
 	document.getElementById(dangerColor[1]).classList.add('hidden');
 	document.getElementById(dangerColor[2]).classList.add('hidden');
 	document.getElementById(dangerColor[3]).classList.add('hidden');
 	document.getElementById(dangerColor[4]).classList.add('hidden');
 	document.getElementById("zombie").src = zombieImgSrc[5];
-	//hiding elements
+}
+
+/** @function
+* This function hides all elements for home-screen/title-card
+*/
+function hideElements() {
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	document.getElementById('text-box').classList.add('hidden');
 	document.getElementById('next-btn-box').classList.add('hidden');
 	document.getElementById('choose-difficulty').classList.add('hidden');
 	document.getElementById('enter-name').classList.remove('hidden');
-};
-//toggle sound
+}
+
+/** @function
+* This function toggles the sound on/off.
+* Retrieves sound button element by Id.
+* Activates with user click on 'sound-btn'.
+* IF soundbutton contains class name "fa-volume-off"
+* THEN function swaps class name to "fa-volume-high" // (This changes the icons appearance also).
+* Sets all available sounds to mute = false.
+* plays click sound.
+* ELSE IF soundbutton contains class name "fa-volume-high"
+* THEN function swaps class name to "fa-volume-off" // (This changes the icons appearance also).
+* Sets all available sounds to mute = true.
+*/
 document.getElementById('sound-btn').onclick = function() {
 	selected.play();
 	let soundBtn = document.getElementById('sound-btn');
@@ -145,7 +214,15 @@ document.getElementById('sound-btn').onclick = function() {
 		correctSound.muted = true;
 	}
 };
-//info page
+
+/** @function
+* This function takes the user to the info-card.
+* Retrives info button by Id.
+* Activates on user click of info button.
+* Play click sound.
+* Set infoCard display style to "flex".
+* Set other cards display style to "none".
+*/
 document.getElementById('info-btn').onclick = function() {
 	selected.play();
 	infoCard.style.display = "flex";
@@ -155,7 +232,15 @@ document.getElementById('info-btn').onclick = function() {
 	scoreCard.style.display = "none";
 	commentCard.style.display = "none";
 };
-//score page
+
+/** @function
+* This function takes the user to the score-card.
+* Retrives score button by Id.
+* Activates on user click of score button.
+* Play click sound.
+* Set scoreCard display style to "flex".
+* Set other cards display style to "none".
+*/
 document.getElementById('score-btn').onclick = function() {
 	selected.play();
 	scoreCard.style.display = "flex";
@@ -167,7 +252,15 @@ document.getElementById('score-btn').onclick = function() {
 	document.getElementById('survivors').innerHTML = survivedList.join(``);
 	document.getElementById('failures').innerHTML = failedList.join(``);
 };
-//comment page
+
+/** @function
+* This function takes the user to the comment-card/feedback form.
+* Retrives comment button by Id.
+* Activates on user click of comment button.
+* Play click sound.
+* Set commentCard display style to "flex".
+* Set other cards display style to "none".
+*/
 document.getElementById('comment-btn').onclick = function() {
 	selected.play();
 	commentCard.style.display = "flex";
@@ -177,10 +270,20 @@ document.getElementById('comment-btn').onclick = function() {
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
 };
-// Adding continue button function to return to previous screen...
+
+/** 
+* Fetching continue buttons by Id
+* Setting user click event listeners for continueGame function...
+*/
 document.getElementById('continue-btn-info').onclick = continueGame;
 document.getElementById('continue-btn-score').onclick = continueGame;
 document.getElementById('continue-btn-comment').onclick = continueGame;
+
+/** @function
+* This function takes the user back to the screen/card they last visited.
+* IF Checks gameState value 
+* THEN reveals only the window relevant to game state.
+*/
 function continueGame() {
 	if (gameState === "home") {
 		gameCard.style.display = "none";
@@ -205,185 +308,253 @@ function continueGame() {
 		scoreCard.style.display = "none";
 	}
 }
-// Adding labels to nav links on mouse hover
+
+/** @function
+* This function reveals a piece of text labeling the icon above it when the users mouse hovers over.
+* Fetches button/icon by Id
+* Removes 'hidden' from class list.
+*/
 document.getElementById('home-btn').onmouseover = function() {
 	document.getElementById('home-label').classList.remove('hidden');
 };
+
+/** @function
+* This function hides a piece of text labeling the icon above it when the users mouse moves out.
+* Fetches button/icon by Id
+* Adds 'hidden' to class list.
+*/
 document.getElementById('home-btn').onmouseout = function() {
 	document.getElementById('home-label').classList.add('hidden');
 };
+
+/** @function
+* This function reveals a piece of text labeling the icon above it when the users mouse hovers over.
+* Fetches button/icon by Id
+* Removes 'hidden' from class list.
+*/
 document.getElementById('sound-btn').onmouseover = function() {
 	document.getElementById('sound-label').classList.remove('hidden');
 };
+
+/** @function
+* This function hides a piece of text labeling the icon above it when the users mouse moves out.
+* Fetches button/icon by Id
+* Adds 'hidden' to class list.
+*/
 document.getElementById('sound-btn').onmouseout = function() {
 	document.getElementById('sound-label').classList.add('hidden');
 };
+
+/** @function
+* This function reveals a piece of text labeling the icon above it when the users mouse hovers over.
+* Fetches button/icon by Id
+* Removes 'hidden' from class list.
+*/
 document.getElementById('info-btn').onmouseover = function() {
 	document.getElementById('info-label').classList.remove('hidden');
 };
+
+/** @function
+* This function hides a piece of text labeling the icon above it when the users mouse moves out.
+* Fetches button/icon by Id
+* Adds 'hidden' to class list.
+*/
 document.getElementById('info-btn').onmouseout = function() {
 	document.getElementById('info-label').classList.add('hidden');
 };
+
+/** @function
+* This function reveals a piece of text labeling the icon above it when the users mouse hovers over.
+* Fetches button/icon by Id
+* Removes 'hidden' from class list.
+*/
 document.getElementById('score-btn').onmouseover = function() {
 	document.getElementById('score-label').classList.remove('hidden');
 };
+
+/** @function
+* This function hides a piece of text labeling the icon above it when the users mouse moves out.
+* Fetches button/icon by Id
+* Adds 'hidden' to class list.
+*/
+
 document.getElementById('score-btn').onmouseout = function() {
 	document.getElementById('score-label').classList.add('hidden');
 };
+
+/** @function
+* This function reveals a piece of text labeling the icon above it when the users mouse hovers over.
+* Fetches button/icon by Id
+* Removes 'hidden' from class list.
+*/
 document.getElementById('comment-btn').onmouseover = function() {
 	document.getElementById('comment-label').classList.remove('hidden');
 };
+
+/** @function
+* This function hides a piece of text labeling the icon above it when the users mouse moves out.
+* Fetches button/icon by Id
+* Adds 'hidden' to class list.
+*/
 document.getElementById('comment-btn').onmouseout = function() {
 	document.getElementById('comment-label').classList.add('hidden');
 };
 
-// Setting username variable when entered...
-const userName = document.getElementById('name');
-
-//logging username to console and moving to difficulty select...
-const startBtn = document.getElementById('start-btn');
-document.getElementById('name-input').addEventListener('submit', logName);
-function logName() {
+/** @function
+* This function removes the name entry input and reveals the choose-difficulty buttons.
+* Fetches name-input form by Id.
+* Activated when user submits their name in the name-input form.
+* Plays click sound.
+* Fetches enter-name input and choose-difficulty buttons by Id
+* Adds hidden class to input while removing it from buttons.
+*/
+document.getElementById('name-input').addEventListener('submit', function() {
 	selected.play();
-	console.log(`Username: ${userName.value}`);
 	let enterName = document.getElementById('enter-name');
 	let chooseDifficulty = document.getElementById('choose-difficulty');
 	enterName.classList.add('hidden');
     chooseDifficulty.classList.remove('hidden');
-}
+});
 
-// Adding variables and event listeners for difficulty selection buttons...
-const easyBtn = document.getElementById('easy-btn');
-const normalBtn = document.getElementById('normal-btn');
-const hardBtn = document.getElementById('hard-btn');
+/**
+* Add event listeners to difficulty buttons
+* On user click activate next function modeSelected()
+*/
 easyBtn.addEventListener('click', modeSelected);
 normalBtn.addEventListener('click', modeSelected);
 hardBtn.addEventListener('click', modeSelected);
 
-// Setting the options according to mode chosen...
+/** @function
+* This function sets the gameplay values according to difficulty chosen.
+* Plays click sound.
+* Set gameState to "game".
+* Set gameMode to chosen difficulty.
+* IF easy THEN the quiz length is shortened to 5.
+* IF hard THEN the players lives are reduced to 3 // the first two "danger-squares" are revealed to reflect this.
+* exitTitle function call.
+*/
 function modeSelected(event) {
 	selected.play();
 	gameState = "game";
-	console.log(gameState);
 	let mode = event.target.value;
 	if (mode === "easy") {
-		gameMode = "Easy";
-		console.log('Easy mode started...');
+		gameMode = "easy";
 		quizLength = 5;
-		console.log(`Quiz length is now ${quizLength} questions`);
 	}
 	else if (mode === "normal") {
-		gameMode = "Normal";
-		console.log('Normal mode started...');
-		console.log(`Quiz length remains ${quizLength} questions.`);
-		console.log(`Number of lives remain at ${lives}.`);
+		gameMode = "normal";
 	}
 	else if (mode === "hard") {
-		gameMode = "Hard";
-		console.log('Hard mode started...');
+		gameMode = "hard";
 		lives = 3;
+		document.getElementById(dangerColor[5]).classList.remove('hidden');
 		document.getElementById(dangerColor[4]).classList.remove('hidden');
-		document.getElementById(dangerColor[3]).classList.remove('hidden');
-		quizLength = 10;
-		console.log(`Quiz length is now ${quizLength} questions`);
-	}
+	} exitTitle();
+}
+
+/** @funtion
+* This function removes the title screen and reveals the game screen.
+* It then calls function to begin game intro.
+*/
+function exitTitle() {
 	titleCard.style.display = "none";
 	gameCard.style.display = "flex";
 	creatureBox.classList.remove('hidden');
 	questionBox.classList.remove('hidden');
 	document.getElementById('text-box').classList.remove('hidden');
 	document.getElementById('next-btn-box').classList.remove('hidden');
-	let nexBtn04 = document.getElementById('next-btn-04');
-	nexBtn04.classList.add('hidden');
-	let nexBtn05 = document.getElementById('next-btn-05');
-	nexBtn05.classList.add('hidden');
-	let nexBtn06 = document.getElementById('next-btn-06');
-	nexBtn06.classList.add('hidden');
 	introMessage01();
 }
 
-// Adding functions for cycling through the intro messages...
+/** @function
+* This function displays a welcome message and reveals a button leading to next message.
+* Plays a click sound
+* Add message to html text box
+* Reveals button
+* Button calls next function on click.
+*/
 function introMessage01() {
 	selected.play();
 	textBox.innerHTML = `<p>Welcome ${userName.value}.</p>`;
-	let nexBtn01 = document.getElementById('next-btn-01');
-	nexBtn01.classList.remove('hidden');
-    nexBtn01.addEventListener('click', introMessage02);
+	nextBtn.classList.remove('hidden');
+    nextBtn.addEventListener('click', introMessage02);
 }
+
+/** @function
+* This function displays a welcome message and reveals a button leading to next message.
+* Plays a click sound
+* Add message to html text box
+* Button calls next function on click.
+*/
 function introMessage02() {
 	selected.play();
 	textBox.innerHTML = `<p>You have entered a world of survival trivia.</p>`;
-	let nexBtn01 = document.getElementById('next-btn-01');
-	nexBtn01.classList.add('hidden');
-	let nexBtn02 = document.getElementById('next-btn-02');
-	nexBtn02.classList.remove('hidden');
-    nexBtn02.addEventListener('click', introMessage03);
+	nextBtn.removeEventListener('click', introMessage02);
+    nextBtn.addEventListener('click', introMessage03);
 }
+
+/** @function
+* This function displays a welcome message and reveals a button leading to next message.
+* Plays a click sound
+* Add message to html text box
+* Button calls next function on click.
+*/
 function introMessage03() {
 	selected.play();
 	textBox.innerHTML = `<p>Answer questions correctly to stall the creature.</p>`;
-	let nexBtn02 = document.getElementById('next-btn-02');
-	nexBtn02.classList.add('hidden');
-	let nexBtn03 = document.getElementById('next-btn-03');
-	nexBtn03.classList.remove('hidden');
-    nexBtn03.onclick = introMessage04;
+	nextBtn.removeEventListener('click', introMessage03);
+    nextBtn.addEventListener('click', introMessage04);
 }
+
+/** @function
+* This function displays a welcome message and reveals a button leading to next message.
+* Plays a click sound
+* Add message to html text box
+* Button calls next function (shuffleQuestions) on click.
+*/
 function introMessage04() {
 	selected.play();
 	textBox.innerHTML = `<p>Good luck.</p>`;
-	let nexBtn03 = document.getElementById('next-btn-03');
-	nexBtn03.classList.add('hidden');
-	let nexBtn04 = document.getElementById('next-btn-04');
-	nexBtn04.classList.remove('hidden');
-    nexBtn04.onclick = shuffleQuestions();
-}
-// Shuffling question array...
-function shuffleQuestions() {
-	selected.play();
-	questionSet = questionList.sort(() => Math.random() - 0.5);
-	console.log(questionSet);
-	startQuiz();
+	nextBtn.removeEventListener('click', introMessage04);
+    nextBtn.addEventListener('click', shuffleQuestions);
 }
 
-// Checking if user has reached the end of the question list or lost all their lives...
-function checkPoint() {
-	let finishLine = quizLength + 1;
-	if (questionNumber === finishLine) {
-		console.log('Quiz complete.');
-		win();
-		return;
-	} else if (lives === 0){
-		console.log('Quiz lost');
-		fail();
-		return;
-	} startQuiz();
+/** @function
+* This function shuffles the question array by sorting with a random number.
+* Plays click sound.
+* Fills empty variable questionSet with questionList array in random order.
+* Calls startQuiz function.
+*/
+function shuffleQuestions() {
+	nextBtn.removeEventListener('click', shuffleQuestions);
+	selected.play();
+	questionSet = questionList.sort(() => Math.random() - 0.5);
+	startQuiz();
+	return;
 }
+
 
 // Starting Quiz
 function startQuiz() {
 	selected.play();
-	// Setting danger level variable to interact with images...
-	let dangerLvl = lives - 1;
-	document.getElementById("zombie").src = zombieImgSrc[dangerLvl];
-	document.getElementById(dangerColor[dangerLvl]).classList.remove('hidden');
-	console.log(`Question number: ${questionNumber}.`);
-	console.log(`Answer is: ${questionSet[questionNumber].answer}`);
-	
 	//Removing intro text and button...
-	let nexBtn04 = document.getElementById('next-btn-04');
-	let nexBtn05 = document.getElementById('next-btn-05');
-	let nexBtn06 = document.getElementById('next-btn-06');
-	nexBtn04.classList.add('hidden');
-	nexBtn05.classList.add('hidden');
-	nexBtn06.classList.add('hidden');
-	textBox.classList.add('hidden');
-	
+	nextBtn.classList.add('hidden');
+	textBox.classList.add('hidden');	
+	document.getElementById("zombie").src = zombieImgSrc[lives];
+	document.getElementById(dangerColor[lives]).classList.remove('hidden');
 	// Revealing question text and answer buttons...
 	let question = document.getElementById('questions');
 	let answers = document.getElementById('answers');
 	question.classList.remove('hidden');
 	answers.classList.remove('hidden');
-	
+	nextQuestion();
+	return;
+}
+
+function nextQuestion() {
+	console.log(`Question number: ${questionNumber}.`);
+	console.log(`Answer is: ${questionSet[questionNumber].answer}`);
+	let question = document.getElementById('questions');
 	// Building a question from array...
 	for (let i = 0; i < questionList.length; i++) {
 		question.innerHTML = questionSet[questionNumber].q;
@@ -395,7 +566,7 @@ function startQuiz() {
 		answerBtnB.onclick = checkAnswer;
 		answerBtnC.onclick = checkAnswer;
 		answerBtnD.onclick = checkAnswer;
-    }
+	} return;
 }
 
 // Checking answer...
@@ -423,7 +594,7 @@ function checkAnswer() {
 		console.log(`Lives currently at ${lives}.`);
 		incorrectAnswerMessage();
 	}
-	
+	return;
 }
 // Correct answer message...
 function correctAnswerMessage() {
@@ -433,13 +604,15 @@ function correctAnswerMessage() {
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
 	textBox.innerHTML = `${rightMessage[questionNumber]}`;
-	let nexBtn05 = document.getElementById('next-btn-05');
-	nexBtn05.classList.remove('hidden');
-    nexBtn05.addEventListener('click', function() {
+	nextBtn.classList.remove('hidden');
+    nextBtn.addEventListener('click', function() {
 		document.getElementById('questions').classList.remove('hidden');
 		document.getElementById('answers').classList.remove('hidden');
+		//Removing intro text and button...
+		nextBtn.classList.add('hidden');
+		textBox.classList.add('hidden');
 		checkPoint();
-	}); 
+	}); return;
 }
 // Incorrect answer message..
 function incorrectAnswerMessage() {
@@ -449,13 +622,34 @@ function incorrectAnswerMessage() {
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
 	textBox.innerHTML = `${wrongMessage[lives]}`;
-	let nexBtn06 = document.getElementById('next-btn-06');
-	nexBtn06.classList.remove('hidden');
-    nexBtn06.addEventListener('click', function() {
+	nextBtn.classList.remove('hidden');
+    nextBtn.addEventListener('click', function() {
 		document.getElementById('questions').classList.remove('hidden');
 		document.getElementById('answers').classList.remove('hidden');
+		//Removing intro text and button...
+		nextBtn.classList.add('hidden');
+		textBox.classList.add('hidden');
 		checkPoint();
-	});
+	}); return;
+}
+
+/** @function
+* This function checks to see if the user has answered the full amount of questions and calls a win or fail function if true.
+* Sets a finishLine variable by adding 1 to the quizLength
+* IF questionNumber is the same as finsishLine THEN win() function called.
+* IF lives are equal to 0 THEN fail() function called.
+* IF neither statement true THEN game continues.
+*/
+function checkPoint() {
+	let finishLine = quizLength + 1;
+	if (questionNumber === finishLine) {
+		win();
+		return;
+	} else if (lives === 0){
+		fail();
+		return;
+	} nextQuestion();
+	return;
 }
 
 // Displaying success screen...
@@ -470,6 +664,7 @@ function win() {
 	document.getElementById('win-state').classList.remove('hidden');
 	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	survivedList.push(`${userName.value} survived with a score of ${userScore}/${quizLength}`);
+	return;
 }
 
 // Displaying failure screen...
@@ -484,11 +679,12 @@ function fail() {
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	failedList.push(`${userName.value} was lost with a score of ${userScore}/${quizLength}`);
+	return;
 }
 
 // Exiting Win/Fail screens and restarting from difficulty screen...
-failReplayBtn.onclick = reStart;
-winReplayBtn.onclick = reStart;
+failReplayBtn.addEventListener('click', reStart);
+winReplayBtn.addEventListener('click', reStart);
 
 function reStart() {
 	selected.play();
@@ -499,31 +695,17 @@ function reStart() {
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
 	//Setting adjustable game variables
-	lives = 5;
-	quizLength = 10;
-	questionNumber = 1;
-	userScore = 0;
-	// Empty variable to set randomised questions in
-    questionSet = undefined;
-	// Empty variable to set game mode
-	gameMode = undefined;
+	resetVar();
 	// Resetting images
-	document.getElementById(dangerColor[0]).classList.add('hidden');
-	document.getElementById(dangerColor[1]).classList.add('hidden');
-	document.getElementById(dangerColor[2]).classList.add('hidden');
-	document.getElementById(dangerColor[3]).classList.add('hidden');
-	document.getElementById(dangerColor[4]).classList.add('hidden');
-	document.getElementById("zombie").src = zombieImgSrc[5];
-	document.getElementById('questions').classList.add('hidden');
-	document.getElementById('answers').classList.add('hidden');
-	document.getElementById('text-box').classList.add('hidden');
-	document.getElementById('next-btn-box').classList.add('hidden');
-	document.getElementById('choose-difficulty').classList.remove('hidden');
-	document.getElementById('enter-name').classList.add('hidden');
+	resetImages();
+	// Hide elements
+	hideElements();
+	
 	document.getElementById('win-state').classList.add('hidden');
 	document.getElementById('win-text').innerHTML = "";
 	document.getElementById('fail-state').classList.add('hidden');
 	document.getElementById('fail-text').innerHTML = "";
+
 }
 
 // Setting some large arrays at the bottom here, including the questions array
