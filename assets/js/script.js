@@ -602,26 +602,13 @@ function buildNextQuestion() {
 */
 function checkAnswer() {
 	selected.play();
-	// Retrieving users answer...
 	let userAnswer = this.value;
-	console.log(`User answered: ${userAnswer}`);
-	// Retrieving correct answer...
 	let correctAnswer = questionSet[questionNumber].answer;
-	console.log(`Correct answer is: ${correctAnswer}`);
-	// Comparing the two answers...
 	if (userAnswer == correctAnswer) {
-		console.log('User answered correctly.');
-		console.log('The Creature is stalled.');
-		console.log('No lives lost.');
-		console.log(`Lives currently at ${lives}.`);
 		userScore++;
 		correctAnswerMessage();
 	} else {
-		console.log('User answered incorrectly.');
-		console.log('The creature takes a step forward.');
 		lives--;
-		console.log('Lives reduced by 1.');
-		console.log(`Lives currently at ${lives}.`);
 		incorrectAnswerMessage();
 	}
 }
@@ -692,11 +679,8 @@ function reStart() {
 	infoCard.style.display = "none";
 	resultsCard.style.display = "none";
 	scoreCard.style.display = "none";
-	//Setting adjustable game variables
 	resetVar();
-	// Resetting images
 	resetImages();
-	// Hide elements
 	hideElements();
 	document.getElementById('win-state').classList.add('hidden');
 	document.getElementById('win-text').innerHTML = "";
