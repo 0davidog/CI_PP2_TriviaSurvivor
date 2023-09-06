@@ -530,13 +530,13 @@ function shuffleQuestions() {
 	selected.play();
 	questionSet = questionList.sort(() => Math.random() - 0.5);
 	startQuiz();
-	return;
 }
 
 
 // Starting Quiz
 function startQuiz() {
 	selected.play();
+	nextBtn.removeEventListener('click', startQuiz);
 	//Removing intro text and button...
 	nextBtn.classList.add('hidden');
 	textBox.classList.add('hidden');	
@@ -548,15 +548,23 @@ function startQuiz() {
 	question.classList.remove('hidden');
 	answers.classList.remove('hidden');
 	nextQuestion();
-	return;
 }
 
+
 function nextQuestion() {
-	console.log(`Question number: ${questionNumber}.`);
-	console.log(`Answer is: ${questionSet[questionNumber].answer}`);
-	let question = document.getElementById('questions');
-	// Building a question from array...
-	for (let i = 0; i < questionList.length; i++) {
+	let finishLine = quizLength + 1;
+	if (questionNumber === finishLine) {
+		win();
+		return;
+	} else if (lives === 0){
+		fail();
+		return;
+	} else {
+		console.log(`Question number: ${questionNumber}.`);
+		console.log(`Answer is: ${questionSet[questionNumber].answer}`);
+		let question = document.getElementById('questions');
+		// Building a question from array...
+		for (let i = 0; i < questionList.length; i++) {
 		question.innerHTML = questionSet[questionNumber].q;
 		answerBtnA.innerHTML = questionSet[questionNumber].a;
 		answerBtnB.innerHTML = questionSet[questionNumber].b;
@@ -566,8 +574,10 @@ function nextQuestion() {
 		answerBtnB.onclick = checkAnswer;
 		answerBtnC.onclick = checkAnswer;
 		answerBtnD.onclick = checkAnswer;
-	} return;
+	}
+	}
 }
+
 
 // Checking answer...
 function checkAnswer() {
@@ -594,7 +604,6 @@ function checkAnswer() {
 		console.log(`Lives currently at ${lives}.`);
 		incorrectAnswerMessage();
 	}
-	return;
 }
 // Correct answer message...
 function correctAnswerMessage() {
@@ -605,14 +614,7 @@ function correctAnswerMessage() {
 	textBox.classList.remove('hidden');
 	textBox.innerHTML = `${rightMessage[questionNumber]}`;
 	nextBtn.classList.remove('hidden');
-    nextBtn.addEventListener('click', function() {
-		document.getElementById('questions').classList.remove('hidden');
-		document.getElementById('answers').classList.remove('hidden');
-		//Removing intro text and button...
-		nextBtn.classList.add('hidden');
-		textBox.classList.add('hidden');
-		checkPoint();
-	}); return;
+    nextBtn.addEventListener('click', startQuiz);
 }
 // Incorrect answer message..
 function incorrectAnswerMessage() {
@@ -623,14 +625,7 @@ function incorrectAnswerMessage() {
 	textBox.classList.remove('hidden');
 	textBox.innerHTML = `${wrongMessage[lives]}`;
 	nextBtn.classList.remove('hidden');
-    nextBtn.addEventListener('click', function() {
-		document.getElementById('questions').classList.remove('hidden');
-		document.getElementById('answers').classList.remove('hidden');
-		//Removing intro text and button...
-		nextBtn.classList.add('hidden');
-		textBox.classList.add('hidden');
-		checkPoint();
-	}); return;
+    nextBtn.addEventListener('click', startQuiz);
 }
 
 /** @function
@@ -640,17 +635,7 @@ function incorrectAnswerMessage() {
 * IF lives are equal to 0 THEN fail() function called.
 * IF neither statement true THEN game continues.
 */
-function checkPoint() {
-	let finishLine = quizLength + 1;
-	if (questionNumber === finishLine) {
-		win();
-		return;
-	} else if (lives === 0){
-		fail();
-		return;
-	} nextQuestion();
-	return;
-}
+
 
 // Displaying success screen...
 function win() {
@@ -663,7 +648,7 @@ function win() {
 	resultsCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
 	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
-	survivedList.push(`${userName.value} survived with a score of ${userScore}/${quizLength}`);
+	survivedList.push(`${userName.value} survived with a score of ${userScore}/${quizLength}<br>`);
 	return;
 }
 
@@ -678,7 +663,7 @@ function fail() {
 	resultsCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
-	failedList.push(`${userName.value} was lost with a score of ${userScore}/${quizLength}`);
+	failedList.push(`${userName.value} was lost with a score of ${userScore}/${quizLength}<br>`);
 	return;
 }
 
