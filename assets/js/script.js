@@ -711,14 +711,14 @@ const wrongMessage = [
 	`<p>Wrong answer.<br>The creature takes a step forward.<br>Be careful.</p>`,
 ];
 const questionList = [
-	{
+{
 		q: `"They're coming to get you Barbra" is a line from which film?`,
 		a: "Night of the Living Dead (1968)",
 		b: "Shaun of the Dead (2004)",
 		c: "Dawn of the Dead (1978)",
 		d: "Survival of the Dead (2009)",
 		answer: "A",
-	}, 
+}, 
 	{
 		q: `Which of these films was not directed by George A. Romero`,
 		a: "Dawn of the Dead (1978)",
@@ -726,7 +726,7 @@ const questionList = [
 		c: "Diary of the Dead (2007)",
 		d: "City of the Living Dead (1980)",
 		answer: "D",
-	},
+},
 	{
 		q: `"When there's no more room in hell, the dead will walk the Earth" is a line from which film?`,
 		a: "Night of the Living Dead (1968)",
@@ -734,7 +734,7 @@ const questionList = [
 		c: "City of the Living Dead (1980)",
 		d: "Day of the Dead (1985)",
 		answer: "B",
-	},
+},
 	{
 		q: `"SCREAM So They can Find You!!" Is a tagline from which film?`,
 		a: "Day of the Dead (1985)",
@@ -742,15 +742,15 @@ const questionList = [
 		c: "Tombs of the Blind Dead (1972)",
 		d: "The Return of the Living Dead (1985)",
 		answer: "C",
-	},
+},
 	{
 		q: `Which film has the alternate title "The Living Dead at Manchester Morgue"`,
 		a: "Tombs of the Blind Dead (1972)",
-		b: "Return of the Livind Dead III (1993)",
+		b: "Return of the Living Dead III (1993)",
 		c: "City of the Living Dead (1980)",
 		d: "Let Sleeping Corpses Lie (1974)",
 		answer: "D",
-	},
+},
 	{
 		q: `"Julie, are you eating him? You should stop it." Is a line from which film?`,
 		a: "Return of the Living Dead III (1993)",
@@ -758,7 +758,7 @@ const questionList = [
 		c: "I Walked with a Zombie (1943)",
 		d: "Diary of the Dead (2007)",
 		answer: "A",
-	},
+},
 	{
 		q: `Which zombie film has the characters named after their home states?`,
 		a: "City of the Living Dead (1980)",
@@ -766,7 +766,7 @@ const questionList = [
 		c: "Return of the Living Dead: Part II (1988)",
 		d: "House by the Cemetery (1981)",
 		answer: "B",
-	},
+},
 	{
 		q: `Which film kicked off a series in which the zombies hungered specifically for brains?`,
 		a: "City of the Living Dead (1980)",
@@ -774,7 +774,7 @@ const questionList = [
 		c: "The Return of the Living Dead (1985)",
 		d: "28 Days Later (2002)",
 		answer: "C",
-	},
+},
 	{
 		q: `In which film does a zombie say the line "send more paramedics" on a CB radio?`,
 		a: "Evil Dead II (1987)",
@@ -782,7 +782,7 @@ const questionList = [
 		c: "Zombie for Sale (2019)",
 		d: "The Return of the Living Dead (1985)",
 		answer: "D",
-	},
+},
 	{
 		q: `"We're coming to get you, Barbara!" Is a line from which film?`,
 		a: "Shaun of the Dead (2004)",
@@ -790,15 +790,15 @@ const questionList = [
 		c: "Return of the Living Dead III (1993)",
 		d: "Undead (2003)",
 		answer: "A",
-	},
+},
 	{
-		q: `Which film kicked of a series in which a zombie outbreak was caused by the T-Virus`,
+		q: `Which film kicked off a series in which a zombie outbreak was caused by the T-Virus`,
 		a: "Island of the Dead (2000)",
 		b: "Resident Evil (2002)",
 		c: "Silent Hill (2006)",
 		d: "House of the Dead (2003)",
 		answer: "B",
-	},
+},
 	{
 		q: `Which of these zombie classics have not yet been remade?`,
 		a: "Night of the Living Dead (1968)",
@@ -806,7 +806,7 @@ const questionList = [
 		c: "The Return of the Living Dead (1985)",
 		d: "Day of the Dead (1985)",
 		answer: "C",
-	},
+},
 	{
 		q: `The awakening of Nazi Zombies on a mountain is a particular problem in which of these films?`,
 		a: "Zombie Holocaust (1980)",
@@ -814,7 +814,7 @@ const questionList = [
 		c: "Army of the Dead (2021)",
 		d: "Dead Snow (2009)",
 		answer: "D",
-	},
+},
 	{
 		q: `Which of these film featured Bub, a tamed zombie.`,
 		a: "Day of the Dead (1985)",
@@ -822,7 +822,7 @@ const questionList = [
 		c: "Fido (2006)",
 		d: "Survival of the Dead (2009)",
 		answer: "A",
-	},
+},
 	{
 		q: `Which of these films was based on the novel of the same name by author Max Brooks?`,
 		a: "Pontypool (2008)",
@@ -830,7 +830,7 @@ const questionList = [
 		c: "Resident Evil (2003)",
 		d: "Warm Bodies (2013)",
 		answer: "B",
-	},
+},
 	{
 		q: `A zombie vs a live shark describes a scene from which film?`,
 		a: "Cowboys vs. Zombies (2014)",
@@ -838,7 +838,7 @@ const questionList = [
 		c: "Zombie Flesh Eaters (1979)",
 		d: "Re-Animator (1985)",
 		answer: "C",
-	},
+},
 	{
 		q: `Which of these films is set primarily in the Monroeville Mall?`,
 		a: "#Alive (2020)",
@@ -846,7 +846,7 @@ const questionList = [
 		c: "Zom 100: Bucket List of the Dead (2023)",
 		d: "Dawn of the Dead (1978)",
 		answer: "D",
-	},
+},
 	{
 		q: `Which of these films is based on a popular zombie video game series?`,
 		a: "Resident Evil (2002)",
@@ -854,15 +854,15 @@ const questionList = [
 		c: "Tombs of the Blind Dead (1972)",
 		d: "The Evil Dead (1981)",
 		answer: "A",
-	},
+},
 	{
-		q: `Which of these films is not real? ...Yet.`,
+		q: `Which of these films is not real? ... Yet.`,
 		a: "Zombies vs. Strippers (2012)",
 		b: "Clowns vs. Zombies (2014)",
 		c: "Cockneys vs. Zombies (2012)",
 		d: "Cowboys vs, Zombies (2014)",
 		answer: "B",
-	},
+},
 	{
 		q: `Which of these zombie outbreak films stars actor Brad Pitt?`,
 		a: "Maggie (2015)",
@@ -870,7 +870,7 @@ const questionList = [
 		c: "World War Z (2013)",
 		d: "Warm Bodies (2013)",
 		answer: "C",
-	},
+},
 	{
 		q: `Which of these films feature a zombie outbreak on a train in South Korea?`,
 		a: "3:10 to Yuma (2007)",
@@ -878,15 +878,15 @@ const questionList = [
 		c: "Terror Train (1980)",
 		d: "Train to Busan (2016)",
 		answer: "D",
-	},
+},
 	{
-		q: `In which of these films is a zombie virus trasmitted through language?`,
+		q: `In which of these films is a zombie virus transmitted through language?`,
 		a: "Pontypool (2008)",
 		b: "The Astro-Zombies (1968)",
 		c: "The Plague of the Zombies (1966)",
 		d: "Resident Evil: Death Island (2023)",
 		answer: "A",
-	}, ];
+},];
 
 let survivedList = [
 	`Barry survived with a score of 8/10<br>`
