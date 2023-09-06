@@ -16,9 +16,6 @@ const creatureBox = document.getElementById('creature-box');
 const questionBox = document.getElementById('question-box');
 const textBox = document.getElementById('text-box');
 
-// Start button
-const startBtn = document.getElementById('start-btn');
-
 // Difficulty buttons
 const easyBtn = document.getElementById('easy-btn');
 const normalBtn = document.getElementById('normal-btn');
@@ -51,7 +48,7 @@ let userName = document.getElementById('name');
 //Setting adjustable game variables
 let lives = 5;
 let quizLength = 10;
-let questionNumber = 1;
+let questionNumber = 0;
 let userScore = 0;
 
 // Empty variable to set randomised questions in
@@ -152,7 +149,7 @@ document.getElementById('home-btn').onclick = function() {
 function resetVar() {
 	lives = 5;
 	quizLength = 10;
-	questionNumber = 1;
+	questionNumber = 0;
 	userScore = 0;
     questionSet = undefined;
 	gameMode = undefined;
@@ -249,9 +246,25 @@ document.getElementById('score-btn').onclick = function() {
 	titleCard.style.display = "none";
 	resultsCard.style.display = "none";
 	commentCard.style.display = "none";
-	document.getElementById('survivors').innerHTML = survivedList.join(``);
-	document.getElementById('failures').innerHTML = failedList.join(``);
+	displayScores();
 };
+
+/** @function
+* This function displays the scores from the relevant arrays.
+* The FOR loop dispays each item from the array by adding them with the += operator to the div referenced by id.
+*/
+function displayScores() {
+	let survived = document.getElementById('survivors');
+	survived.innerHTML = ''; 
+	for (let i = 0; i < survivedList.length; i++) {
+    survived.innerHTML += survivedList[i] + '<br>';
+	}
+	let lost = document.getElementById('failures');
+	lost.innerHTML = '';
+	for (let i = 0; i < failedList.length; i++) {
+    lost.innerHTML += failedList[i] + '<br>';
+	}
+}
 
 /** @function
 * This function takes the user to the comment-card/feedback form.
@@ -533,7 +546,9 @@ function shuffleQuestions() {
 }
 
 
-// Starting Quiz
+/** @function
+* This function sets up the quiz area ready for the first/next game.
+*/
 function startQuiz() {
 	selected.play();
 	nextBtn.removeEventListener('click', startQuiz);
@@ -550,36 +565,41 @@ function startQuiz() {
 	nextQuestion();
 }
 
-
+/** @function
+* This function checks if the user has reached the end of the quiz or loads the next question.
+*/
 function nextQuestion() {
-	let finishLine = quizLength + 1;
-	if (questionNumber === finishLine) {
+	if (questionNumber === quizLength) {
 		win();
 		return;
 	} else if (lives === 0){
 		fail();
 		return;
 	} else {
-		console.log(`Question number: ${questionNumber}.`);
-		console.log(`Answer is: ${questionSet[questionNumber].answer}`);
-		let question = document.getElementById('questions');
-		// Building a question from array...
-		for (let i = 0; i < questionList.length; i++) {
-		question.innerHTML = questionSet[questionNumber].q;
-		answerBtnA.innerHTML = questionSet[questionNumber].a;
-		answerBtnB.innerHTML = questionSet[questionNumber].b;
-		answerBtnC.innerHTML = questionSet[questionNumber].c;
-		answerBtnD.innerHTML = questionSet[questionNumber].d;
-		answerBtnA.onclick = checkAnswer;
-		answerBtnB.onclick = checkAnswer;
-		answerBtnC.onclick = checkAnswer;
-		answerBtnD.onclick = checkAnswer;
-	}
+		questionNumber++;
+		buildNextQuestion();
 	}
 }
 
+/** @function
+* This function fills the question area and buttons with values from the question set depending on the the current question number. 
+*/
+function buildNextQuestion() {
+	let questions = document.getElementById('questions');
+	questions.innerHTML = questionSet[questionNumber].q;
+	answerBtnA.innerHTML = questionSet[questionNumber].a;
+	answerBtnB.innerHTML = questionSet[questionNumber].b;
+	answerBtnC.innerHTML = questionSet[questionNumber].c;
+	answerBtnD.innerHTML = questionSet[questionNumber].d;
+	answerBtnA.onclick = checkAnswer;
+	answerBtnB.onclick = checkAnswer;
+	answerBtnC.onclick = checkAnswer;
+	answerBtnD.onclick = checkAnswer;
+}
 
-// Checking answer...
+/**
+*
+*/
 function checkAnswer() {
 	selected.play();
 	// Retrieving users answer...
@@ -605,10 +625,12 @@ function checkAnswer() {
 		incorrectAnswerMessage();
 	}
 }
-// Correct answer message...
+
+/** @function
+*
+*/
 function correctAnswerMessage() {
 	correctSound.play();
-	questionNumber++;
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
@@ -616,10 +638,12 @@ function correctAnswerMessage() {
 	nextBtn.classList.remove('hidden');
     nextBtn.addEventListener('click', startQuiz);
 }
-// Incorrect answer message..
+
+/** @function
+*
+*/
 function incorrectAnswerMessage() {
 	creatureStep.play();
-	questionNumber++;
 	document.getElementById('questions').classList.add('hidden');
 	document.getElementById('answers').classList.add('hidden');
 	textBox.classList.remove('hidden');
@@ -627,15 +651,6 @@ function incorrectAnswerMessage() {
 	nextBtn.classList.remove('hidden');
     nextBtn.addEventListener('click', startQuiz);
 }
-
-/** @function
-* This function checks to see if the user has answered the full amount of questions and calls a win or fail function if true.
-* Sets a finishLine variable by adding 1 to the quizLength
-* IF questionNumber is the same as finsishLine THEN win() function called.
-* IF lives are equal to 0 THEN fail() function called.
-* IF neither statement true THEN game continues.
-*/
-
 
 // Displaying success screen...
 function win() {
@@ -649,7 +664,6 @@ function win() {
 	document.getElementById('win-state').classList.remove('hidden');
 	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	survivedList.push(`${userName.value} survived with a score of ${userScore}/${quizLength}<br>`);
-	return;
 }
 
 // Displaying failure screen...
@@ -664,7 +678,6 @@ function fail() {
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	failedList.push(`${userName.value} was lost with a score of ${userScore}/${quizLength}<br>`);
-	return;
 }
 
 // Exiting Win/Fail screens and restarting from difficulty screen...
@@ -685,7 +698,6 @@ function reStart() {
 	resetImages();
 	// Hide elements
 	hideElements();
-	
 	document.getElementById('win-state').classList.add('hidden');
 	document.getElementById('win-text').innerHTML = "";
 	document.getElementById('fail-state').classList.add('hidden');
@@ -696,7 +708,6 @@ function reStart() {
 // Setting some large arrays at the bottom here, including the questions array
 const rightMessage = [
 	`right answer 0`,
-	`right answer 1`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done, keep it up!</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Keep going!.</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>So far so good.</p>`,
