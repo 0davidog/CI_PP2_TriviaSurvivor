@@ -548,16 +548,19 @@ function shuffleQuestions() {
 
 /** @function
 * This function sets up the quiz area ready for the first/next game.
+* plays click sound
+* removes previous event listener for next button
+* hides the text box
+* Displays the zombie image in accordance with the users current lives (0-5)
+* Reveals question and answer divs by fetching from their Id
 */
 function startQuiz() {
 	selected.play();
 	nextBtn.removeEventListener('click', startQuiz);
-	//Removing intro text and button...
 	nextBtn.classList.add('hidden');
 	textBox.classList.add('hidden');	
 	document.getElementById("zombie").src = zombieImgSrc[lives];
 	document.getElementById(dangerColor[lives]).classList.remove('hidden');
-	// Revealing question text and answer buttons...
 	let question = document.getElementById('questions');
 	let answers = document.getElementById('answers');
 	question.classList.remove('hidden');
@@ -566,15 +569,18 @@ function startQuiz() {
 }
 
 /** @function
-* This function checks if the user has reached the end of the quiz or loads the next question.
+* This function checks if the user has reached the end of the quiz before loading the next question.
+* IF the question number is equal to quiz length
+* THEN calls function that displays win screen.
+* ELSE IF lives have reached zero
+* THEN calls function to display lose screen.
+* IF neither applies THEN increments question number and calls function to display next question.
 */
 function nextQuestion() {
 	if (questionNumber === quizLength) {
 		win();
-		return;
 	} else if (lives === 0){
 		fail();
-		return;
 	} else {
 		questionNumber++;
 		buildNextQuestion();
@@ -583,6 +589,10 @@ function nextQuestion() {
 
 /** @function
 * This function fills the question area and buttons with values from the question set depending on the the current question number. 
+* fetches questions div by id
+* populates question div and answer buttons with questionSet
+* (question set is the questionList array shuffled by math.Random)
+* Sets answer buttons to respond to mouse click by calling checkAnswer function.
 */
 function buildNextQuestion() {
 	let questions = document.getElementById('questions');
@@ -597,8 +607,13 @@ function buildNextQuestion() {
 	answerBtnD.onclick = checkAnswer;
 }
 
-/**
-*
+/** @function
+* This function checks the answer the user has just mouse-clicked and checks it against the right answer
+* retrieves the users answer through 'this.value' method
+* retrives correct answer from questionList array.
+* IF both match
+* THEN user score incremented and function called to display correct answer message.
+* ELSE lives are decremented and function called to display incorrect answer message.
 */
 function checkAnswer() {
 	selected.play();
@@ -614,7 +629,7 @@ function checkAnswer() {
 }
 
 /** @function
-*
+* This function displays a message after a correct answer.
 */
 function correctAnswerMessage() {
 	correctSound.play();
@@ -627,7 +642,7 @@ function correctAnswerMessage() {
 }
 
 /** @function
-*
+* This function displays a message after an incorrect answer.
 */
 function incorrectAnswerMessage() {
 	creatureStep.play();
@@ -639,7 +654,9 @@ function incorrectAnswerMessage() {
     nextBtn.addEventListener('click', startQuiz);
 }
 
-// Displaying success screen...
+/** @function
+* This function displays the win result screen.
+*/
 function win() {
 	gameState = "results";
 	textBox.classList.add('hidden;');
@@ -651,9 +668,12 @@ function win() {
 	document.getElementById('win-state').classList.remove('hidden');
 	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	survivedList.push(`${userName.value} survived with a score of ${userScore}/${quizLength}<br>`);
+	winReplayBtn.addEventListener('click', reStart);
 }
 
-// Displaying failure screen...
+/** @function
+* This function displays the fail result screen.
+*/
 function fail() {
 	gameState = "results";
 	textBox.classList.add('hidden');
@@ -665,12 +685,12 @@ function fail() {
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	failedList.push(`${userName.value} was lost with a score of ${userScore}/${quizLength}<br>`);
+	failReplayBtn.addEventListener('click', reStart);
 }
 
-// Exiting Win/Fail screens and restarting from difficulty screen...
-failReplayBtn.addEventListener('click', reStart);
-winReplayBtn.addEventListener('click', reStart);
-
+/** @function
+* This function resets the game variable and takes user to difficulty selection screen.
+*/
 function reStart() {
 	selected.play();
 	gameState = "home";
@@ -689,7 +709,9 @@ function reStart() {
 
 }
 
-// Setting some large arrays at the bottom here, including the questions array
+// Setting some large arrays at the bottom here...
+
+//Correct Answer Messages
 const rightMessage = [
 	`right answer 0`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done, keep it up!</p>`,
@@ -703,6 +725,8 @@ const rightMessage = [
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done, you've almost escaped!</p>`,
 	`<p>Correct answer.<br>The creature has been completely stalled by your knowledge.<br>Great work, you made it!</p>`,
 ];
+
+//Wrong Answer Messages
 const wrongMessage = [
 	`<p>Wrong answer.<br>The creature takes a step forward.<br>Sorry, there are no more lives left.</p>`,
 	`<p>Wrong answer.<br>The creature takes a step forward.<br>Don't give up!</p>`,
@@ -710,6 +734,8 @@ const wrongMessage = [
 	`<p>Wrong answer.<br>The creature takes a step forward.<br><em>It's coming to get you!</em></p>`,
 	`<p>Wrong answer.<br>The creature takes a step forward.<br>Be careful.</p>`,
 ];
+
+// Question List
 const questionList = [
 {
 		q: `"They're coming to get you Barbra" is a line from which film?`,
@@ -888,9 +914,12 @@ const questionList = [
 		answer: "A",
 },];
 
+// Win scores
 let survivedList = [
-	`Barry survived with a score of 8/10<br>`
+	`Barry survived with a score of 8/10<br>`,
 ];
+
+// Fail Scores
 let failedList = [
-	`Albert was lost with a score of 5/10<br>`
+	`Albert was lost with a score of 5/10<br>`,
 ];
