@@ -706,7 +706,6 @@ function reStart() {
 	document.getElementById('win-text').innerHTML = "";
 	document.getElementById('fail-state').classList.add('hidden');
 	document.getElementById('fail-text').innerHTML = "";
-
 }
 
 // Setting some large arrays at the bottom here...
@@ -715,7 +714,7 @@ function reStart() {
 const rightMessage = [
 	`right answer 0`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Well done, keep it up!</p>`,
-	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Keep going!.</p>`,
+	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>Keep going!</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>So far so good.</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>You can do it!</p>`,
 	`<p>Correct answer.<br>The creature is stalled by your knowledge.<br>You're doing great!</p>`,
@@ -746,7 +745,7 @@ const questionList = [
 		answer: "A",
 }, 
 	{
-		q: `Which of these films was not directed by George A. Romero`,
+		q: `Which one of these films was not directed by George A. Romero?`,
 		a: "Dawn of the Dead (1978)",
 		b: "Land of the Dead (2005)",
 		c: "Diary of the Dead (2007)",
@@ -818,7 +817,7 @@ const questionList = [
 		answer: "A",
 },
 	{
-		q: `Which film kicked off a series in which a zombie outbreak was caused by the T-Virus`,
+		q: `Which film kicked off a series in which a zombie outbreak was caused by the T-Virus?`,
 		a: "Island of the Dead (2000)",
 		b: "Resident Evil (2002)",
 		c: "Silent Hill (2006)",
@@ -842,7 +841,7 @@ const questionList = [
 		answer: "D",
 },
 	{
-		q: `Which of these film featured Bub, a tamed zombie.`,
+		q: `Which one of these films featured Bub, a tamed zombie?`,
 		a: "Day of the Dead (1985)",
 		b: "Warm Bodies (2013)",
 		c: "Fido (2006)",
@@ -850,7 +849,7 @@ const questionList = [
 		answer: "A",
 },
 	{
-		q: `Which of these films was based on the novel of the same name by author Max Brooks?`,
+		q: `Which one of these films was based on the novel of the same name by author Max Brooks?`,
 		a: "Pontypool (2008)",
 		b: "World War Z (2013)",
 		c: "Resident Evil (2003)",
@@ -874,7 +873,7 @@ const questionList = [
 		answer: "D",
 },
 	{
-		q: `Which of these films is based on a popular zombie video game series?`,
+		q: `Which one of these films is based on a popular zombie video game series?`,
 		a: "Resident Evil (2002)",
 		b: "Army of the Dead (2021)",
 		c: "Tombs of the Blind Dead (1972)",
@@ -882,7 +881,7 @@ const questionList = [
 		answer: "A",
 },
 	{
-		q: `Which of these films is not real? ... Yet.`,
+		q: `Which one of these films is not real? ... Yet.`,
 		a: "Zombies vs. Strippers (2012)",
 		b: "Clowns vs. Zombies (2014)",
 		c: "Cockneys vs. Zombies (2012)",
@@ -890,7 +889,7 @@ const questionList = [
 		answer: "B",
 },
 	{
-		q: `Which of these zombie outbreak films stars actor Brad Pitt?`,
+		q: `Which one of these zombie outbreak films stars actor Brad Pitt?`,
 		a: "Maggie (2015)",
 		b: "Pride and Prejudice and Zombies (2016)",
 		c: "World War Z (2013)",
@@ -898,7 +897,7 @@ const questionList = [
 		answer: "C",
 },
 	{
-		q: `Which of these films feature a zombie outbreak on a train in South Korea?`,
+		q: `Which one of these films features a zombie outbreak on a train in South Korea?`,
 		a: "3:10 to Yuma (2007)",
 		b: "The Midnight Meat Train (2008)",
 		c: "Terror Train (1980)",
