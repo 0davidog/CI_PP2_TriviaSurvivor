@@ -178,6 +178,16 @@ A custom 404 error page was created in the style of the rest of the site with a 
 
 ## Validation
 
+### HTML Validator
+
+![Screenshot 2023-09-10 at 18-10-12 Showing results for https __0davidog github io_trivia-survivor_ - Nu Html Checker](https://github.com/0davidog/trivia-survivor/assets/135815736/de0e9a4d-34db-4339-b9e0-9a2d0b36a41c)
+
+### CSS Validator
+
+![Screenshot 2023-09-10 at 18-10-59 W3C CSS Validator results for https __0davidog github io_trivia-survivor_ (CSS level 3 SVG)](https://github.com/0davidog/trivia-survivor/assets/135815736/9ec1c555-4c03-4466-95be-684a658eeb68)
+
+[Full page view](https://github.com/0davidog/trivia-survivor/assets/135815736/55011400-9ae2-4deb-a648-35d7c02624c7)
+
 ### JS hint
 
 Copy and pasted the javascript file into [jshint](https://jshint.com/), a web service that checks Java script code for errors and recieved no errors or warnings.
@@ -186,12 +196,56 @@ Copy and pasted the javascript file into [jshint](https://jshint.com/), a web se
 
 ### Lighthouse
 
-## Tech Used
+![lighthouse](https://github.com/0davidog/trivia-survivor/assets/135815736/a900de4a-261f-4e0a-ac23-96f121bc97e0)
 
 ## Deployment
+
+The website is deployed on [Github](https://github.com/) using GithubPages. 
+The instructions for this are as follows:
+
+![deployment-screen-01](https://github.com/0davidog/trivia-survivor/assets/135815736/abf43655-cfd5-48a3-ab18-c95950ed0594)
+![deployment-screen-02](https://github.com/0davidog/trivia-survivor/assets/135815736/f54c4681-0f18-4ffc-9774-b70a621b655a)
+![deployment-screen-03](https://github.com/0davidog/trivia-survivor/assets/135815736/9dcf6975-fbbf-4539-a7d4-b235a6168978)
+![deployment-screen-04](https://github.com/0davidog/trivia-survivor/assets/135815736/ea5eb167-14d3-4824-9525-5cac1eea83d7)
+![deployment-screen-05](https://github.com/0davidog/trivia-survivor/assets/135815736/43940cb1-c4fb-4c78-84a5-af396574dd50)
+![deployment-screen-06](https://github.com/0davidog/trivia-survivor/assets/135815736/f7ab205c-4825-4550-b2cb-0f4f08887722)
+![deployment-screen-07](https://github.com/0davidog/trivia-survivor/assets/135815736/ba228a79-020f-4c26-9fed-199546326b1c)
 
 ## Credits
 
 ### Content
 
-### Acknowledgments
+- The Icons in the Nav bar were sourced from the [Font Awesome website](https://fontawesome.com/).
+- [Multi Device Image in README generated with 'Am I Responsive?'](https://ui.dev/amiresponsive)
+- [Table of contents in README generated with markdown-toc](http://ecotrust-canada.github.io/markdown-toc/')
+- [Colour palate image in README generated with coolors.co](https://coolors.co/)
+- [Favicon icons and code courtesy of favicon.io](https://favicon.io/favicon-converter/)
+
+### Languages Used
+
+- HTML
+- CSS
+- Javascript
+
+### Tech Used
+
+- Adobe Dreamweaver
+- Adobe Photoshop (for images and wire-frames)
+- [Git](https://git-scm.com/)
+- [Github](https://github.com/)
+
+#### Media
+
+All images and video used are the author's own work.
+
+#### Acknowledgements
+
+- Much of the learning and code framwork is inspired by the html and css essentials and Love-Maths modules in the Code Institute Software Development Course.
+
+#### Mentor
+
+Malia Havlicek
+
+#### Author
+
+David C. O'Gara 2023
