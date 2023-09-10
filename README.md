@@ -122,6 +122,17 @@ Fixed to the top of the screen is the navigation bar containing buttons that tak
 
 ![nav-bar-screen-06](https://github.com/0davidog/trivia-survivor/assets/135815736/da26059a-a480-4567-9bc0-1c21ac51184e)
 
+### Info Page
+
+![info-page-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/ee771f5b-8622-4fe5-a8b0-3f5b97cc2f3f)
+
+### Score Page
+
+![scores-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/7e1ebaa0-ca1b-4bc8-92c8-d331339a37fd)
+
+### Feedback Form
+
+![contact-form-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/97f5a864-5334-4b3c-93e4-dc91b586fb87)
 
 ### 404 Error Page
 
