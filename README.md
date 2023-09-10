@@ -1,14 +1,14 @@
 # Trivia Survivor 
 
+_Author: David O'Gara_
+
 Trivia Survivor is a movie trivia quiz game with an element of danger. Players will test their knowledge of movie trivia as a creature makes its way towards them. Correct answers will sall the creatures approach while incorrect answers will allow it to advance. When too many wrong answers have been submitted the game ends in failure so to survive players must answer enough trivia questions correctly.
+
+![cover-image](https://github.com/0davidog/trivia-survivor/assets/135815736/307d4b6e-a9f1-485d-942b-59f3d14bc705)
 
 ## Demo of the Dead
 
 This version, created as part of an course project will be subtitled 'Demo of the Dead' and focus its subject matter on the zombie sub-genre of horror movies as this will allow for a scope that fits within the time frame given for development.
-
-### Author
-
-David C. O'Gara
 
 ### Repository
 
