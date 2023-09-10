@@ -30,6 +30,12 @@ h1 {
 p {
 	padding: 10px;
 }
+a {
+	color: #808080;
+}
+a:hover {
+	color: #9E0B0F;
+}
 /* Styling all buttons... */
 button {
 	background-color: #000000;
@@ -331,6 +337,14 @@ i:hover {
 }
 #score-btn-box {
 	width: 100%;
+}
+
+/* Styling the 404 page */
+#error-box {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
 }
 /* Setting media query for portrait/landscape modes */
 @media screen and (orientation: landscape) {
