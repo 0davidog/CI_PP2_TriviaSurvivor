@@ -164,7 +164,8 @@ function resetImages() {
 	document.getElementById(dangerColor[2]).classList.add('hidden');
 	document.getElementById(dangerColor[3]).classList.add('hidden');
 	document.getElementById(dangerColor[4]).classList.add('hidden');
-	document.getElementById("zombie").src = zombieImgSrc[5];
+	document.getElementById(dangerColor[5]).classList.add('hidden');
+	document.getElementById("zombie").src = zombieImgSrc[0];
 }
 
 /** @function
