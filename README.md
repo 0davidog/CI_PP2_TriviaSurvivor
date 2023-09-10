@@ -18,6 +18,61 @@ This version, created as part of an course project will be subtitled 'Demo of th
 
 [Trivia Survivor](https://0davidog.github.io/trivia-survivor/)
 
+## Contents
+
+- [Trivia Survivor](#trivia-survivor)
+  * [Demo of the Dead](#demo-of-the-dead)
+    + [Repository](#repository)
+    + [Deployed Site](#deployed-site)
+  * [External user goal](#external-user-goal)
+  * [Site owner goal](#site-owner-goal)
+  * [Target Audience](#target-audience)
+  * [User Story](#user-story)
+  * [Site Owner Story](#site-owner-story)
+  * [Design](#design)
+    + [Wireframes](#wireframes)
+    + [Storyboard](#storyboard)
+    + [Colour Scheme](#colour-scheme)
+    + [Font-Family](#font-family)
+  * [Features](#features)
+    + [Title Screen](#title-screen)
+    + [Select Difficulty](#select-difficulty)
+    + [Game Screen](#game-screen)
+    + [Navigation bar](#navigation-bar)
+    + [Info Page](#info-page)
+    + [Score Page](#score-page)
+    + [Feedback Form](#feedback-form)
+    + [404 Error Page](#404-error-page)
+    + [Future Features](#future-features)
+  * [Testing](#testing)
+    + [Manual Tests](#manual-tests)
+      - [Buttons](#buttons)
+    + [Game Walkthrough](#game-walkthrough)
+      - [Scenario 1](#scenario-1)
+      - [Scenario 2](#scenario-2)
+    + [Contact Form Test](#contact-form-test)
+    + [Initial Screen Size Tests](#initial-screen-size-tests)
+    + [Browser and OS testing](#browser-and-os-testing)
+    + [Market Research](#market-research)
+  * [Validation](#validation)
+    + [HTML Validator](#html-validator)
+    + [CSS Validator](#css-validator)
+    + [JS hint](#js-hint)
+    + [Lighthouse](#lighthouse)
+  * [Unfixed Bugs](#unfixed-bugs)
+  * [Deployment](#deployment)
+  * [Credits](#credits)
+    + [Content](#content)
+    + [Languages Used](#languages-used)
+    + [Tech Used](#tech-used)
+      - [Media](#media)
+      - [Acknowledgements](#acknowledgements)
+      - [Mentor](#mentor)
+      - [Author](#author)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## External user goal
 
 Users of the site are invited to test their knowledge of movie trivia in a fun survival quiz where they must answer questions correctly or lose from a limited number of lives.  
