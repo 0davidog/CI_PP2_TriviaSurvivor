@@ -335,6 +335,8 @@ Copy and pasted the javascript file into [jshint](https://jshint.com/), a web se
 
 ### Lighthouse
 
+Chrome developer tools 'lighthouse' function was used to assess the apps accessibily, search engine optimisation and performance.
+
 ![lighthouse](https://github.com/0davidog/trivia-survivor/assets/135815736/a900de4a-261f-4e0a-ac23-96f121bc97e0)
 
 ## Unfixed Bugs
