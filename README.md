@@ -226,10 +226,16 @@ I tested the buttons in the navigation bar to check the behave as expected. This
 ### Game Walkthrough
 
 - #### Scenario 1
+  
 - Play the quiz though on normal answering questions correctly to achieve 10/10.
+
+https://github.com/0davidog/trivia-survivor/assets/135815736/7c9cfc6e-8c93-4d43-844a-4f9139c3bd0e
   
 - #### Scenario 2
-- Played the quiz through on hard, purposly choosing incorrect answers.
+  
+- Played the quiz through on hard, purposly choosing incorrect answers to fail screen.
+
+https://github.com/0davidog/trivia-survivor/assets/135815736/e5f53b84-36bf-4f25-8029-f02bfb199378
 
 ### Contact Form Test
 
