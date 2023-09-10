@@ -97,6 +97,32 @@ Once a difficulty is chosen the game will begin. The game screen is split into 2
 
 ![game-screen-mob](https://github.com/0davidog/trivia-survivor/assets/135815736/539b3dbb-2c23-4e24-b908-2ace7fc3b958)
 
+### Navigation bar
+
+Fixed to the top of the screen is the navigation bar containing buttons that take the user to different sections of the app. These are not html links, instead the buttons activate functions that show or hide different sections of html information. The buttons are made using font-awesome icons and a label in plain-text is displayed when the buttons are hovered over.
+
+- The home button takes the user to the title screen, starting the app from the beginning where they'll be asked to input their name to start.
+
+![nav-bar-screen-01](https://github.com/0davidog/trivia-survivor/assets/135815736/229222ad-02c7-4cec-b34b-1c1c27c0f344)
+
+- The sound button toggles the sound effects on or off. This is off by default.
+
+![nav-bar-screen-02](https://github.com/0davidog/trivia-survivor/assets/135815736/278c3d4a-e48b-4ba0-b041-2dbcf80c8421)
+![nav-bar-screen-03](https://github.com/0davidog/trivia-survivor/assets/135815736/76b2e006-00d7-49bd-8980-84d7b78f7372)
+
+- The information button displays the information screen where the rules of the game can be found.
+
+![nav-bar-screen-04](https://github.com/0davidog/trivia-survivor/assets/135815736/a3b2f594-e9c4-4cb8-9022-7736ab339624)
+
+- The Score button displays the score page where the users results are displayed.
+
+![nav-bar-screen-05](https://github.com/0davidog/trivia-survivor/assets/135815736/45aa118c-89b9-45ce-ba71-d86128d7f2a2)
+
+- The feedback button displays the feedback page where the user can fill in a feedback form which will be sent as email to the site owner.
+
+![nav-bar-screen-06](https://github.com/0davidog/trivia-survivor/assets/135815736/da26059a-a480-4567-9bc0-1c21ac51184e)
+
+
 ### Implimented
 
 ### Future Features
