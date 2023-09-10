@@ -1,183 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Trivia Survivor, use your knowledge of movie trivia to escape the creature.">
-    <meta name="keywords" content="Trivia, Survivor, movie, horror-movie, quiz, zombie">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=10">
-    <link rel="stylesheet" href="assets/css/style.css">
-	
-	<title>Trivia Survivor</title>
-	
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Trivia Survivor, use your knowledge of movie trivia to escape the creature."
+    />
+    <meta
+      name="keywords"
+      content="Trivia, Survivor, movie, horror-movie, quiz, zombie"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=10"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Trivia Survivor</title>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
     <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init('3Q0SMJLBwZIF-Uvwg');
-        })();
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init("3Q0SMJLBwZIF-Uvwg");
+      })();
     </script>
     <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = (Math.random() * 100000) | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm("service_pmzmnla", "contact-form", this).then(
+              function () {
+                console.log("SUCCESS!");
+                document.getElementById("contact-form").reset();
+                alert("Thank you for the feedback.");
+              },
+              function (error) {
+                console.log("FAILED...", error);
+                alert("Sorry, message failed to send");
+              }
+            );
+          });
+      };
     </script>
-	
-</head>
+  </head>
 
-<body>
-	<!-- Main game container -->
-	<section class="flex-container">
-		<!-- Navigation bar to sit at the top of the screen -->
-		<div id="nav-box">
-			<nav>
-				<i class="fa-solid fa-house" id="home-btn"></i>
-				<i class="fa-solid fa-volume-off" id="sound-btn"></i>
-				<i class="fa-solid fa-circle-info" id="info-btn"></i>
-				<i class="fa-solid fa-star" id="score-btn"></i>
-				<i class="fa-solid fa-comment" id="comment-btn"></i>
-			</nav>
-			<div id="label-box">
-				<p id="home-label" class="hidden">Home</p>
-				<p id="sound-label" class="hidden">Sound is off</p>
-				<p id="info-label" class="hidden">About the game</p>
-				<p id="score-label" class="hidden">Scores</p>
-				<p id="comment-label" class="hidden">Feedback</p>
-			</div>
-		</div>
-		<!-- Title Card Section, first thing user will see -->
-		<div id="title-card" class="card">
-			<h1 id="title">TRIVIA SURVIVOR</h1>
-			<h2 id="sub-title">[Demo of the Dead]</h2>
-			<!-- username entry -->
-			<div id="enter-name">
-				<form action="javascript:void(0);" id="name-input">
-				<label for="name">Enter your name to begin:</label><br>
-				<input type="text" id="name" name="name" placeholder="Name" required><br>
-				<button type="submit" name="start-btn" id="start-btn" class="start-btn btn">Start</button>
-				</form>
-			</div>
-			<!-- Difficulty mode selection -->
-			<div id="choose-difficulty" class="hidden">
-				<button id="easy-btn" class="easy-btn btn" value="easy">Easy</button><br>
-				<button id="normal-btn" class="normal-btn btn" value="normal">Normal</button><br>
-				<button id="hard-btn" class="hard-btn btn" value="hard">Hard</button><br>
-			</div>
-			
-		</div>
+  <body>
+    <!-- Main game container -->
+    <section class="flex-container">
+      <!-- Navigation bar to sit at the top of the screen -->
+      <div id="nav-box">
+        <nav>
+          <i class="fa-solid fa-house" id="home-btn"></i>
+          <i class="fa-solid fa-volume-off" id="sound-btn"></i>
+          <i class="fa-solid fa-circle-info" id="info-btn"></i>
+          <i class="fa-solid fa-star" id="score-btn"></i>
+          <i class="fa-solid fa-comment" id="comment-btn"></i>
+        </nav>
+        <div id="label-box">
+          <p id="home-label" class="hidden">Home</p>
+          <p id="sound-label" class="hidden">Sound is off</p>
+          <p id="info-label" class="hidden">About the game</p>
+          <p id="score-label" class="hidden">Scores</p>
+          <p id="comment-label" class="hidden">Feedback</p>
+        </div>
+      </div>
+      <!-- Title Card Section, first thing user will see -->
+      <div id="title-card" class="card">
+        <h1 id="title">TRIVIA SURVIVOR</h1>
+        <h2 id="sub-title">[Demo of the Dead]</h2>
+        <!-- username entry -->
+        <div id="enter-name">
+          <form action="javascript:void(0);" id="name-input">
+            <label for="name">Enter your name to begin:</label><br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            /><br />
+            <button
+              type="submit"
+              name="start-btn"
+              id="start-btn"
+              class="start-btn btn"
+            >
+              Start
+            </button>
+          </form>
+        </div>
+        <!-- Difficulty mode selection -->
+        <div id="choose-difficulty" class="hidden">
+          <button id="easy-btn" class="easy-btn btn" value="easy">Easy</button
+          ><br />
+          <button id="normal-btn" class="normal-btn btn" value="normal">
+            Normal</button
+          ><br />
+          <button id="hard-btn" class="hard-btn btn" value="hard">Hard</button
+          ><br />
+        </div>
+      </div>
 
-		<!-- Game Card Section, the main portion of the game -->
-		<div id="game-card" class="card">
-			<!-- Top Half of the game card -->
-			<div id="creature-box" class="hidden">
-				<div id="danger-box">
-					<div class="danger-square">
-						<img id="danger-square-05" src="assets/images/danger-block-05.webp" class="hidden" alt="A red coloured square.">
-					</div>
-					<div class="danger-square" >
-						<img id="danger-square-04" src="assets/images/danger-block-04.webp" class="hidden" alt="An orange coloured square.">
-					</div>	
-					<div class="danger-square">
-						<img id="danger-square-03" src="assets/images/danger-block-03.webp" class="hidden" alt="A green-yellow mix coloured square.">
-					</div>
-					<div class="danger-square">
-						<img id="danger-square-02" src="assets/images/danger-block-02.webp" class="hidden" alt="A more pale green coloured square.">
-					</div>
-					<div class="danger-square">
-						<img id="danger-square-01" src="assets/images/danger-block-01.webp" class="hidden"  alt="A green coloured square.">
-					</div>
-				</div>
-			<div id="view-box">
-				<img id="zombie" src="assets/images/zombie-approach-00.webp" alt="An empty corridor.">
-			</div>
-			</div>
-			<!-- Bottom half of the game card -->
-			<div id="question-box" class="hidden">
-				<div id="text-box">
-				</div>
-				<div id="next-btn-box">
-					<button class="hidden" id="next-btn">next &gt;&gt;</button>
-				</div>
-				<div id="questions" class="hidden">
-				</div>
-				<div id="answers" class="hidden">
-					<button id="answer-btn-a" class="btn answer-btn" value="A" aria-label="Answer Button A">Answer A</button><br>
-					<button id="answer-btn-b" class="btn answer-btn" value="B" aria-label="Answer Button B">Answer B</button><br>
-					<button id="answer-btn-c" class="btn answer-btn" value="C" aria-label="Answer Button C">Answer C</button><br>
-					<button id="answer-btn-d" class="btn answer-btn" value="D" aria-label="Answer Button D">Answer D</button><br>
-				</div>
-			</div>
-		</div>
-		<!-- Screen to be displayed as win/lose result -->
-		<div id="results-card" class="card">
-			<div id="win-state" class="hidden">
-				<h1>YOU SURVIVED</h1>
-				<p id="win-text"></p>
-				<button id="win-replay-btn">Return</button>
-			</div>
-			<div id="fail-state" class="hidden">
-				<h1>YOU FAILED</h1>
-				<p id="fail-text"></p>
-				<button id="fail-replay-btn">Return</button>
-			</div>
-		</div>
-		<!-- Display of user scores -->
-		<div id="score-card" class="card">
-			<div id="survivor-box">
-				<h1>SURVIVED</h1>
-				<p id="survivors"></p>
-			</div>
-			<div id="failure-box">
-				<h1>FAILED</h1>
-				<p id="failures"></p>
-			</div>
-	<div id="score-btn-box"><button id="continue-btn-score">Continue</button></div>
-		</div>
-		<!-- Description of the game -->
-		<div id="info-card" class="card">
-			<h1>INFORMATION</h1>
-			<p>Trivia Survivor is a survival quiz game. The rules are simple. You must test your knowledge of movie-triva against an approaching threat. The creature stalking you will advance a step with every wrong answer. Answer all 10 questions to survive. Good luck.</p>
-			<div id="info-btn-box"><button id="continue-btn-info">Continue</button></div>
-		</div>
-	
-		<!-- A feedback form -->
-	<div id="comment-card" class="card">
-		<h1>FEEDBACK</h1>
-		<p>Thank you for checking out Trivia Survivor. Please consider leaving a comment on your experience with the game.</p>
-		<div id="feedback-form">
-			    <form id="contact-form">
-        <input type="hidden" name="contact_number">
-        <label>Name</label><br>
-        <input type="text" name="user_name"><br>
-        <label>Email</label><br>
-        <input type="email" name="user_email"><br>
-        <label>Message</label><br>
-        <textarea name="message"></textarea><br>
-        <input type="submit" value="Send"><br><br>
-    </form>
+      <!-- Game Card Section, the main portion of the game -->
+      <div id="game-card" class="card">
+        <!-- Top Half of the game card -->
+        <div id="creature-box" class="hidden">
+          <div id="danger-box">
+            <div class="danger-square">
+              <img
+                id="danger-square-05"
+                src="assets/images/danger-block-05.webp"
+                class="hidden"
+                alt="A red coloured square."
+              />
+            </div>
+            <div class="danger-square">
+              <img
+                id="danger-square-04"
+                src="assets/images/danger-block-04.webp"
+                class="hidden"
+                alt="An orange coloured square."
+              />
+            </div>
+            <div class="danger-square">
+              <img
+                id="danger-square-03"
+                src="assets/images/danger-block-03.webp"
+                class="hidden"
+                alt="A green-yellow mix coloured square."
+              />
+            </div>
+            <div class="danger-square">
+              <img
+                id="danger-square-02"
+                src="assets/images/danger-block-02.webp"
+                class="hidden"
+                alt="A more pale green coloured square."
+              />
+            </div>
+            <div class="danger-square">
+              <img
+                id="danger-square-01"
+                src="assets/images/danger-block-01.webp"
+                class="hidden"
+                alt="A green coloured square."
+              />
+            </div>
+          </div>
+          <div id="view-box">
+            <img
+              id="zombie"
+              src="assets/images/zombie-approach-00.webp"
+              alt="An empty corridor."
+            />
+          </div>
+        </div>
+        <!-- Bottom half of the game card -->
+        <div id="question-box" class="hidden">
+          <div id="text-box"></div>
+          <div id="next-btn-box">
+            <button class="hidden" id="next-btn">next &gt;&gt;</button>
+          </div>
+          <div id="questions" class="hidden"></div>
+          <div id="answers" class="hidden">
+            <button
+              id="answer-btn-a"
+              class="btn answer-btn"
+              value="A"
+              aria-label="Answer Button A"
+            >
+              Answer A</button
+            ><br />
+            <button
+              id="answer-btn-b"
+              class="btn answer-btn"
+              value="B"
+              aria-label="Answer Button B"
+            >
+              Answer B</button
+            ><br />
+            <button
+              id="answer-btn-c"
+              class="btn answer-btn"
+              value="C"
+              aria-label="Answer Button C"
+            >
+              Answer C</button
+            ><br />
+            <button
+              id="answer-btn-d"
+              class="btn answer-btn"
+              value="D"
+              aria-label="Answer Button D"
+            >
+              Answer D</button
+            ><br />
+          </div>
+        </div>
+      </div>
+      <!-- Screen to be displayed as win/lose result -->
+      <div id="results-card" class="card">
+        <div id="win-state" class="hidden">
+          <h1>YOU SURVIVED</h1>
+          <p id="win-text"></p>
+          <button id="win-replay-btn">Return</button>
+        </div>
+        <div id="fail-state" class="hidden">
+          <h1>YOU FAILED</h1>
+          <p id="fail-text"></p>
+          <button id="fail-replay-btn">Return</button>
+        </div>
+      </div>
+      <!-- Display of user scores -->
+      <div id="score-card" class="card">
+        <div id="survivor-box">
+          <h1>SURVIVED</h1>
+          <p id="survivors"></p>
+        </div>
+        <div id="failure-box">
+          <h1>FAILED</h1>
+          <p id="failures"></p>
+        </div>
+        <div id="score-btn-box">
+          <button id="continue-btn-score">Continue</button>
+        </div>
+      </div>
+      <!-- Description of the game -->
+      <div id="info-card" class="card">
+        <h1>INFORMATION</h1>
+        <p>
+          Trivia Survivor is a survival quiz game. The rules are simple. You
+          must test your knowledge of movie-triva against an approaching threat.
+          The creature stalking you will advance a step with every wrong answer.
+          Answer all 10 questions to survive. Good luck.
+        </p>
+        <div id="info-btn-box">
+          <button id="continue-btn-info">Continue</button>
+        </div>
+      </div>
 
-			
-				<div id="form-btn-box">
-					<button id="continue-btn-comment">Continue</button>
-				</div>
-				
-		</div>
-	</div>
-	</section>
-	
-	<!-- link to Javascript file -->
-	<script type="text/javascript" src="assets/js/script.js"></script>
-	<!-- Adding script for fontawesome icons -->	
-	<script src="https://kit.fontawesome.com/5216db6454.js" crossorigin="anonymous"></script>
-</body>
+      <!-- A feedback form -->
+      <div id="comment-card" class="card">
+        <h1>FEEDBACK</h1>
+        <p>
+          Thank you for checking out Trivia Survivor. Please consider leaving a
+          comment on your experience with the game.
+        </p>
+        <div id="feedback-form">
+          <form id="contact-form">
+            <input type="hidden" name="contact_number" required />
+            <label>Name</label><br />
+            <input type="text" name="user_name" required /><br />
+            <label>Email</label><br />
+            <input type="email" name="user_email" required /><br />
+            <label>Message</label><br />
+            <textarea name="message" required></textarea><br />
+            <input type="submit" value="Send" /><br /><br />
+          </form>
+
+          <div id="form-btn-box">
+            <button id="continue-btn-comment">Continue</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- link to Javascript file -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <!-- Adding script for fontawesome icons -->
+    <script
+      src="https://kit.fontawesome.com/5216db6454.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
