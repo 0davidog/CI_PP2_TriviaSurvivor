@@ -68,6 +68,13 @@ Instead of aiming for an exact match however, I found a suitable set of close-ma
 
 Though not pictured here, the site will use plain white (#ffffff) for the majority of text shown.
 
+### Font-Family
+
+![Screenshot 2023-09-10 at 12-45-52 Trivia Survivor](https://github.com/0davidog/trivia-survivor/assets/135815736/57ffb8ae-09d3-4ecc-bfa5-bba5c3ae1605)
+
+- For the majority of the text the font choice will be courier new as this fits thematically with a movie trivia game by resembling typed film-scripts.
+- For the Headings; a sans serif font, 'League Gothic' was chosen for a dramatic important look to the title.
+
 ## Features
 
 ### Implimented
