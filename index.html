@@ -27,12 +27,10 @@
             // these IDs from the previous steps
             emailjs.sendForm("service_pmzmnla", "contact-form", this).then(
               function () {
-                console.log("SUCCESS!");
                 document.getElementById("contact-form").reset();
                 alert("Thank you for the feedback.");
               },
               function (error) {
-                console.log("FAILED...", error);
                 alert("Sorry, message failed to send");
               }
             );
