@@ -176,7 +176,13 @@ A custom 404 error page was created in the style of the rest of the site with a 
 
 ![form-test-07](https://github.com/0davidog/trivia-survivor/assets/135815736/48e2e884-a09a-4446-82bc-71b4a74fde01)
 
-### Validation
+## Validation
+
+### JS hint
+
+Copy and pasted the javascript file into [jshint](https://jshint.com/), a web service that checks Java script code for errors and recieved no errors or warnings.
+
+![Screenshot 2023-09-10 at 17-47-34 JSHint a JavaScript Code Quality Tool](https://github.com/0davidog/trivia-survivor/assets/135815736/16a84a85-8bfc-4431-b268-c2dbc32b9495)
 
 ### Lighthouse
 
