@@ -318,16 +318,16 @@ The instructions for this are as follows:
 ### Content
 
 - The Icons in the Nav bar were sourced from the [Font Awesome website](https://fontawesome.com/).
-- [Multi Device Image in README generated with 'Am I Responsive?'](https://ui.dev/amiresponsive)
-- [Table of contents in README generated with markdown-toc](http://ecotrust-canada.github.io/markdown-toc/')
-- [Colour palate image in README generated with coolors.co](https://coolors.co/)
-- [Favicon icons and code courtesy of favicon.io](https://favicon.io/favicon-converter/)
   - [Home](https://fontawesome.com/icons/house?f=classic&s=solid)
   - [Sound on](https://fontawesome.com/icons/volume-off?f=classic&s=solid)
   - [Sound off](https://fontawesome.com/icons/volume-high?f=classic&s=solid)
   - [Info](https://fontawesome.com/icons/circle-info?f=classic&s=solid)
   - [Scores](https://fontawesome.com/icons/star?f=classic&s=solid)
   - [Feedback](https://fontawesome.com/icons/comment?f=classic&s=solid)
+- [Multi Device Image in README generated with 'Am I Responsive?'](https://ui.dev/amiresponsive)
+- [Table of contents in README generated with markdown-toc](http://ecotrust-canada.github.io/markdown-toc/')
+- [Colour palate image in README generated with coolors.co](https://coolors.co/)
+- [Favicon icons and code courtesy of favicon.io](https://favicon.io/favicon-converter/)
 - Sounds from https://freesound.org/
   - [Click sound](https://freesound.org/people/adh.dreaming/sounds/668358/)
   - [Correct sound](https://freesound.org/people/Fupicat/sounds/538147/)
