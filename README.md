@@ -83,6 +83,12 @@ Though not pictured here, the site will use plain white (#ffffff) for the majori
 
 The first thing a user will see it the title screen. The information given is the title of the app 'Trivia Survivor', its sub-title 'Demo of the Dead'. Underneath this the user is asked to enter their name in the input provided and press the start-game button to play the game. The background image used is a darkened version of the illustration used as the main game back drop.
 
+### Select Difficulty
+
+![title-screen-diff](https://github.com/0davidog/trivia-survivor/assets/135815736/ade8b9e5-612c-4c05-9d5a-66ea8210cb9b)
+
+Upon entering their name and selecting the start button the user will then be asked to choose a difficulty from easy, normal or hard. Normal mode is set at 10 questions to answer and 5 lives the user has for wrong answers. Easy mode reduces the questions to 5 while keeping the lives the same. Hard mode keeps the quiz length at 10 but reduces the users lives to 3.
+
 ### Implimented
 
 ### Future Features
