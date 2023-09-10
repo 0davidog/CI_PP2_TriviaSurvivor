@@ -155,9 +155,11 @@ A custom 404 error page was created in the style of the rest of the site with a 
 
 ### Manual Tests
 
+- [x] Nav links
+
 ### Game Walkthrough
-#### Scenario 1
-#### Scenario 2
+- #### Scenario 1
+- #### Scenario 2
 
 ### Contact Form Test
 
@@ -189,6 +191,39 @@ A custom 404 error page was created in the style of the rest of the site with a 
 
 ![form-test-07](https://github.com/0davidog/trivia-survivor/assets/135815736/48e2e884-a09a-4446-82bc-71b4a74fde01)
 
+### Initial Screen Size Tests
+
+During development Chrome's developer tools were used to test the look of the app accross multiple screen sizes by inspecting the page and then viewing the site using the presets available. This emulated using the app accross different devices. This list includes the laptop I use to develop the app also.
+
+|Device   |Dimensions|
+|---------|----------|
+|iPhone SE|375x667   |
+|iPhone XR|414x896 |
+|iPhone 12 Pro |390x844 |
+|Pixel 5 |393x851 |
+|Samsung Galaxy S8+ |360x740 |
+|Samsung Galaxy S20 Ultra |412x915 |
+|iPad Air |820x1180|
+|iPad Mini |768x1024|
+|Surface Pro 7|912x1368|
+|Surface Duo |540x720 |
+|Galaxy Fold |280x653 |
+|Samsung Galaxy A51/71 |412x914|
+|Nest Hub|1024x600|
+|Nest Hub Max|1280x800|
+|Windows laptop|1920x1080|
+
+### Browser and OS testing
+
+[Browserstack](https://www.browserstack.com/)
+
+|Device|OS|Viewport|Browser|Browserstack Screenshot|
+|-|-|-|-|-|
+
+### Market Research
+
+[Statcounter](https://gs.statcounter.com/)
+
 ## Validation
 
 ### HTML Validator
@@ -210,6 +245,10 @@ Copy and pasted the javascript file into [jshint](https://jshint.com/), a web se
 ### Lighthouse
 
 ![lighthouse](https://github.com/0davidog/trivia-survivor/assets/135815736/a900de4a-261f-4e0a-ac23-96f121bc97e0)
+
+## Unfixed Bugs
+
+No known bugs remain unfixed.
 
 ## Deployment
 
