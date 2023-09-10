@@ -126,13 +126,19 @@ Fixed to the top of the screen is the navigation bar containing buttons that tak
 
 ![info-page-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/ee771f5b-8622-4fe5-a8b0-3f5b97cc2f3f)
 
+The info page gives a brief description of the game and its rules.
+
 ### Score Page
 
 ![scores-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/7e1ebaa0-ca1b-4bc8-92c8-d331339a37fd)
 
+The scores page displays the recent score the user has achieved in this session.
+
 ### Feedback Form
 
 ![contact-form-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/97f5a864-5334-4b3c-93e4-dc91b586fb87)
+
+The contact form allows the user to leave feedback on their experience with the app. Using the service [emailJS](https://www.emailjs.com/) I set up Javascript email service so that any feedback entered in the form will be sent to me via email.
 
 ### 404 Error Page
 
@@ -142,9 +148,16 @@ A custom 404 error page was created in the style of the rest of the site with a 
 
 ### Future Features
 
+- Different games for various genres.
+- Lively animation
+
 ## Testing
 
 ### Manual Tests
+
+### Game Walkthrough
+#### Scenario 1
+#### Scenario 2
 
 ### Contact Form Test
 
@@ -220,6 +233,93 @@ The instructions for this are as follows:
 - [Table of contents in README generated with markdown-toc](http://ecotrust-canada.github.io/markdown-toc/')
 - [Colour palate image in README generated with coolors.co](https://coolors.co/)
 - [Favicon icons and code courtesy of favicon.io](https://favicon.io/favicon-converter/)
+- Email service courtesy of [emailJS](https://www.emailjs.com/)
+  - This is the code given in the emailJS setup tutorial: [(link here)](https://www.emailjs.com/docs/tutorial/creating-contact-form/)
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('YOUR_PUBLIC_KEY');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+    <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label>Email</label>
+        <input type="email" name="user_email">
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
+```
+-   And here is how I utilised it on my page:
+```
+     <script>
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init("3Q0SMJLBwZIF-Uvwg");
+      })();
+    </script>
+    <script>
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = (Math.random() * 100000) | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm("service_pmzmnla", "contact-form", this).then(
+              function () {
+                document.getElementById("contact-form").reset();
+                alert("Thank you for the feedback.");
+              },
+              function (error) {
+                alert("Sorry, message failed to send");
+              }
+            );
+          });
+      };
+    </script>
+```
+```
+              <form id="contact-form">
+            <input type="hidden" name="contact_number">
+            <label>Name</label><br>
+            <input type="text" name="user_name" required><br>
+            <label>Email</label><br>
+            <input type="email" name="user_email" required><br>
+            <label>Message</label><br>
+            <textarea name="message" required></textarea><br>
+            <input type="submit" value="Send"><br><br>
+          </form>
+```
 
 ### Languages Used
 
