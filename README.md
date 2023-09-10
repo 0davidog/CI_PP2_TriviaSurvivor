@@ -219,6 +219,11 @@ During development Chrome's developer tools were used to test the look of the ap
 
 |Device|OS|Viewport|Browser|Browserstack Screenshot|
 |-|-|-|-|-|
+|Samsung Galaxy S23|Android|393x786|Chrome|[browser-testing-screen-01](https://github.com/0davidog/trivia-survivor/assets/135815736/1386d46b-36b3-437e-99c4-3b214ceb4cd1)|
+|Xiaomi Redmi Note 12|Android|393x873|Chrome|[browser-testing-screen-02](https://github.com/0davidog/trivia-survivor/assets/135815736/748cbd6c-38fc-429e-a984-0bec50932966)|
+|iPhone 14 plus|IOS|428x746|Safari|[browser-testing-screen-03](https://github.com/0davidog/trivia-survivor/assets/135815736/110413c5-b807-472d-a487-d90434dca2db)|
+
+
 
 ### Market Research
 
