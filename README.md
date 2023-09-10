@@ -123,7 +123,11 @@ Fixed to the top of the screen is the navigation bar containing buttons that tak
 ![nav-bar-screen-06](https://github.com/0davidog/trivia-survivor/assets/135815736/da26059a-a480-4567-9bc0-1c21ac51184e)
 
 
-### Implimented
+### 404 Error Page
+
+![404-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/a91aa5a0-97b9-44fb-af98-454a87d8f08f)
+
+A custom 404 error page was created in the style of the rest of the site with a link back to the trivia survivor page. This page is created in the same format as the main page so as not to seem to jarring when the error occurs.
 
 ### Future Features
 
