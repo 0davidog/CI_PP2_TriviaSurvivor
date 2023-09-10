@@ -148,18 +148,33 @@ A custom 404 error page was created in the style of the rest of the site with a 
 
 ### Future Features
 
-- Different games for various genres.
-- Lively animation
+- A version of the game with greater development time would include a different game setting for different genres of film that utilise a different backdrop and creature design depending on the genre represented.
+- Greater production time could also see a more animated version of the game with graphics creating a livelier feel.
 
 ## Testing
 
 ### Manual Tests
 
-- [x] Nav links
+#### Buttons
+
+I tested the buttons in the navigation bar to check the behave as expected. This includes trying the buttons from various states of gameplay.
+
+- [x] tested navigation buttons from title screen.
+- [x] tested navigation buttons from mid-quiz.
+- [x] tested navigation buttons from results screen.
+- [x] tested navigation buttons with sound on.
+- [x] tested navigation buttons with sound off.
+- [x] tested continue buttons from all screens during title screen
+- [x] tested continue buttons from all screens during quiz
+- [x] tested continue buttons from all screens during results
 
 ### Game Walkthrough
+
 - #### Scenario 1
+- Play the quiz though on normal answering questions correctly to achieve 10/10.
+  
 - #### Scenario 2
+- Played the quiz through on hard, purposly choosing incorrect answers.
 
 ### Contact Form Test
 
@@ -307,6 +322,16 @@ The instructions for this are as follows:
 - [Table of contents in README generated with markdown-toc](http://ecotrust-canada.github.io/markdown-toc/')
 - [Colour palate image in README generated with coolors.co](https://coolors.co/)
 - [Favicon icons and code courtesy of favicon.io](https://favicon.io/favicon-converter/)
+  - [Home](https://fontawesome.com/icons/house?f=classic&s=solid)
+  - [Sound on](https://fontawesome.com/icons/volume-off?f=classic&s=solid)
+  - [Sound off](https://fontawesome.com/icons/volume-high?f=classic&s=solid)
+  - [Info](https://fontawesome.com/icons/circle-info?f=classic&s=solid)
+  - [Scores](https://fontawesome.com/icons/star?f=classic&s=solid)
+  - [Feedback](https://fontawesome.com/icons/comment?f=classic&s=solid)
+- Sounds from https://freesound.org/
+  - [Click sound](https://freesound.org/people/adh.dreaming/sounds/668358/)
+  - [Correct sound](https://freesound.org/people/Fupicat/sounds/538147/)
+  - [Wrong answer sound](https://freesound.org/people/MATRIXXX_/sounds/516901/)  
 - Email service courtesy of [emailJS](https://www.emailjs.com/)
   - This is the code given in the emailJS setup tutorial: [(link here)](https://www.emailjs.com/docs/tutorial/creating-contact-form/)
 ```
