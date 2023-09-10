@@ -216,12 +216,32 @@ Copy and pasted the javascript file into [jshint](https://jshint.com/), a web se
 The website is deployed on [Github](https://github.com/) using GithubPages. 
 The instructions for this are as follows:
 
+- Go to the Repository:
+
 ![deployment-screen-01](https://github.com/0davidog/trivia-survivor/assets/135815736/abf43655-cfd5-48a3-ab18-c95950ed0594)
+
+- Navigate to the settings tab:
+
 ![deployment-screen-02](https://github.com/0davidog/trivia-survivor/assets/135815736/f54c4681-0f18-4ffc-9774-b70a621b655a)
+
+- Navigate to 'Pages' on the left menu bar under 'Code and Automation':
+
 ![deployment-screen-03](https://github.com/0davidog/trivia-survivor/assets/135815736/9dcf6975-fbbf-4539-a7d4-b235a6168978)
+
+- Under 'Branch' select 'main' from the list: 
+
 ![deployment-screen-04](https://github.com/0davidog/trivia-survivor/assets/135815736/ea5eb167-14d3-4824-9525-5cac1eea83d7)
+
+- Hit Save:
+
 ![deployment-screen-05](https://github.com/0davidog/trivia-survivor/assets/135815736/43940cb1-c4fb-4c78-84a5-af396574dd50)
+
+- Once saved you'll recieve confirmation. The deployment may take a few moments to complete:
+
 ![deployment-screen-06](https://github.com/0davidog/trivia-survivor/assets/135815736/f7ab205c-4825-4550-b2cb-0f4f08887722)
+
+- Once complete you'll find a link to your site at the top of the page:
+
 ![deployment-screen-07](https://github.com/0davidog/trivia-survivor/assets/135815736/ba228a79-020f-4c26-9fed-199546326b1c)
 
 ## Credits
