@@ -24,7 +24,7 @@ Users of the site are invited to test their knowledge of movie trivia in a fun s
 
 ## Site owner goal
 
-The goal in creating the site is to provide and entertaining and fun quiz that encourages repeat attempts. 
+The goal in creating the site is to provide and entertaining and fun quiz that encourages repeat attempts. A secondary goal of this site is to demonstrate the use of Javascript in creating an interactive application.
 
 ## Target Audience
 
@@ -88,6 +88,14 @@ The first thing a user will see it the title screen. The information given is th
 ![title-screen-diff](https://github.com/0davidog/trivia-survivor/assets/135815736/ade8b9e5-612c-4c05-9d5a-66ea8210cb9b)
 
 Upon entering their name and selecting the start button the user will then be asked to choose a difficulty from easy, normal or hard. Normal mode is set at 10 questions to answer and 5 lives the user has for wrong answers. Easy mode reduces the questions to 5 while keeping the lives the same. Hard mode keeps the quiz length at 10 but reduces the users lives to 3.
+
+### Game Screen
+
+![game-screen-desk](https://github.com/0davidog/trivia-survivor/assets/135815736/69a30eba-e542-4b5f-b967-e06861ee3c20)
+
+Once a difficulty is chosen the game will begin. The game screen is split into 2 halves. One half displays the image of the creature and the coloured bar beside it. The other half either displays the questions and answer buttons or message text and a button to continue after reading. The majority of time spent in the game here, switching between questions and confirmation text stating whether an answer was right or wrong. On desktop or large tablets viewed in landscape the screen division is set at a left and right while with mobiles and small screens in portrait view the game screen is divided in top and bottom. 
+
+![game-screen-mob](https://github.com/0davidog/trivia-survivor/assets/135815736/539b3dbb-2c23-4e24-b908-2ace7fc3b958)
 
 ### Implimented
 
