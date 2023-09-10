@@ -135,6 +135,36 @@ A custom 404 error page was created in the style of the rest of the site with a 
 
 ### Manual Tests
 
+### Contact Form Test
+
+- Submitting form with empty name input:
+
+![form-test-01](https://github.com/0davidog/trivia-survivor/assets/135815736/7254e710-55be-4ae0-92cc-9ae190b5db16)
+
+- Submitting form with empty email input:
+  
+![form-test-02](https://github.com/0davidog/trivia-survivor/assets/135815736/91cdc838-82a6-49bf-98d8-03ea58e1e2c2)
+
+- Submitting form with incorrect email format:
+  
+![form-test-03](https://github.com/0davidog/trivia-survivor/assets/135815736/4e3f4fa6-d60a-4969-ac5c-473dd692f460)
+
+- Submitting form with empty text area:
+  
+![form-test-04](https://github.com/0davidog/trivia-survivor/assets/135815736/f4e577c1-f5d7-4681-b04b-f67901725117)
+
+- Succesfully submitting form and recieving confirmation alert:
+
+![form-test-05](https://github.com/0davidog/trivia-survivor/assets/135815736/f127995f-effa-41f3-8903-9ead60a40236)
+
+- Form clears upon confirmation:
+  
+![form-test-06](https://github.com/0davidog/trivia-survivor/assets/135815736/fefcfdae-ed9e-4c98-a0b9-3175bfc2b09a)
+
+- Message recieved in the form of email:
+
+![form-test-07](https://github.com/0davidog/trivia-survivor/assets/135815736/48e2e884-a09a-4446-82bc-71b4a74fde01)
+
 ### Validation
 
 ### Lighthouse
