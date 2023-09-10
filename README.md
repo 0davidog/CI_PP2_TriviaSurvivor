@@ -70,12 +70,18 @@ Though not pictured here, the site will use plain white (#ffffff) for the majori
 
 ### Font-Family
 
-![Screenshot 2023-09-10 at 12-45-52 Trivia Survivor](https://github.com/0davidog/trivia-survivor/assets/135815736/57ffb8ae-09d3-4ecc-bfa5-bba5c3ae1605)
+![title-font](https://github.com/0davidog/trivia-survivor/assets/135815736/4241e6d6-fbae-459b-94a3-f31eefd4fc5a)
 
 - For the majority of the text the font choice will be courier new as this fits thematically with a movie trivia game by resembling typed film-scripts.
 - For the Headings; a sans serif font, 'League Gothic' was chosen for a dramatic important look to the title.
 
 ## Features
+
+### Title Screen
+
+![title-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/ec27a772-e540-455a-ae2b-2f5520bdbb56)
+
+The first thing a user will see it the title screen. The information given is the title of the app 'Trivia Survivor', its sub-title 'Demo of the Dead'. Underneath this the user is asked to enter their name in the input provided and press the start-game button to play the game. The background image used is a darkened version of the illustration used as the main game back drop.
 
 ### Implimented
 
