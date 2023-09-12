@@ -80,10 +80,19 @@ const dangerColor = [
 	"danger-square-01",
 ];
 
+/** @function
+ * Activates when the window loads.
+ * Calls function to retieve score data from local storage.
+ */
+
+window.addEventListener('load', function () {
+	loadData();
+});
+
 /** @Function
 * Activates when the window loads.
 * Fetch screen height.
-* Fetch window orientation.
+* Fetch window orientation.s
 * IF in landscape and height less than 500px.
 * Then - ALERT Ask to rotate/unfold
 */
@@ -265,6 +274,23 @@ function displayScores() {
 	for (let i = 0; i < failedList.length; i++) {
     lost.innerHTML += failedList[i] + '<br>';
 	}
+}
+
+/** @function
+ * This function retrieves data from the browser's local storage as a new variable 'userScores', 
+ * checks if the retrieved object data has the properties survived and failed
+ * if those properties are arrays with a non-zero length, it assigns their values to survivedList and failedList. 
+ * calls the displayScores() function to display the retrieved scores data.
+ */
+
+function loadData() {
+    let userScores = JSON.parse(localStorage.getItem('trivia-survivor'));
+	
+    if (userScores !== null && typeof (userScores.survived) !== undefined && userScores.failed !=undefined) {
+                if (userScores.survived.length > 0) {survivedList=userScores.survived}
+                if (userScores.failed.length > 0) {failedList=userScores.failed}
+                displayScores();
+        }
 }
 
 /** @function
@@ -656,6 +682,20 @@ function incorrectAnswerMessage() {
 }
 
 /** @function
+* This function creates an object named 'mem' with 'survived' and 'failed' properties that consist of the survivedList and failedList arrays respectively, 
+* function then stores this object as a JSON-formatted string under the key 'trivia-survivor' in the browser's local storage. 
+* This is a way to keep user scores dispayed for longer than current session.
+*/
+
+function saveData() {
+    let mem = {
+		'survived' : survivedList, 
+		'failed': failedList,
+	};
+	localStorage.setItem('trivia-survivor', JSON.stringify(mem));}
+
+
+/** @function
 * This function displays the win result screen.
 */
 function win() {
@@ -670,6 +710,7 @@ function win() {
 	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	survivedList.push(`${userName.value} survived with a score of ${userScore}/${quizLength}<br>`);
 	winReplayBtn.addEventListener('click', reStart);
+	saveData();
 }
 
 /** @function
@@ -687,6 +728,7 @@ function fail() {
 	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
 	failedList.push(`${userName.value} was lost with a score of ${userScore}/${quizLength}<br>`);
 	failReplayBtn.addEventListener('click', reStart);
+	saveData();
 }
 
 /** @function
