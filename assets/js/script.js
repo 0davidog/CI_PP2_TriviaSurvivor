@@ -101,7 +101,8 @@ window.addEventListener('load', function() {
 	let orientation = screen.orientation.type;
 	if (orientation == "landscape-primary") {
 		if (screenHeight <= 500) {
-			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.');
+			modal_message.innerHTML = 'This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.';
+			modal.style.display = "flex";
 			}
 	}
 }
@@ -119,7 +120,8 @@ window.addEventListener('resize', function() {
 	let orientation = screen.orientation.type;
 	if (orientation == "landscape-primary") {
 		if (screenHeight <= 500) {
-			alert('This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.');
+			modal_message.innerHTML = 'This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.';
+			modal.style.display = "flex";
 			}
 	}
 }
@@ -612,7 +614,9 @@ function startQuiz() {
 /** @function
 * This function checks if the user has reached the end of the quiz before loading the next question.
 * IF the question number is equal to quiz length
-* THEN calls function that displays win screen.
+* THEN another if statement checks the number of lives.
+* IF lives are zero THEN calls function to display lose screen.
+* ELSE calls function that displays win screen.
 * ELSE IF lives have reached zero
 * THEN calls function to display lose screen.
 * IF neither applies THEN increments question number and calls function to display next question.
@@ -768,6 +772,24 @@ function reStart() {
 	document.getElementById('fail-state').classList.add('hidden');
 	document.getElementById('fail-text').innerHTML = "";
 }
+
+
+// modal logic from https://www.w3schools.com/howto/howto_css_modals.asp
+
+const modal = document.getElementById("modal");
+const modalBtn = document.getElementById("continue-btn-modal");
+const modal_message = document.getElementById('modal_message');
+modalBtn.onclick = function() {
+	modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+	if (event.target === modal) {
+		modal.style.display = "none";
+	}
+}
+/* end of modal stuff from w3schools
+*/
 
 // Setting some large arrays at the bottom here...
 
