@@ -619,7 +619,11 @@ function startQuiz() {
 */
 function nextQuestion() {
 	if (questionNumber === quizLength) {
-		win();
+		if (lives === 0) {
+			fail();
+		} else {
+			win();
+		}
 	} else if (lives === 0){
 		fail();
 	} else {
