@@ -506,6 +506,20 @@ function exitTitle() {
 	introMessage01();
 }
 
+/**@function
+* This function takes a string as its parameter.
+* \w matches any word character (letters, digits, or underscores).
+* \S* matches zero or more non-whitespace characters (i.e., the rest of the word).
+* g is a flag that indicates the search should be global (i.e., find all matches in the input string).
+* The `replace` method is used on the input string and for each matched word in the input string this function is called.
+* It capitalizes the first character of the word (txt.charAt(0).toUpperCase()) and converts all other characters to lowercase (txt.substr(1).toLowerCase()).
+*/
+function toTitleCase(str) {
+	return str.replace(/\w\S*/g, function(txt) {
+		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+	});
+}
+
 /** @function
 * This function displays a welcome message and reveals a button leading to next message.
 * Plays a click sound
@@ -515,7 +529,7 @@ function exitTitle() {
 */
 function introMessage01() {
 	selected.play();
-	textBox.innerHTML = `<p>Welcome ${userName.value}.</p>`;
+	textBox.innerHTML = `<p>Welcome ${toTitleCase(userName.value)}.</p>`;
 	nextBtn.classList.remove('hidden');
     nextBtn.addEventListener('click', introMessage02);
 }
@@ -707,8 +721,8 @@ function win() {
 	gameCard.style.display = "none";
 	resultsCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
-	document.getElementById('win-text').innerHTML = `Congratulations ${userName.value}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
-	survivedList.push(`${userName.value} survived with a score of ${userScore}/${quizLength}<br>`);
+	document.getElementById('win-text').innerHTML = `Congratulations ${toTitleCase(userName.value)}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
+	survivedList.push(`${toTitleCase(userName.value)} survived with a score of ${userScore}/${quizLength}<br>`);
 	winReplayBtn.addEventListener('click', reStart);
 	saveData();
 }
@@ -725,8 +739,8 @@ function fail() {
 	gameCard.style.display = "none";
 	resultsCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
-	document.getElementById('fail-text').innerHTML = `<p>${userName.value}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
-	failedList.push(`${userName.value} was lost with a score of ${userScore}/${quizLength}<br>`);
+	document.getElementById('fail-text').innerHTML = `<p>${toTitleCase(userName.value)}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
+	failedList.push(`${toTitleCase(userName.value)} was lost with a score of ${userScore}/${quizLength}<br>`);
 	failReplayBtn.addEventListener('click', reStart);
 	saveData();
 }
