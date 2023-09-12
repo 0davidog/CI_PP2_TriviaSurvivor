@@ -20,80 +20,49 @@
 		
 		<title>Trivia Survivor</title>
 		
-		<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-      (function () {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init("3Q0SMJLBwZIF-Uvwg");
-      })();
-    </script>
-    <script>
-      window.onload = function () {
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-            // generate a five digit number for the contact_number variable
-            this.contact_number.value = (Math.random() * 100000) | 0;
-            // these IDs from the previous steps
-            emailjs.sendForm("service_pmzmnla", "contact-form", this).then(
-              function () {
-                document.getElementById("contact-form").reset();
-                alert("Thank you for the feedback.");
-              },
-              function (error) {
-                alert("Sorry, message failed to send");
-              }
-            );
-          });
-      };
-    </script>
-  </head>
-
-  <body>
-    <!-- Main game container -->
-    <section class="flex-container">
-      <!-- Navigation bar to sit at the top of the screen -->
-      <div id="nav-box">
-        <nav>
-          <i class="fa-solid fa-house" id="home-btn"></i>
-          <i class="fa-solid fa-volume-off" id="sound-btn"></i>
-          <i class="fa-solid fa-circle-info" id="info-btn"></i>
-          <i class="fa-solid fa-star" id="score-btn"></i>
-          <i class="fa-solid fa-comment" id="comment-btn"></i>
-        </nav>
-        <div id="label-box">
-          <p id="home-label" class="hidden">Home</p>
-          <p id="sound-label" class="hidden">Sound is off</p>
-          <p id="info-label" class="hidden">About the game</p>
-          <p id="score-label" class="hidden">Scores</p>
-          <p id="comment-label" class="hidden">Feedback</p>
-        </div>
-      </div>
-      <!-- Title Card Section, first thing user will see -->
-      <div id="title-card" class="card">
-        <h1 id="title">TRIVIA SURVIVOR</h1>
-        <h2 id="sub-title">[Demo of the Dead]</h2>
-        <!-- username entry -->
-        <div id="enter-name">
-          <form action="javascript:void(0);" id="name-input">
-            <label for="name">Enter your name to begin:</label><br>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              required><br>
-            <button
-              type="submit"
-              name="start-btn"
-              id="start-btn"
-              class="start-btn btn">
-              Start
-            </button>
-          </form>
-        </div>
-        <!-- Difficulty mode selection -->
+	</head>
+	
+	<body>
+		
+		<!-- Main game container -->
+		<section class="flex-container">
+			
+			<!-- Navigation bar to sit at the top of the screen -->
+			<div id="nav-box">
+				
+				<nav>
+					<i class="fa-solid fa-house" id="home-btn"></i>
+					<i class="fa-solid fa-volume-off" id="sound-btn"></i>
+					<i class="fa-solid fa-circle-info" id="info-btn"></i>
+					<i class="fa-solid fa-star" id="score-btn"></i>
+					<i class="fa-solid fa-comment" id="comment-btn"></i>
+				</nav>
+				
+				<div id="label-box">
+					<p id="home-label" class="hidden">Home</p>
+					<p id="sound-label" class="hidden">Sound is off</p>
+					<p id="info-label" class="hidden">About the game</p>
+					<p id="score-label" class="hidden">Scores</p>
+					<p id="comment-label" class="hidden">Feedback</p>
+				</div>
+				
+			</div>
+			
+			<!-- Title Card Section, first thing user will see -->
+			<div id="title-card" class="card">
+				<h1 id="title">TRIVIA SURVIVOR</h1>
+        		<h2 id="sub-title">[Demo of the Dead]</h2>
+        	
+				<!-- username entry -->
+        		<div id="enter-name">
+					<form action="javascript:void(0);" id="name-input">
+						<label for="name">Enter your name to begin:</label><br>
+						<input type="text" id="name" name="name" placeholder="Name" required><br>
+						<button type="submit" name="start-btn" id="start-btn" class="start-btn btn">Start</button>
+					</form>
+				</div>
+				
+				<!-- Difficulty mode selection -->
         <div id="choose-difficulty" class="hidden">
           <button id="easy-btn" class="easy-btn btn" value="easy">Easy</button><br>
           <button id="normal-btn" class="normal-btn btn" value="normal">Normal</button><br>
@@ -221,9 +190,12 @@
         </div>
       </div>
     </section>
-    <!-- link to Javascript file -->
+    <!-- link to Javascript files -->
     <script src="assets/js/script.js"></script>
 	  <script src="assets/js/questions.js"></script>
+	  <script src="assets/js/email.js"></script>
+	  <!-- Link to emailJS script -->
+	  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- Adding script for fontawesome icons -->
     <script src="https://kit.fontawesome.com/5216db6454.js" crossorigin="anonymous"></script>
   </body>
