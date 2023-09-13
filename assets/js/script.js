@@ -289,8 +289,12 @@ function loadData() {
     let userScores = JSON.parse(localStorage.getItem('trivia-survivor'));
 	
     if (userScores !== null && typeof (userScores.survived) !== undefined && userScores.failed !=undefined) {
-                if (userScores.survived.length > 0) {survivedList=userScores.survived};
-                if (userScores.failed.length > 0) {failedList=userScores.failed};
+                if (userScores.survived.length > 0) {
+			survivedList=userScores.survived;
+		}
+                if (userScores.failed.length > 0) {
+			failedList=userScores.failed;
+		}
                 displayScores();
         }
 }
