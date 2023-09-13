@@ -315,13 +315,13 @@ Using the website [Statcounter](https://gs.statcounter.com/), I looked at the mo
 
 ### HTML Validator
 
-![Screenshot 2023-09-10 at 18-10-12 Showing results for https __0davidog github io_trivia-survivor_ - Nu Html Checker](https://github.com/0davidog/trivia-survivor/assets/135815736/de0e9a4d-34db-4339-b9e0-9a2d0b36a41c)
+![Screenshot 2023-09-13 at 13-40-53 Showing results for https __0davidog github io_trivia-survivor_ - Nu Html Checker](https://github.com/0davidog/trivia-survivor/assets/135815736/b4b45c6c-9882-48e5-aeb0-ac8883901c9f)
 
 ### CSS Validator
 
-![Screenshot 2023-09-10 at 18-10-59 W3C CSS Validator results for https __0davidog github io_trivia-survivor_ (CSS level 3 SVG)](https://github.com/0davidog/trivia-survivor/assets/135815736/9ec1c555-4c03-4466-95be-684a658eeb68)
+![Screenshot 2023-09-13 at 13-37-33 W3C CSS Validator results for https __0davidog github io_trivia-survivor_ (CSS level 3 SVG)](https://github.com/0davidog/trivia-survivor/assets/135815736/95a69528-fa4a-437a-86cf-a610d6d75ae7)
 
-[Full page view](https://github.com/0davidog/trivia-survivor/assets/135815736/55011400-9ae2-4deb-a648-35d7c02624c7)
+[Full page screenshot](https://github.com/0davidog/trivia-survivor/assets/135815736/b6c7d8d1-f770-4c00-8a7a-a5762be12bfe)
 
 ### JS hint
 
