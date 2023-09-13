@@ -289,8 +289,8 @@ function loadData() {
     let userScores = JSON.parse(localStorage.getItem('trivia-survivor'));
 	
     if (userScores !== null && typeof (userScores.survived) !== undefined && userScores.failed !=undefined) {
-                if (userScores.survived.length > 0) {survivedList=userScores.survived}
-                if (userScores.failed.length > 0) {failedList=userScores.failed}
+                if (userScores.survived.length > 0) {survivedList=userScores.survived};
+                if (userScores.failed.length > 0) {failedList=userScores.failed};
                 displayScores();
         }
 }
@@ -781,13 +781,13 @@ const modalBtn = document.getElementById("continue-btn-modal");
 const modal_message = document.getElementById('modal_message');
 modalBtn.onclick = function() {
 	modal.style.display = "none";
-}
+};
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
 	if (event.target === modal) {
 		modal.style.display = "none";
 	}
-}
+};
 /* end of modal stuff from w3schools
 */
 
