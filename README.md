@@ -235,19 +235,25 @@ I tested the buttons in the navigation bar to check the behave as expected. This
 - [x] tested continue buttons from all screens during quiz
 - [x] tested continue buttons from all screens during results
 
-### Game Walkthrough
+### Game Walkthrough Testing
 
-#### Scenario 1
-  
-- Play the quiz though on normal answering questions correctly to achieve 10/10.
-
-https://github.com/0davidog/trivia-survivor/assets/135815736/7c9cfc6e-8c93-4d43-844a-4f9139c3bd0e
-  
-#### Scenario 2
-  
-- Played the quiz through on hard, purposly choosing incorrect answers to fail screen.
-
-https://github.com/0davidog/trivia-survivor/assets/135815736/e5f53b84-36bf-4f25-8029-f02bfb199378
+|Mode|Scenario|Video|
+|----|--------|-----|
+|Normal|Survive 10/10|https://github.com/0davidog/trivia-survivor/assets/135815736/7c9cfc6e-8c93-4d43-844a-4f9139c3bd0e|
+|Hard|Fai l0/10|https://github.com/0davidog/trivia-survivor/assets/135815736/e5f53b84-36bf-4f25-8029-f02bfb199378|
+|Easy|Survive 1/5|--|
+|Easy| user loosing at boundary of 0 out of 5 correct|
+|Easy| user winning at last question|
+|Regular| level winning at 5 out of 10 correct|
+|Regular| level loosing at 6 out of 10|
+|Regular| level winning on last question|
+|Regular| level loosing on last question|
+|Regular| Level loosing before 10th question|
+|Hard| level winning at 7 out of 10|
+|Hard| level loosing at 6 out of 10|
+|Hard| level winning on last question|
+|Hard| level loosing on last question|
+|Hard| level loosing before 10th question|
 
 ### Contact Form Test
 
@@ -319,9 +325,12 @@ Using the website [Statcounter](https://gs.statcounter.com/), I looked at the mo
 
 ### JS hint
 
-Copy and pasted the javascript file into [jshint](https://jshint.com/), a web service that checks Java script code for errors and recieved no errors or warnings.
-
-![Screenshot 2023-09-10 at 17-47-34 JSHint a JavaScript Code Quality Tool](https://github.com/0davidog/trivia-survivor/assets/135815736/16a84a85-8bfc-4431-b268-c2dbc32b9495)
+Copy and pasted the javascript files into [jshint](https://jshint.com/), a web service that checks Java script code for errors and recieved no errors and 1 warning.
+|Screenshot|Description|
+|----------|-----------|
+|![jshint-screen-01](https://github.com/0davidog/trivia-survivor/assets/135815736/2dedc264-9ac0-4741-8426-d51ff2d451d7)| JShint displays one comment when checking the main script.js. This is that there is an undefined variable of questionsList. This is because JShint cannot, from the code pasted see that this variable comes from its own js file 'questions.js'. So this comment is ignored.
+|![jshint-screen-02](https://github.com/0davidog/trivia-survivor/assets/135815736/2ab33475-a46b-4275-a98d-5032ba0137f4)| JShint displays one comment when checking questions.js. This is that there is an unused variable of questionsList. This is because JShint cannot, from the code pasted see that the variable is used within the main script.js file. So this comment too is ignored.
+|![jshint-screen-03](https://github.com/0davidog/trivia-survivor/assets/135815736/af0fc46e-8826-4bc9-af4f-fb5b9e50bfda)| JShint displays one warning when checking the email.js file. This is that there is an unexpected character on line 23. As this is code copied from the emailJS tutorial and not written by me I decided to ignore this to avoid any errors in the email service function. The comments about undefined variable too are due to the code refrencing an external source and is therfore ignored.
 
 ### Lighthouse
 
