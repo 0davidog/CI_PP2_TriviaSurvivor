@@ -239,33 +239,15 @@ https://github.com/0davidog/trivia-survivor/assets/135815736/e5f53b84-36bf-4f25-
 
 ### Contact Form Test
 
-- Submitting form with empty name input:
-
-![form-test-01](https://github.com/0davidog/trivia-survivor/assets/135815736/7254e710-55be-4ae0-92cc-9ae190b5db16)
-
-- Submitting form with empty email input:
-  
-![form-test-02](https://github.com/0davidog/trivia-survivor/assets/135815736/91cdc838-82a6-49bf-98d8-03ea58e1e2c2)
-
-- Submitting form with incorrect email format:
-  
-![form-test-03](https://github.com/0davidog/trivia-survivor/assets/135815736/4e3f4fa6-d60a-4969-ac5c-473dd692f460)
-
-- Submitting form with empty text area:
-  
-![form-test-04](https://github.com/0davidog/trivia-survivor/assets/135815736/f4e577c1-f5d7-4681-b04b-f67901725117)
-
-- Succesfully submitting form and recieving confirmation alert:
-
-![form-test-05](https://github.com/0davidog/trivia-survivor/assets/135815736/f127995f-effa-41f3-8903-9ead60a40236)
-
-- Form clears upon confirmation:
-  
-![form-test-06](https://github.com/0davidog/trivia-survivor/assets/135815736/fefcfdae-ed9e-4c98-a0b9-3175bfc2b09a)
-
-- Message recieved in the form of email:
-
-![form-test-07](https://github.com/0davidog/trivia-survivor/assets/135815736/48e2e884-a09a-4446-82bc-71b4a74fde01)
+|Navigate to the Feedback form:|[form-test-01](https://github.com/0davidog/trivia-survivor/assets/135815736/001709bd-34e9-4a7a-ab2c-3ff23ced197d)|
+|Attempt to send form with no input data:|[form-test-02](https://github.com/0davidog/trivia-survivor/assets/135815736/772eada9-2f5f-4372-a87f-e9ad3388a50d)|
+|Attempt to send form with no email data:|[form-test-03](https://github.com/0davidog/trivia-survivor/assets/135815736/f102b8f3-bdbb-41a3-b8f2-99eded0690ac)|
+|Attempt to send form with email in wrong format:|[form-test-04](https://github.com/0davidog/trivia-survivor/assets/135815736/c14d6761-f7de-4546-a263-a66ce2c64826)|
+|Attempt to send form with no text data:|[form-test-05](https://github.com/0davidog/trivia-survivor/assets/135815736/552b034b-9fd5-49a4-87d4-e67fcbadc8e8)|
+|Form correctly filled in:|[form-test-06](https://github.com/0davidog/trivia-survivor/assets/135815736/eabcb2fe-bba2-4719-ab2e-23cfee6283b4)|
+|Confirmation message on form success:|[form-test-07](https://github.com/0davidog/trivia-survivor/assets/135815736/6a48875d-ce57-4a12-938f-8ba016855c99)|
+|Form cleared and feedback form text changed:|[form-test-08](https://github.com/0davidog/trivia-survivor/assets/135815736/90e5060d-0b0c-43b5-a373-2ccad5a0b9a9)|
+|Recieved email of form data:|[form-test-09](https://github.com/0davidog/trivia-survivor/assets/135815736/13ab8cb4-5576-47a5-9314-3f24f0b3bb58)|
 
 ### Initial Screen Size Tests
 
