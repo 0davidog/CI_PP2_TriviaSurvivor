@@ -48,9 +48,7 @@ This version, created as part of an course project will be subtitled 'Demo of th
   * [Testing](#testing)
     + [Manual Tests](#manual-tests)
       - [Buttons](#buttons)
-    + [Game Walkthrough](#game-walkthrough)
-      - [Scenario 1](#scenario-1)
-      - [Scenario 2](#scenario-2)
+    + [Game Walkthrough](#game-walkthrough-testing)
     + [Contact Form Test](#contact-form-test)
     + [Initial Screen Size Tests](#initial-screen-size-tests)
     + [Browser and OS testing](#browser-and-os-testing)
@@ -72,7 +70,7 @@ This version, created as part of an course project will be subtitled 'Demo of th
     + [Languages Used](#languages-used)
     + [Tech Used](#tech-used)
       - [Media](#media)
-      - [Acknowledgments](#Acknowledgments)
+      - [Acknowledgements](#Acknowledgements)
       - [Mentor](#mentor)
       - [Author](#author)
 
@@ -249,21 +247,16 @@ I tested the buttons in the navigation bar to check they behave as expected. Thi
 
 |Mode|Scenario|Video|
 |----|--------|-----|
-|Normal|Survive 10/10|https://github.com/0davidog/trivia-survivor/assets/135815736/7c9cfc6e-8c93-4d43-844a-4f9139c3bd0e|
-|Hard|Fai l0/10|https://github.com/0davidog/trivia-survivor/assets/135815736/e5f53b84-36bf-4f25-8029-f02bfb199378|
-|Easy|Survive 1/5|--|
-|Easy| user loosing at boundary of 0 out of 5 correct|
-|Easy| user winning at last question|
-|Regular| level winning at 5 out of 10 correct|
-|Regular| level loosing at 6 out of 10|
-|Regular| level winning on last question|
-|Regular| level loosing on last question|
-|Regular| Level loosing before 10th question|
-|Hard| level winning at 7 out of 10|
-|Hard| level loosing at 6 out of 10|
-|Hard| level winning on last question|
-|Hard| level loosing on last question|
-|Hard| level loosing before 10th question|
+|Normal|Failing with 0/10|[video](https://youtu.be/lMojnsYw000)|
+|Normal|Failing with 5/10|[video](https://youtu.be/VlZkMXdHGtA)|
+|Normal|Surviving with 6/10 (minimum score for survival)|[video](https://youtu.be/Suesnkmfw2Y)|
+|Normal|Surviving with 10/10|[video](https://youtu.be/GTtI7fGdbcY)|
+|Easy|Failing with 0/10|[video](https://youtu.be/cTdiBK9nlNI)|
+|Easy|Surviving with 1/10 (minimum score for survival)|[video](https://youtu.be/TJKwRHkZ2PU)|
+|Hard|Failing with 0/10|[video](https://youtu.be/jKURppLX_CM)|
+|Hard|Failing with 7/10|[video](https://youtu.be/LpxNe5Cz3u8)|
+|Hard|Surviving with 8/10 (minimum score for survival)|[video](https://youtu.be/KoJKRWj_FZc)|
+|Hard|Surviving with 10/10|[video](https://youtu.be/pZIuLP7nooU)|
 
 ### Contact Form Test
 
@@ -362,7 +355,7 @@ During development many bugs occurred, some more difficult to address than other
 
 - Users were able to get to the end of the game an win with 0/5 on the easy difficulty as the game was counting 5 questions completed as a win regardless of the 0 lives left. This was fixed quite simply with an if statement that check the users lives count before making a win/lose decision.
 
-- #### Repitition Bug
+- #### Repetition Bug
   A big problem for me was a bug in the way my code was set up that seemed to increment the question number exponentially and caused the game to be over before even playing ten questions. I couldn't figure out the cause of this problem using console logs and developer debug breakpoints. I believe however, that this was fixed by tidying up the use of eventlisteners for various buttons in use throughout as well as through a thorough organising and notation of the code, making sure the step wise motion of functions made logical sense.
    
 - #### Email service Bug
@@ -533,9 +526,9 @@ window.onload = function () {
 
 All images/illustration used are the author's own work.
 
-#### Acknowledgments
+#### Acknowledgements
 
-- Much of the learning and code framwork is inspired by the html and css essentials and Love-Maths modules in the Code Institute Software Development Course.
+Much of the learning and code framwork is inspired by the html and css essentials and Love-Maths modules in the Code Institute Software Development Course.
 
 #### Mentor
 
