@@ -376,8 +376,12 @@ The instructions for this are as follows:
   - [Click sound](https://freesound.org/people/adh.dreaming/sounds/668358/)
   - [Correct sound](https://freesound.org/people/Fupicat/sounds/538147/)
   - [Wrong answer sound](https://freesound.org/people/MATRIXXX_/sounds/516901/)  
-- Email service courtesy of [emailJS](https://www.emailjs.com/)
-  - This is the code given in the emailJS setup tutorial: [(link here)](https://www.emailjs.com/docs/tutorial/creating-contact-form/)
+
+#### Email service courtesy of [emailJS](https://www.emailjs.com/)
+<details>
+	<summary>Here is the code in action:</summary>
+- This is the code given in the emailJS setup tutorial: [(link here)](https://www.emailjs.com/docs/tutorial/creating-contact-form/)
+
 ```
 <!DOCTYPE html>
 <html>
@@ -475,6 +479,7 @@ window.onload = function () {
 					
 					</form>
 ```
+</details>
 
 ### Languages Used
 
@@ -488,10 +493,11 @@ window.onload = function () {
 - Adobe Photoshop (for images and wire-frames)
 - [Git](https://git-scm.com/)
 - [Github](https://github.com/)
+- [emailJS](https://emailjs.com/)
 
 #### Media
 
-All images and video used are the author's own work.
+All images/illustration used are the author's own work.
 
 #### Acknowledgements
 
