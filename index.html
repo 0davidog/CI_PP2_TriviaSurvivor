@@ -50,23 +50,33 @@
 			
 			<!-- Title Card Section, first thing user will see -->
 			<div id="title-card" class="card">
+				
 				<h1 id="title">TRIVIA SURVIVOR</h1>
+				
         		<h2 id="sub-title">[Demo of the Dead]</h2>
         	
 				<!-- username entry -->
         		<div id="enter-name">
+					
 					<form action="javascript:void(0);" id="name-input">
+						
 						<label for="name">Enter your name to begin:</label><br>
+						
 						<input type="text" id="name" name="name" placeholder="Name" required><br>
+						
 						<button type="submit" name="start-btn" id="start-btn" class="start-btn btn">Start</button>
+						
 					</form>
+					
 				</div>
 				
 				<!-- Difficulty mode selection -->
 				<div id="choose-difficulty" class="hidden">
+					
 					<button id="easy-btn" class="easy-btn btn" value="easy">Easy</button><br>
 					<button id="normal-btn" class="normal-btn btn" value="normal">Normal</button><br>
 					<button id="hard-btn" class="hard-btn btn" value="hard">Hard</button><br>
+					
 				</div>
 				
 			</div>
@@ -87,115 +97,163 @@
 							<img id="danger-square-04" src="assets/images/danger-block-04.webp" class="hidden" alt="An orange coloured square.">
 						</div>
 						
+						<div class="danger-square">	
+							<img id="danger-square-03" src="assets/images/danger-block-03.webp" class="hidden" alt="A green-yellow mix coloured square.">
+						</div>
+						
 						<div class="danger-square">
-              <img
-                id="danger-square-03"
-                src="assets/images/danger-block-03.webp"
-                class="hidden"
-                alt="A green-yellow mix coloured square.">
-            </div>
-            <div class="danger-square">
-              <img
-                id="danger-square-02"
-                src="assets/images/danger-block-02.webp"
-                class="hidden"
-                alt="A more pale green coloured square.">
-            </div>
-            <div class="danger-square">
-              <img id="danger-square-01" src="assets/images/danger-block-01.webp" class="hidden" alt="A green coloured square.">
-            </div>
-          </div>
-          <div id="view-box">
-            <img id="zombie" src="assets/images/zombie-approach-00.webp" alt="An empty corridor.">
-          </div>
-        </div>
-        <!-- Bottom half of the game card -->
-        <div id="question-box" class="hidden">
-          <div id="text-box"></div>
-          <div id="next-btn-box">
-            <button class="hidden" id="next-btn">next &gt;&gt;</button>
-          </div>
-          <div id="questions" class="hidden"></div>
-          <div id="answers" class="hidden">
-            <button id="answer-btn-a" class="btn answer-btn" value="A" aria-label="Answer Button A">Answer A</button><br>
-            <button id="answer-btn-b" class="btn answer-btn" value="B" aria-label="Answer Button B">Answer B</button><br>
-            <button id="answer-btn-c" class="btn answer-btn" value="C" aria-label="Answer Button C">Answer C</button><br>
-            <button id="answer-btn-d" class="btn answer-btn" value="D" aria-label="Answer Button D">Answer D</button><br>
-          </div>
-        </div>
-      </div>
-      <!-- Screen to be displayed as win/lose result -->
-      <div id="results-card" class="card">
-        <div id="win-state" class="hidden">
-          <h1>YOU SURVIVED</h1>
-          <p id="win-text"></p>
-          <button id="win-replay-btn">Return</button>
-        </div>
-        <div id="fail-state" class="hidden">
-          <h1>YOU FAILED</h1>
-          <p id="fail-text"></p>
-          <button id="fail-replay-btn">Return</button>
-        </div>
-      </div>
-      <!-- Display of user scores -->
-      <div id="score-card" class="card">
-        <div id="survivor-box">
-          <h1>SURVIVED</h1>
-          <p id="survivors"></p>
-        </div>
-        <div id="failure-box">
-          <h1>FAILED</h1>
-          <p id="failures"></p>
-        </div>
-        <div id="score-btn-box">
-          <button id="continue-btn-score">Continue</button>
-        </div>
-      </div>
-      <!-- Description of the game -->
-      <div id="info-card" class="card">
-        <h1>INFORMATION</h1>
-        <p>
-          Trivia Survivor is a survival quiz game. The rules are simple. You
-          must test your knowledge of movie-triva against an approaching threat.
-          The creature stalking you will advance a step with every wrong answer.
-          Answer all 10 questions to survive. Good luck.
-        </p>
-        <div id="info-btn-box">
-          <button id="continue-btn-info">Continue</button>
-        </div>
-      </div>
+							<img id="danger-square-02" src="assets/images/danger-block-02.webp" class="hidden" alt="A more pale green coloured square.">
+						</div>
+						
+						<div class="danger-square">
+							<img id="danger-square-01" src="assets/images/danger-block-01.webp" class="hidden" alt="A green coloured square.">
+						</div>
+					
+					</div>
+					
+					<div id="view-box">
+						<img id="zombie" src="assets/images/zombie-approach-00.webp" alt="An empty corridor.">
+					</div>
+				
+				</div>
+				
+				<!-- Bottom half of the game card -->
+				<div id="question-box" class="hidden">
+					
+					<div id="text-box">
+					</div>
+					
+					<div id="next-btn-box">
+						
+						<button class="hidden" id="next-btn">next &gt;&gt;</button>
+						
+					</div>
+					
+					<div id="questions" class="hidden">
+					</div>
+					
+					<div id="answers" class="hidden">
+						
+						<button id="answer-btn-a" class="btn answer-btn" value="A" aria-label="Answer Button A">Answer A</button><br>
+						<button id="answer-btn-b" class="btn answer-btn" value="B" aria-label="Answer Button B">Answer B</button><br>
+						<button id="answer-btn-c" class="btn answer-btn" value="C" aria-label="Answer Button C">Answer C</button><br>
+						<button id="answer-btn-d" class="btn answer-btn" value="D" aria-label="Answer Button D">Answer D</button><br>
+						
+					</div>
+				
+				</div>
 			
-      <!-- A feedback form -->
-      <div id="comment-card" class="card">
-		  
-        <h1>FEEDBACK</h1>
-		  
-        <p id="feedback-text">
-			Thank you for checking out Trivia Survivor. Please consider leaving a comment on your experience with the game.
-		  </p>
-		  
-        <div id="feedback-form">
+			</div>
 			
-          <form id="contact-form">
-            <input type="hidden" name="contact_number">
-            <label>Name:</label><br>
-            <input type="text" name="user_name" required><br>
-            <label>Email:</label><br>
-            <input type="email" name="user_email" required><br>
-            <label>Message:</label><br>
-            <textarea name="message" required></textarea><br>
-            <input type="submit" value="Send" id="send"><br><br>
-          </form>
+			<!-- Screen to be displayed as win/lose result -->
+			<div id="results-card" class="card">
+				
+				<div id="win-state" class="hidden">
+					
+					<h1>YOU SURVIVED</h1>
+					
+					<p id="win-text"></p>
+					
+					<button id="win-replay-btn">Return</button>
+				
+				</div>
+				
+				<div id="fail-state" class="hidden">
+					
+					<h1>YOU FAILED</h1>
+					
+					<p id="fail-text"></p>
+					
+					<button id="fail-replay-btn">Return</button>
+				
+				</div>
 			
-          <div id="form-btn-box">
-            <button id="continue-btn-comment">Continue</button>
-          </div>
-        
-		  </div>
-      </div>
-    </section>
+			</div>
+			
+			<!-- Display of user scores -->
+			<div id="score-card" class="card">
+				
+				<div id="survivor-box">
+					
+					<h1>SURVIVED</h1>
+					
+					<p id="survivors"></p>
+				
+				</div>
+				
+				<div id="failure-box">
+					
+					<h1>FAILED</h1>
+					
+					<p id="failures"></p>
+				
+				</div>
+				
+				<div id="score-btn-box">
+					
+					<button id="continue-btn-score">Continue</button>
+				
+				</div>
+			
+			</div>
+			
+			<!-- Description of the game -->
+			<div id="info-card" class="card">
+				
+				<h1>INFORMATION</h1>
+				
+				<p>Trivia Survivor is a survival quiz game. The rules are simple. You must test your knowledge of movie-triva against an approaching threat. The creature stalking you will advance a step with every wrong answer. Answer all 10 questions to survive. Good luck.</p>
+				
+				<div id="info-btn-box">
+					
+					<button id="continue-btn-info">Continue</button>
+				
+				</div>
+			
+			</div>	
+			
+			<!-- A feedback form -->
+			<div id="comment-card" class="card">
+				
+				<h1>FEEDBACK</h1>
+				
+				<p id="feedback-text">Thank you for checking out Trivia Survivor. Please consider leaving a comment on your experience with the game.</p>
+				
+				<div id="feedback-form">
+					
+					<form id="contact-form">
+						
+						<input type="hidden" name="contact_number">
+						
+						<label>Name:</label><br>
+						
+						<input type="text" name="user_name" required><br>
+						
+						<label>Email:</label><br>
+						
+						<input type="email" name="user_email" required><br>
+						
+						<label>Message:</label><br>
+						
+						<textarea name="message" required></textarea><br>
+						
+						<input type="submit" value="Send" id="send"><br><br>
+					
+					</form>
+					
+					<div id="form-btn-box">
+						
+						<button id="continue-btn-comment">Continue</button>
+					
+					</div>
+				
+				</div>
+			
+			</div>
 		
-		<!-- The Modal  as from https://www.w3schools.com/howto/howto_css_modals.asp -->
+		</section>
+		
+		<!-- Modal html from https://www.w3schools.com/howto/howto_css_modals.asp -->
 		<div id="modal" class="modal">
 			<!-- Modal content -->
 			<div class="modal-content">
