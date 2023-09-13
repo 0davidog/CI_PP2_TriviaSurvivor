@@ -2,6 +2,8 @@
 
 /** @functiom
 * These functions turn the contact form data into an email and send it to my personal address.
+* Modal message alerts user on success or failure of form.
+* Form is reset on success.
 // Service provided by https://www.emailjs.com/
 // Original code from https://www.emailjs.com/docs/tutorial/creating-contact-form/
 */

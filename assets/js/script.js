@@ -94,7 +94,7 @@ window.addEventListener('load', function () {
 * Fetch screen height.
 * Fetch window orientation.s
 * IF in landscape and height less than 500px.
-* Then - ALERT Ask to rotate/unfold
+* Then - Modal message Ask to rotate/unfold
 */
 window.addEventListener('load', function() {
 	let screenHeight = window.innerHeight;
@@ -113,7 +113,7 @@ window.addEventListener('load', function() {
 * Fetch screen height.
 * Fetch window orientation.
 * IF in landscape and height less than 500px.
-* Then - ALERT Ask to rotate/unfold.
+* Then - Modal message Ask to rotate/unfold.
 */
 window.addEventListener('resize', function() {
 	let screenHeight = window.innerHeight;
