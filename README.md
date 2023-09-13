@@ -2,7 +2,7 @@
 
 _Author: David O'Gara_
 
-Trivia Survivor is a movie trivia quiz game with an element of danger. Players will test their knowledge of movie trivia as a creature makes its way towards them. Correct answers will sall the creatures approach while incorrect answers will allow it to advance. When too many wrong answers have been submitted the game ends in failure so to survive players must answer enough trivia questions correctly.
+Trivia Survivor is a movie trivia quiz game with an element of danger. Players will test their knowledge of movie trivia as a creature makes its way towards them. Correct answers will stall the creatures approach while incorrect answers will allow it to advance. When too many wrong answers have been submitted the game ends in failure so to survive players must answer enough trivia questions correctly.
 
 
 ![cover-image](https://github.com/0davidog/trivia-survivor/assets/135815736/307d4b6e-a9f1-485d-942b-59f3d14bc705)
@@ -62,7 +62,7 @@ This version, created as part of an course project will be subtitled 'Demo of th
     + [Lighthouse](#lighthouse)
   * [Bugs](#bugs)
     + [Resolved Issue](#resolved-issues)
-      - [Repitition Bug](#repitition-bug)
+      - [Repetition Bug](#repetition-bug)
       - [email Bug](#email-service-bug) 
     + [Unfixed Bugs](#unfixed-bugs)
   * [Deployment](#deployment)
@@ -71,7 +71,7 @@ This version, created as part of an course project will be subtitled 'Demo of th
     + [Languages Used](#languages-used)
     + [Tech Used](#tech-used)
       - [Media](#media)
-      - [Acknowledgements](#acknowledgements)
+      - [Acknowledgments](#Acknowledgments)
       - [Mentor](#mentor)
       - [Author](#author)
 
@@ -102,13 +102,13 @@ As the site owner I want user to make return visits to the site to both improve 
 
 ### Wireframes
 
-Here is a PDF of the wireframes put together at the sites inception. Adobe photoshop was used to visually plan the sites look and layout using an iPhone Xs (375x812) and a Dell laptop (1920x1080) as reference for viewport size/ratio:
+Here is a PDF of the wireframes put together at the site's inception. Adobe photoshop was used to visually plan the sites look and layout using an iPhone Xs (375x812) and a Dell laptop (1920x1080) as reference for viewport size/ratio:
 
 [wireframes.pdf](https://github.com/0davidog/trivia-survivor/files/12473826/wireframes.pdf)
 
 ### Storyboard
 
-Here is a storyboard for the basic way the creature image advances after each wrong question accompanied by an increasing bar in colours green to red that simbolises the threat level:
+Here is a storyboard for the basic way the creature image advances after each wrong question accompanied by an increasing bar in colours green to red that symbolises the threat level:
 
 ![zombie-storyboard](https://github.com/0davidog/trivia-survivor/assets/135815736/12a69d5b-167f-419a-8c56-7a033c48ba1e)
 
@@ -116,7 +116,7 @@ Here is the zombie design used:
 
 [zombie-design](https://github.com/0davidog/trivia-survivor/assets/135815736/f1042657-c21c-4379-9882-4a8d569b3977)
 
-And here is a pdf file with the zombie-advance images rendered in photshop:
+And here is a pdf file with the zombie-advance images rendered in photoshop:
 
 [zombie-approach](https://github.com/0davidog/trivia-survivor/files/12473927/zombie-approach.pdf)
 
@@ -126,7 +126,7 @@ The theme and title chosen reminded me of the the playstation game series 'Resid
 
 ![resident-evil-2-inventory-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/bbf02be4-b9ed-43c2-9d0d-67608a635886) ![color-swatches](https://github.com/0davidog/trivia-survivor/assets/135815736/4b426abc-4d21-4468-a4f1-c8d4e1ac70f7)
 
-Instead of aiming for an exact match however, I found a suitable set of close-matches as part of photoshop's 'Dark' colour palatte in the default swatches collection. Here is a generated palatte courtesy of the site [coolors](https://coolors.co/):
+Instead of aiming for an exact match however, I found a suitable set of close-matches as part of photoshop's 'Dark' colour palette in the default swatches collection. Here is a generated palette courtesy of the site [coolors](https://coolors.co/):
 
 ![color-palette-coolors](https://github.com/0davidog/trivia-survivor/assets/135815736/05ee9b06-a0be-4fc0-aee3-be2685ae6878)
 
@@ -204,7 +204,7 @@ The scores page displays the recent score the user has achieved in this session.
 
 The contact form allows the user to leave feedback on their experience with the app. Using the service [emailJS](https://www.emailjs.com/) I set up Javascript email service so that any feedback entered in the form will be sent to me via email. The format is as follows:
 
-- Subject: Triva Survivor Feedback from {{user_name}}
+- Subject: Trivia Survivor Feedback from {{user_name}}
 - Hello David,
 - You received a new feedback comment from {{user_name}} on your Trivia-Survivor game:
 - {{message}}
@@ -233,7 +233,7 @@ A custom 404 error page was created in the style of the rest of the site with a 
 
 #### Buttons
 
-I tested the buttons in the navigation bar to check the behave as expected. This includes trying the buttons from various states of gameplay.
+I tested the buttons in the navigation bar to check they behave as expected. This includes trying the buttons from various states of gameplay.
 
 - [x] tested navigation buttons from title screen.
 - [x] tested navigation buttons from mid-quiz.
@@ -276,11 +276,11 @@ I tested the buttons in the navigation bar to check the behave as expected. This
 |Form correctly filled in:|![form-test-06](https://github.com/0davidog/trivia-survivor/assets/135815736/eabcb2fe-bba2-4719-ab2e-23cfee6283b4)|
 |Confirmation message on form success:|![form-test-07](https://github.com/0davidog/trivia-survivor/assets/135815736/6a48875d-ce57-4a12-938f-8ba016855c99)|
 |Form cleared and feedback form text changed:|![form-test-08](https://github.com/0davidog/trivia-survivor/assets/135815736/90e5060d-0b0c-43b5-a373-2ccad5a0b9a9)|
-|Recieved email of form data:|![form-test-09](https://github.com/0davidog/trivia-survivor/assets/135815736/13ab8cb4-5576-47a5-9314-3f24f0b3bb58)|
+|Received email of form data:|![form-test-09](https://github.com/0davidog/trivia-survivor/assets/135815736/13ab8cb4-5576-47a5-9314-3f24f0b3bb58)|
 
 ### Initial Screen Size Tests
 
-During development Chrome's developer tools were used to test the look of the app accross multiple screen sizes by inspecting the page and then viewing the site using the presets available. This emulated using the app accross different devices. This list includes the laptop I use to develop the app also.
+During development Chrome's developer tools were used to test the look of the app accross multiple screen sizes by inspecting the page and then viewing the site using the presets available. This emulated using the app accross different devices. This list includes the laptop I use to develop the app as well.
 
 |Device   |Dimensions|
 |---------|----------|
@@ -302,7 +302,7 @@ During development Chrome's developer tools were used to test the look of the ap
 
 ### Browser and OS testing
 
-Using the site [Browserstack](https://www.browserstack.com/), I tested the app accross multiple devices, browser and operating systems for a wide view of functionality accross platforms.
+Using the site [Browserstack](https://www.browserstack.com/), I tested the app across multiple devices, browser and operating systems for a wide view of functionality across platforms.
 
 |Device|OS|Viewport|Browser|Browserstack Screenshot|
 |-|-|-|-|-|
@@ -357,15 +357,15 @@ Chrome developer tools 'lighthouse' function was used to assess the apps accessi
 
 ### Resolved Issues
 
-During development many bugs occured, some more difficult to address than others. These include:
+During development many bugs occurred, some more difficult to address than others. These include:
 
-- Users were able to get to the end of the game an win with 0/5 on the easy difficulty as the game was counting 5 questions completed as a win regardless of the 0 lives left. This was fixed quite simply with an if statment that check the users lives count before making a win/lose decision.
+- Users were able to get to the end of the game an win with 0/5 on the easy difficulty as the game was counting 5 questions completed as a win regardless of the 0 lives left. This was fixed quite simply with an if statement that check the users lives count before making a win/lose decision.
 
 - #### Repitition Bug
-  A big problem for me was a bug in the way my code was set up that seemed to increment the question number exponentially and caused the game to be over before even playing ten questions. I couldn't figure out the cause of this problem using console logs and developer debug breakpoints. I believe however, that this was fixed by tidying up the use of eventlisteners for various buttons in use throughout as well as through a thoughough organising and notation of the code, making sure the stepwise motion of functions made logical sense.
+  A big problem for me was a bug in the way my code was set up that seemed to increment the question number exponentially and caused the game to be over before even playing ten questions. I couldn't figure out the cause of this problem using console logs and developer debug breakpoints. I believe however, that this was fixed by tidying up the use of eventlisteners for various buttons in use throughout as well as through a thorough organising and notation of the code, making sure the step wise motion of functions made logical sense.
    
 - #### Email service Bug
-  Another particularly difficult bug was one in which the email service appeared to break when it came time to test for the readme. Instead of a pause followed by a confirmation alert and an email recieved as expected the page appeared to refresh and return to the title screen without even giving the failure to send alert that was in place at the time. I couldn't find the reason this wasn't working with either console logs or dev tools breakpoints as it seemed to through the whole process out. The only solution that seemed available was to remake the contact form from tutorial and this appeared to solve the issue.
+  Another particularly difficult bug was one in which the email service appeared to break when it came time to test for the readme. Instead of a pause followed by a confirmation alert and an email received as expected the page appeared to refresh and return to the title screen without even giving the failure to send alert that was in place at the time. I couldn't find the reason this wasn't working with either console logs or dev tools breakpoints as it seemed to through the whole process out. The only solution that seemed available was to remake the contact form from tutorial and this appeared to solve the issue.
 
 ### Unfixed Bugs
 
@@ -383,8 +383,12 @@ The instructions for this are as follows:
 |Navigate to 'Pages' on the left menu bar under 'Code and Automation':|![deployment-screen-03](https://github.com/0davidog/trivia-survivor/assets/135815736/9dcf6975-fbbf-4539-a7d4-b235a6168978)|
 |Under 'Branch' select 'main' from the list:|![deployment-screen-04](https://github.com/0davidog/trivia-survivor/assets/135815736/ea5eb167-14d3-4824-9525-5cac1eea83d7)|
 |Hit Save:|![deployment-screen-05](https://github.com/0davidog/trivia-survivor/assets/135815736/43940cb1-c4fb-4c78-84a5-af396574dd50)|
-|Once saved you'll recieve confirmation. The deployment may take a few moments to complete:|![deployment-screen-06](https://github.com/0davidog/trivia-survivor/assets/135815736/f7ab205c-4825-4550-b2cb-0f4f08887722)|
+|Once saved you'll receive confirmation. The deployment may take a few moments to complete:|![deployment-screen-06](https://github.com/0davidog/trivia-survivor/assets/135815736/f7ab205c-4825-4550-b2cb-0f4f08887722)|
 |Once complete you'll find a link to your site at the top of the page:|![deployment-screen-07](https://github.com/0davidog/trivia-survivor/assets/135815736/ba228a79-020f-4c26-9fed-199546326b1c)|
+
+## IDE
+
+For this project the IDE I predominantly used was Adobe Dreamweaver. Although not a popular IDE, it was something I already had access to as part of Adobe's Creative Cloud package and found easy to start using with my lack of experience in software development. This also allowed me to get started on projects relatively quickly compared to Codeanywere's load times. Combined with git for windows this allowed me to use the git command line terminal to add, commit, pull and push with the repository. Dreamweaver has limitations however, so for any markup documents such as the readme or site manifest for favicons editing directly in github was necessary.
 
 ## Credits
 
@@ -528,7 +532,7 @@ window.onload = function () {
 
 All images/illustration used are the author's own work.
 
-#### Acknowledgements
+#### Acknowledgments
 
 - Much of the learning and code framwork is inspired by the html and css essentials and Love-Maths modules in the Code Institute Software Development Course.
 
