@@ -287,17 +287,11 @@ Using the site [Browserstack](https://www.browserstack.com/), I tested the app a
 
 Using the website [Statcounter](https://gs.statcounter.com/), I looked at the most popular browser, device vendor and operating system for the last year. This told me which combinations to focus on when testing using browserstack. 
 
-Browser:
-
-![StatCounter-browser-ww-monthly-202208-202308-bar](https://github.com/0davidog/trivia-survivor/assets/135815736/f4e1334d-f9fe-4819-992a-9557aaf3dd37)
-
-Device Vendor:
-
-![StatCounter-os_combined-ww-monthly-202208-202308-bar](https://github.com/0davidog/trivia-survivor/assets/135815736/baba4917-2c8f-4631-b8c5-f2c391510d73)
-
-Operating System:
-
-![StatCounter-vendor-ww-monthly-202208-202308-bar](https://github.com/0davidog/trivia-survivor/assets/135815736/ab5b59d5-00b7-45fe-8aa0-39742c4c3d94)
+|Description|Graph|
+|-----------|-----|
+|Browser:|![StatCounter-browser-ww-monthly-202208-202308-bar](https://github.com/0davidog/trivia-survivor/assets/135815736/f4e1334d-f9fe-4819-992a-9557aaf3dd37)|
+|Device Vendor:|![StatCounter-os_combined-ww-monthly-202208-202308-bar](https://github.com/0davidog/trivia-survivor/assets/135815736/baba4917-2c8f-4631-b8c5-f2c391510d73)|
+|Operating System:|![StatCounter-vendor-ww-monthly-202208-202308-bar](https://github.com/0davidog/trivia-survivor/assets/135815736/ab5b59d5-00b7-45fe-8aa0-39742c4c3d94)|
 
 ## Validation
 
