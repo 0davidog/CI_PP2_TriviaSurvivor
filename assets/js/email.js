@@ -22,10 +22,16 @@ window.onload = function () {
 		emailjs.sendForm("service_pmzmnla", "contact-form", this).then(
 			function () {
 				document.getElementById("contact-form").reset();
-				alert("Thank you for the feedback.");
+				document.getElementById('contact-form').disabled = true;
+				modal_message.innerHTML = 'Thank you for your feedback.';
+				modal.style.display = "flex";
+				document.getElementById('feedback-text">').innerHTML="Thank you, your feedback has been recieved and will be taken into consideration.";
+				document.getElementById('contact-form').display="none";
 			},
 			function (error) {
-				alert("Sorry, message failed to send");
+				modal_message.innerHTML = 'Sorry, message failed to send.';
+				modal.style.display = "flex";
+				document.getElementById('feedback-text">').innerHTML="Sorry, as your feedback failed to send please consider trying again.";
 			}
 		);
 	});
