@@ -16,7 +16,6 @@ window.onload = function () {
 		.getElementById("contact-form")
 		.addEventListener("submit", function (event) {
 		event.preventDefault();
-		document.getElementById('contact-form').disabled = true;
 		// generate a five digit number for the contact_number variable
 		this.contact_number.value = (Math.random() * 100000) | 0;
             // these IDs from the previous steps
@@ -32,7 +31,6 @@ window.onload = function () {
 				modal_message.innerHTML = 'Sorry, message failed to send.';
 				modal.style.display = "flex";
 				document.getElementById('feedback-text').innerHTML="Sorry, as your feedback failed to send please consider trying again.";
-				document.getElementById('contact-form').disabled = false;
 			}
 		);
 	});
