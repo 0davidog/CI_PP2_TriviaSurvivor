@@ -1,4 +1,5 @@
 // JavaScript Document
+/*jshint esversion: 6 */ 
 
 /** @functiom
 * These functions turn the contact form data into an email and send it to my personal address.
