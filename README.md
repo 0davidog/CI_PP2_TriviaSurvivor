@@ -107,9 +107,13 @@ Here is a storyboard for the basic way the creature image advances after each wr
 
 ![zombie-storyboard](https://github.com/0davidog/trivia-survivor/assets/135815736/12a69d5b-167f-419a-8c56-7a033c48ba1e)
 
+Here is the zombie design used:
+
+[zombie-design](https://github.com/0davidog/trivia-survivor/assets/135815736/f1042657-c21c-4379-9882-4a8d569b3977)
+
 And here is a pdf file with the zombie-advance images rendered in photshop:
 
-[zombie-approach.pdf](https://github.com/0davidog/trivia-survivor/files/12473927/zombie-approach.pdf)
+[zombie-approach](https://github.com/0davidog/trivia-survivor/files/12473927/zombie-approach.pdf)
 
 ### Colour Scheme
 
