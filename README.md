@@ -442,45 +442,57 @@ The instructions for this are as follows:
 ```
 -   And here is how I utilised it on my page:
 ```
-     <script>
-      (function () {
+
+(function () {
         // https://dashboard.emailjs.com/admin/account
         emailjs.init("3Q0SMJLBwZIF-Uvwg");
-      })();
-    </script>
-    <script>
-      window.onload = function () {
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-            // generate a five digit number for the contact_number variable
-            this.contact_number.value = (Math.random() * 100000) | 0;
+})();
+
+window.onload = function () {
+	document
+		.getElementById("contact-form")
+		.addEventListener("submit", function (event) {
+		event.preventDefault();
+		// generate a five digit number for the contact_number variable
+		this.contact_number.value = (Math.random() * 100000) | 0;
             // these IDs from the previous steps
-            emailjs.sendForm("service_pmzmnla", "contact-form", this).then(
-              function () {
-                document.getElementById("contact-form").reset();
-                alert("Thank you for the feedback.");
-              },
-              function (error) {
-                alert("Sorry, message failed to send");
-              }
-            );
-          });
-      };
-    </script>
+		emailjs.sendForm("service_pmzmnla", "contact-form", this).then(
+			function () {
+				document.getElementById("contact-form").reset();
+				modal_message.innerHTML = 'Thank you for your feedback.';
+				modal.style.display = "flex";
+				document.getElementById('feedback-text').innerHTML="Thank you, your feedback has been recieved and will be taken into consideration.";
+				document.getElementById('contact-form').display="none";
+			},
+			function (error) {
+				modal_message.innerHTML = 'Sorry, message failed to send.';
+				modal.style.display = "flex";
+				document.getElementById('feedback-text').innerHTML="Sorry, as your feedback failed to send please consider trying again.";
+			}
+		);
+	});
+};
 ```
 ```
               <form id="contact-form">
-            <input type="hidden" name="contact_number">
-            <label>Name</label><br>
-            <input type="text" name="user_name" required><br>
-            <label>Email</label><br>
-            <input type="email" name="user_email" required><br>
-            <label>Message</label><br>
-            <textarea name="message" required></textarea><br>
-            <input type="submit" value="Send"><br><br>
-          </form>
+						
+						<input type="hidden" name="contact_number">
+						
+						<label>Name:</label><br>
+						
+						<input type="text" name="user_name" required><br>
+						
+						<label>Email:</label><br>
+						
+						<input type="email" name="user_email" required><br>
+						
+						<label>Message:</label><br>
+						
+						<textarea name="message" required></textarea><br>
+						
+						<input type="submit" value="Send" id="send"><br><br>
+					
+					</form>
 ```
 
 ### Languages Used
