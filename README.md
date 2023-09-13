@@ -301,9 +301,15 @@ Using the site [Browserstack](https://www.browserstack.com/), I tested the app a
 
 |Device|OS|Viewport|Browser|Browserstack Screenshot|
 |-|-|-|-|-|
-|Samsung Galaxy S23|Android|393x786|Chrome|[browser-testing-screen-01](https://github.com/0davidog/trivia-survivor/assets/135815736/1386d46b-36b3-437e-99c4-3b214ceb4cd1)|
-|Xiaomi Redmi Note 12|Android|393x873|Chrome|[browser-testing-screen-02](https://github.com/0davidog/trivia-survivor/assets/135815736/748cbd6c-38fc-429e-a984-0bec50932966)|
-|iPhone 14 plus|IOS|428x746|Safari|[browser-testing-screen-03](https://github.com/0davidog/trivia-survivor/assets/135815736/110413c5-b807-472d-a487-d90434dca2db)|
+|Samsung Galaxy S23|Android|393x786|Chrome|[Screenshot-01](https://github.com/0davidog/trivia-survivor/assets/135815736/9006a9dc-3a9c-42c4-aca3-e5474f353c3e)|
+|Xiaomi Redmi Note 12|Android|393x873|Chrome|[Screenshot-02](https://github.com/0davidog/trivia-survivor/assets/135815736/5029187b-f2fc-444d-89a4-53e36d46e8e9)|
+|iPhone 14|IOS|390x664|Safari|[Screenshot-03](https://github.com/0davidog/trivia-survivor/assets/135815736/394d9db8-5e06-4f2c-bb4a-f12e2f544bf8)|
+|iPhone 13|IOS|390x664|Safari|[Screenshot-04](https://github.com/0davidog/trivia-survivor/assets/135815736/db3fd403-4d6f-4f22-bd48-ada3de91e202)|
+|iPad 10th|IOS|393x786|Safari|[Screenshot-05](https://github.com/0davidog/trivia-survivor/assets/135815736/82a59203-f768-4cd6-959f-cbbc3a648529)|
+|PC|Windows 11|120x927|Edge|[Screenshot-06](https://github.com/0davidog/trivia-survivor/assets/135815736/0fe46edd-a0ff-4818-9d5b-738802d614e6)|
+|Mac|Ventura|120x927|Safari|[Screenshot-07](https://github.com/0davidog/trivia-survivor/assets/135815736/e23479e9-ccfa-48d8-a747-e4d6e6561b80)|
+|Google Pixel 6 Pro|Android|412x778|Chrome|[Screenshot-08](https://github.com/0davidog/trivia-survivor/assets/135815736/ca521b93-c868-4475-9c7b-00b76cd48264)|
+|laptop PC|Windows 10|1920x1080|Firefox & Chrome|Screenshots used throughout|
 
 ### Market Research
 
