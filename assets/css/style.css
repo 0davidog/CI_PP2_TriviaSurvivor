@@ -294,6 +294,24 @@ i:hover {
 #form-btn-box {
 	text-align: center;
 }
+/* Styling form button... */
+#send {
+	background-color: #000000;
+	color: #ffffff;
+	padding: 5px;
+	font-size: 1.1rem;
+	border: solid 1px #808080;
+	border-radius: 5px;
+	margin: 2px 2px 2px 2px;
+	
+}
+
+/* Changing button text colour to red when hovered over... */
+#send:hover {
+	color: #9E0B0F;
+	transform: scale(1.1);
+	cursor: pointer;
+}
 /* Styling the results card */
 #results-card {
 	display: none;

@@ -164,25 +164,34 @@
           <button id="continue-btn-info">Continue</button>
         </div>
       </div>
+			
       <!-- A feedback form -->
       <div id="comment-card" class="card">
+		  
         <h1>FEEDBACK</h1>
-        <p id="feedback-text">Thank you for checking out Trivia Survivor. Please consider leaving a comment on your experience with the game.</p>
+		  
+        <p id="feedback-text">
+			Thank you for checking out Trivia Survivor. Please consider leaving a comment on your experience with the game.
+		  </p>
+		  
         <div id="feedback-form">
+			
           <form id="contact-form">
             <input type="hidden" name="contact_number">
-            <label>Name</label><br>
+            <label>Name:</label><br>
             <input type="text" name="user_name" required><br>
-            <label>Email</label><br>
+            <label>Email:</label><br>
             <input type="email" name="user_email" required><br>
-            <label>Message</label><br>
+            <label>Message:</label><br>
             <textarea name="message" required></textarea><br>
-            <input type="submit" value="Send"><br><br>
+            <input type="submit" value="Send" id="send"><br><br>
           </form>
+			
           <div id="form-btn-box">
             <button id="continue-btn-comment">Continue</button>
           </div>
-        </div>
+        
+		  </div>
       </div>
     </section>
 		
