@@ -191,9 +191,21 @@ The scores page displays the recent score the user has achieved in this session.
 
 ### Feedback Form
 
-![contact-form-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/97f5a864-5334-4b3c-93e4-dc91b586fb87)
+![contact-form-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/d9211c2b-c2c5-4389-bc5c-8fe86586c069)
 
-The contact form allows the user to leave feedback on their experience with the app. Using the service [emailJS](https://www.emailjs.com/) I set up Javascript email service so that any feedback entered in the form will be sent to me via email.
+The contact form allows the user to leave feedback on their experience with the app. Using the service [emailJS](https://www.emailjs.com/) I set up Javascript email service so that any feedback entered in the form will be sent to me via email. The format is as follows:
+
+- Subject: Triva Survivor Feedback from {{user_name}}
+- Hello David,
+- You received a new feedback comment from {{user_name}} on your Trivia-Survivor game:
+- {{message}}
+- Best wishes,
+- EmailJS team
+
+Here's a screenshot from a successful test:
+
+![email-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/ad43b00c-1001-4ee3-85fd-c42b33d55ff6)
+
 
 ### 404 Error Page
 
