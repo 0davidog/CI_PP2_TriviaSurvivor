@@ -27,7 +27,7 @@ window.onload = function () {
 				document.getElementById("contact-form").reset();
 				modal_message.innerHTML = 'Thank you for your feedback.';
 				modal.style.display = "flex";
-				document.getElementById('feedback-text').innerHTML="Thank you, your feedback has been recieved and will be taken into consideration.";
+				document.getElementById('feedback-text').innerHTML="Thank you, your feedback has been received and will be taken into consideration.";
 				document.getElementById('contact-form').display="none";
 			},
 			function (error) {
