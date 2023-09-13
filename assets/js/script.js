@@ -734,7 +734,7 @@ function win() {
 	resultsCard.style.display = "flex";
 	document.getElementById('win-state').classList.remove('hidden');
 	document.getElementById('win-text').innerHTML = `Congratulations ${toTitleCase(userName.value)}, you have escaped the creature's grasp this time. <br><br>Dare you try again?<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
-	survivedList.push(`${toTitleCase(userName.value)} survived with a score of ${userScore}/${quizLength}<br>`);
+	survivedList.push(`${toTitleCase(userName.value)} survived with a score of ${userScore}/${quizLength} on ${gameMode} mode.<br>`);
 	winReplayBtn.addEventListener('click', reStart);
 	saveData();
 }
@@ -752,7 +752,7 @@ function fail() {
 	resultsCard.style.display = "flex";
 	document.getElementById('fail-state').classList.remove('hidden');
 	document.getElementById('fail-text').innerHTML = `<p>${toTitleCase(userName.value)}, the creature has you in it's grasp this time. But don't give up. <br><br>Please try again.<br><br>Score: ${userScore}/${quizLength}<br>Mode: ${gameMode}<br>`;
-	failedList.push(`${toTitleCase(userName.value)} was lost with a score of ${userScore}/${quizLength}<br>`);
+	failedList.push(`${toTitleCase(userName.value)} was lost with a score of ${userScore}/${quizLength} on ${gameMode} mode.<br>`);
 	failReplayBtn.addEventListener('click', reStart);
 	saveData();
 }
@@ -825,10 +825,10 @@ const wrongMessage = [
 
 // Win scores
 let survivedList = [
-	`Barry survived with a score of 8/10<br>`,
+	`Barry survived with a score of 8/10 on normal mode.<br>`,
 ];
 
 // Fail Scores
 let failedList = [
-	`Albert was lost with a score of 5/10<br>`,
+	`Albert was lost with a score of 5/10 on normal mode.<br>`,
 ];
