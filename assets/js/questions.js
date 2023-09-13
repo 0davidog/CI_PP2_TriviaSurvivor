@@ -1,4 +1,5 @@
 // JavaScript Document
+/*jshint esversion: 6 */ 
 
 // Question List
 
