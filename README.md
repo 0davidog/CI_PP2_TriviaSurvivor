@@ -4,6 +4,7 @@ _Author: David O'Gara_
 
 Trivia Survivor is a movie trivia quiz game with an element of danger. Players will test their knowledge of movie trivia as a creature makes its way towards them. Correct answers will sall the creatures approach while incorrect answers will allow it to advance. When too many wrong answers have been submitted the game ends in failure so to survive players must answer enough trivia questions correctly.
 
+
 ![cover-image](https://github.com/0davidog/trivia-survivor/assets/135815736/307d4b6e-a9f1-485d-942b-59f3d14bc705)
 
 ## Demo of the Dead
@@ -59,7 +60,11 @@ This version, created as part of an course project will be subtitled 'Demo of th
     + [CSS Validator](#css-validator)
     + [JS hint](#js-hint)
     + [Lighthouse](#lighthouse)
-  * [Unfixed Bugs](#unfixed-bugs)
+  * [Bugs](#bugs)
+    + [Resolved Issue](#resolved-issues)
+      - [Repitition Bug](#repitition-bug)
+      - [email Bug](#email-service-bug) 
+    + [Unfixed Bugs](#unfixed-bugs)
   * [Deployment](#deployment)
   * [Credits](#credits)
     + [Content](#content)
@@ -348,7 +353,21 @@ Chrome developer tools 'lighthouse' function was used to assess the apps accessi
 
 ![lighthouse](https://github.com/0davidog/trivia-survivor/assets/135815736/a900de4a-261f-4e0a-ac23-96f121bc97e0)
 
-## Unfixed Bugs
+## Bugs
+
+### Resolved Issues
+
+During development many bugs occured, some more difficult to address than others. These include:
+
+- Users were able to get to the end of the game an win with 0/5 on the easy difficulty as the game was counting 5 questions completed as a win regardless of the 0 lives left. This was fixed quite simply with an if statment that check the users lives count before making a win/lose decision.
+
+- #### Repitition Bug
+  A big problem for me was a bug in the way my code was set up that seemed to increment the question number exponentially and caused the game to be over before even playing ten questions. I couldn't figure out the cause of this problem using console logs and developer debug breakpoints. I believe however, that this was fixed by tidying up the use of eventlisteners for various buttons in use throughout as well as through a thoughough organising and notation of the code, making sure the stepwise motion of functions made logical sense.
+   
+- #### Email service Bug
+  Another particularly difficult bug was one in which the email service appeared to break when it came time to test for the readme. Instead of a pause followed by a confirmation alert and an email recieved as expected the page appeared to refresh and return to the title screen without even giving the failure to send alert that was in place at the time. I couldn't find the reason this wasn't working with either console logs or dev tools breakpoints as it seemed to through the whole process out. The only solution that seemed available was to remake the contact form from tutorial and this appeared to solve the issue.
+
+### Unfixed Bugs
 
 No known bugs remain unfixed.
 
