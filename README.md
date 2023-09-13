@@ -66,6 +66,7 @@ This version, created as part of an course project will be subtitled 'Demo of th
       - [email Bug](#email-service-bug) 
     + [Unfixed Bugs](#unfixed-bugs)
   * [Deployment](#deployment)
+  * [IDE](#ide)
   * [Credits](#credits)
     + [Content](#content)
     + [Languages Used](#languages-used)
