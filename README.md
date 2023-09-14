@@ -201,7 +201,7 @@ The scores page displays the recent score the user has achieved in this session.
 
 ![contact-form-screen](https://github.com/0davidog/trivia-survivor/assets/135815736/d9211c2b-c2c5-4389-bc5c-8fe86586c069)
 
-The contact form allows the user to leave feedback on their experience with the app. Using the service [emailJS](https://www.emailjs.com/) I set up Javascript email service so that any feedback entered in the form will be sent to me via email. The format is as follows:
+The contact form allows the user to leave feedback on their experience with the app. Using the service [emailJS](https://www.emailjs.com/) I set up Javascript email service so that any feedback entered in the form will be sent to me via email. This would allow for the site to grow from user suggestions. The format is as follows:
 
 - Subject: Trivia Survivor Feedback from {{user_name}}
 - Hello David,
@@ -505,6 +505,37 @@ window.onload = function () {
 						<input type="submit" value="Send" id="send"><br><br>
 					
 					</form>
+```
+</details>
+
+#### Modal Message from W3Schools
+
+Alerts were proving to be too jarring in style difference in such a way that a user would probably ignore them. Using this [modal tutorial](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal) from W3Schools I instead created modal messages that could provide information while not taking the user out of the app.
+
+<details>
+	<summary>Examples:</summary>
+Here's were I used the concept in html:
+
+```
+		<!-- Modal html from https://www.w3schools.com/howto/howto_css_modals.asp -->
+		<div id="modal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<p id="modal_message">What a horrible night to have a curse...</p>
+				<button id="continue-btn-modal">Continue</button>
+			</div>
+		</div>
+
+```
+In Main javascript file:
+```
+			modal_message.innerHTML = 'This game is best viewed in portrait while at this screen-size.\nPlease rotate or unfold your device.';
+			modal.style.display = "flex";
+```
+In email javascript file:
+```
+				modal_message.innerHTML = 'Thank you for your feedback.';
+				modal.style.display = "flex";
 ```
 </details>
 
