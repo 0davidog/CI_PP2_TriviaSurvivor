@@ -19,7 +19,7 @@ This version, created as part of an course project will be subtitled 'Demo of th
 
 ### Deployed Site
 
-[Trivia Survivor](https://0davidog.github.io/trivia-survivor/)
+[Trivia Survivor](https://0davidog.github.io/CI_PP2_TriviaSurvivor/)
 
 ## Contents
 
