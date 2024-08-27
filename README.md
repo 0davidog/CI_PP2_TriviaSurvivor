@@ -2,6 +2,8 @@
 
 _Author: David O'Gara_
 
+<em>This is the unaltered original version of this project, created for the Code Institute Full Stack Software Developer course.</em>
+
 Trivia Survivor is a movie trivia quiz game with an element of danger. Players will test their knowledge of movie trivia as a creature makes its way towards them. Correct answers will stall the creatures approach while incorrect answers will allow it to advance. When too many wrong answers have been submitted the game ends in failure so to survive players must answer enough trivia questions correctly.
 
 
